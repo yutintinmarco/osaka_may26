@@ -82,7 +82,8 @@
     .weather-temp { margin-top: 2px; }
     .city-tabs { display: flex; gap: 6px; margin-bottom: 8px; }
     .city-tab { padding: 4px 12px; border-radius: 999px; font-size: calc(11px * var(--font-scale)); border: 1px solid #dadada; background: #f8f8fa; color: #555; }
-    .city-tab.active { background: #111; border-color: #111; color: #fff; font-weight: 600; }
+    .city-tab.active-kyoto { background: #d4ecd4; border-color: #5a9e5a; color: #2a5a2a; font-weight: 600; }
+    .city-tab.active-osaka { background: #ffddd4; border-color: #e06040; color: #6a2010; font-weight: 600; }
 
     /* Day tabs */
     .day-tabs { display: flex; gap: 8px; margin: 16px 0 10px 0; overflow-x: auto; }
@@ -90,6 +91,7 @@
     .day-tab.active { background: #ffe58f; border-color: #f5c542; color: #111; font-weight: 600; }
     .day-tab.city-kyoto.active { background: #d4ecd4; border-color: #5a9e5a; color: #2a5a2a; }
     .day-tab.city-osaka.active { background: #ffddd4; border-color: #e06040; color: #6a2010; }
+    .day-tab.city-both.active { background: linear-gradient(to right, #d4ecd4 50%, #ffddd4 50%); border-color: #5a9e5a; border-right-color: #e06040; color: #333; font-weight: 600; }
     .day-content { display: none; }
     .day-content.active { display: block; }
     .section-title { font-size: calc(14px * var(--font-scale)); font-weight: 600; margin-bottom: 4px; color: #000; }
@@ -317,10 +319,13 @@ function renderWeather(data){
   const keys=Object.keys(cities);if(!keys.length)return;
   const ctEl=document.getElementById("city-tabs");ctEl.style.display="flex";ctEl.innerHTML="";
   let activeKey=keys[0];
+  function setCityTabActive(activeK){
+    document.querySelectorAll(".city-tab").forEach(b=>{b.className="city-tab";if(b.dataset.cityKey===activeK)b.classList.add(`active-${activeK}`);});
+  }
   keys.forEach(k=>{
-    const btn=document.createElement("button");btn.className="city-tab"+(k===activeKey?" active":"");
-    btn.textContent=cities[k].label||k;
-    btn.addEventListener("click",()=>{document.querySelectorAll(".city-tab").forEach(b=>b.classList.remove("active"));btn.classList.add("active");activeKey=k;fetchCity(k,cities[k],tripDates);});
+    const btn=document.createElement("button");btn.className="city-tab"+(k===activeKey?` active-${k}`:"");
+    btn.dataset.cityKey=k;btn.textContent=cities[k].label||k;
+    btn.addEventListener("click",()=>{activeKey=k;setCityTabActive(k);fetchCity(k,cities[k],tripDates);});
     ctEl.appendChild(btn);
   });
   fetchCity(activeKey,cities[activeKey],tripDates);
@@ -375,7 +380,10 @@ let activeTeam="all";
 function applyTeam(team){
   activeTeam=team;
   document.querySelectorAll(".team-btn").forEach(b=>{b.className="team-btn";if(b.dataset.team===team){if(team==="all")b.classList.add("active-all");else if(team==="team1")b.classList.add("active-t1");else if(team==="team2")b.classList.add("active-t2");}});
+  // Filter timeline items
   document.querySelectorAll(".timeline-item[data-who]").forEach(item=>{const who=item.getAttribute("data-who");item.classList.toggle("hidden-item",!(team==="all"||who==="all"||who===team));});
+  // Filter flight rows
+  document.querySelectorAll(".flight-team-row[data-team]").forEach(row=>{const t=row.getAttribute("data-team");row.style.display=(team==="all"||t===team)?"block":"none";});
 }
 document.querySelectorAll(".team-btn").forEach(b=>b.addEventListener("click",()=>applyTeam(b.dataset.team)));
 
@@ -455,7 +463,8 @@ function render(data){
     flights.forEach(f=>{
       const ti=travellers[f.teamKey];
       const row=document.createElement("div");row.className="flight-team-row";
-      if(ti){const lbl=document.createElement("div");lbl.className="flight-team-label";lbl.style.background=ti.color||"#888";lbl.textContent=`${ti.label||f.teamKey}  ${ti.members||""}`;row.appendChild(lbl);}
+      row.setAttribute("data-team",f.teamKey);
+      if(ti){const lbl=document.createElement("div");lbl.className="flight-team-label";lbl.style.background=ti.color||"#888";lbl.textContent=`${ti.label||f.teamKey}${ti.members?" "+ti.members:""}`;row.appendChild(lbl);}
       const tr=document.createElement("div");tr.className="trip-row trip-row-with-logo";
       const oc=document.createElement("div");oc.className="trip-col";oc.innerHTML=`<div class="trip-col-title">去程</div><div class="trip-col-main">${f.outbound?.date||""}  ${f.outbound?.flight||""}</div><div class="trip-col-sub">${f.outbound?.route||""}  ${f.outbound?.time||""}</div>`;
       const ic2=document.createElement("div");ic2.className="trip-col trip-col-right";ic2.innerHTML=`<div class="trip-col-title">回程</div><div class="trip-col-main">${f.inbound?.date||""}  ${f.inbound?.flight||""}</div><div class="trip-col-sub">${f.inbound?.route||""}  ${f.inbound?.time||""}</div>`;
@@ -474,8 +483,10 @@ function render(data){
   const cityKeys=Object.keys(cities);
 
   data.days.forEach((day,idx)=>{
-    const ck=day.city||(cityKeys.find(k=>{const cd=cities[k];return cd.startIso&&cd.endIso&&day.isoDate&&day.isoDate>=cd.startIso&&day.isoDate<=cd.endIso;})||null);
-    const ci=ck?cities[ck]:null;
+    // Find which city/cities this day belongs to
+    const matchedCities=day.city?[day.city]:cityKeys.filter(k=>{const cd=cities[k];return cd.startIso&&cd.endIso&&day.isoDate&&day.isoDate>=cd.startIso&&day.isoDate<=cd.endIso;});
+    const ck=matchedCities.length===1?matchedCities[0]:(matchedCities.length>1?"both":null);
+    const ci=ck&&ck!=="both"?cities[ck]:null;
 
     const tab=document.createElement("button");
     tab.className=`day-tab${idx===0?" active":""}${ck?` city-${ck}`:""}`;
