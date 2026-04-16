@@ -42,6 +42,7 @@
     "flights": [
       {
         "teamKey": "team1",
+        "airlineLogo": "assets/icon/cx_logo.png",
         "outbound": {
           "date": "5月23日",
           "flight": "待定",
@@ -57,6 +58,7 @@
       },
       {
         "teamKey": "team2",
+        "airlineLogo": "assets/icon/cx_logo.png",
         "outbound": {
           "date": "5月23日",
           "flight": "待定",
@@ -262,6 +264,7 @@
       "title": "京都 → 大阪",
       "subtitle": "上午京都  下午移動大阪  check in",
       "isoDate": "2026-05-26",
+      "city": "both",
       "items": [
         {
           "time": "09:00",
