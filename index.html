@@ -496,7 +496,12 @@ function render(data){
     const content=document.createElement("div");content.className="day-content"+(idx===0?" active":"");content.dataset.dayIndex=String(idx);
     const titleEl=document.createElement("div");titleEl.className="section-title";
     titleEl.textContent=(day.date?day.date+"  ":"")+(day.title||"");
-    if(ci){const b=document.createElement("span");b.className=`city-badge city-badge-${ck}`;b.textContent=ci.label||ck;titleEl.appendChild(b);}
+    if(ck==="both"){
+      // Show both city badges
+      matchedCities.forEach(k=>{const b=document.createElement("span");b.className=`city-badge city-badge-${k}`;b.textContent=cities[k].label||k;titleEl.appendChild(b);});
+    } else if(ci){
+      const b=document.createElement("span");b.className=`city-badge city-badge-${ck}`;b.textContent=ci.label||ck;titleEl.appendChild(b);
+    }
     if(day.pass){const b=document.createElement("span");b.classList.add("pass-badge");if(String(day.pass).includes("JR"))b.classList.add("pass-jr");else if(String(day.pass).includes("ICOCA"))b.classList.add("pass-icoca");else if(String(day.pass).includes("地鐵"))b.classList.add("pass-metro");b.textContent=day.pass;titleEl.appendChild(b);}
     content.appendChild(titleEl);
     if(day.subtitle){const sub=document.createElement("div");sub.className="section-sub";sub.textContent=day.subtitle;content.appendChild(sub);}
