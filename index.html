@@ -21,11 +21,11 @@
     }
     body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif; background: transparent; color: #111; height: 100vh; overflow: hidden; }
     html { background: transparent; }
-    .scroll-shell { height: 100vh; overflow-y: auto; -webkit-overflow-scrolling: touch; padding-top: env(safe-area-inset-top); background: rgba(245,245,247,0.45); }
+    .scroll-shell { height: 100vh; overflow-y: auto; -webkit-overflow-scrolling: touch; padding-top: env(safe-area-inset-top); background: transparent; }
     .container { max-width: 480px; margin: 0 auto; padding: 16px 16px 120px 16px; }
 
     /* Header */
-    .header { margin-bottom: 10px; }
+    .header { margin-bottom: 10px; background: rgba(245,245,247,0.55); border-radius: 16px; padding: 10px 12px; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
     .header-top { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-bottom: 4px; }
     .header-title-small { font-size: calc(13px * var(--font-scale)); color: #000; margin-bottom: 2px; }
     .header-title-main { font-size: calc(20px * var(--font-scale)); font-weight: 600; margin-bottom: 2px; }
@@ -53,7 +53,7 @@
     .team-btn.active-t2   { background: var(--team2-color); border-color: var(--team2-color); color: #fff; font-weight: 700; }
 
     /* Cards */
-    .card { background: #eee9f2; border-radius: 16px; padding: 12px 14px; box-shadow: 0 8px 20px rgba(15,23,42,0.08); margin-bottom: 14px; border: 1px solid #e5e5ea; }
+    .card { background: rgba(238,233,242,0.82); border-radius: 16px; padding: 12px 14px; box-shadow: 0 8px 20px rgba(15,23,42,0.12); margin-bottom: 14px; border: 1px solid rgba(229,229,234,0.7); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
 
     /* Flight */
     .trip-row { display: flex; justify-content: space-between; font-size: calc(12px * var(--font-scale)); color: #333; }
@@ -104,7 +104,7 @@
     .city-badge-osaka { background: #ffddd4; color: #6a2010; border: 1px solid #e06040; }
 
     /* Timeline */
-    .timeline-item { display: flex; gap: 10px; padding: 10px 8px; border-radius: 12px; background: #eee9f2; margin-bottom: 6px; border: 1px solid #e5e5ea; }
+    .timeline-item { display: flex; gap: 10px; padding: 10px 8px; border-radius: 12px; background: rgba(238,233,242,0.82); margin-bottom: 6px; border: 1px solid rgba(229,229,234,0.7); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
     .timeline-item.clickable { cursor: pointer; }
     .timeline-item.who-team1 { border-left: 3px solid var(--team1-color); }
     .timeline-item.who-team2 { border-left: 3px solid var(--team2-color); }
