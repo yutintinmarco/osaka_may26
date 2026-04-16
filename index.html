@@ -67,6 +67,8 @@
     .trip-col-sub { font-size: calc(11px * var(--font-scale)); color: #777; margin-top: 2px; }
     .flight-team-row { margin-bottom: 10px; padding-bottom: 10px; border-bottom: 1px solid #e0e0e0; }
     .flight-team-row:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+    .flight-team-row[style*="display: none"] + .flight-team-row,
+    .flight-team-row:not([style*="display: none"]):last-of-type { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
     .flight-team-label { font-size: calc(11px * var(--font-scale)); font-weight: 700; margin-bottom: 6px; padding: 2px 8px; border-radius: 999px; display: inline-block; color: #fff; }
 
     /* Weather */
@@ -382,8 +384,18 @@ function applyTeam(team){
   document.querySelectorAll(".team-btn").forEach(b=>{b.className="team-btn";if(b.dataset.team===team){if(team==="all")b.classList.add("active-all");else if(team==="team1")b.classList.add("active-t1");else if(team==="team2")b.classList.add("active-t2");}});
   // Filter timeline items
   document.querySelectorAll(".timeline-item[data-who]").forEach(item=>{const who=item.getAttribute("data-who");item.classList.toggle("hidden-item",!(team==="all"||who==="all"||who===team));});
-  // Filter flight rows
-  document.querySelectorAll(".flight-team-row[data-team]").forEach(row=>{const t=row.getAttribute("data-team");row.style.display=(team==="all"||t===team)?"block":"none";});
+  // Filter flight rows + fix last visible row border
+  const flightRows=document.querySelectorAll(".flight-team-row[data-team]");
+  let lastVisible=null;
+  flightRows.forEach(row=>{
+    const t=row.getAttribute("data-team");
+    const show=team==="all"||t===team;
+    row.style.display=show?"block":"none";
+    if(show)lastVisible=row;
+  });
+  // Reset all borders then remove from last visible
+  flightRows.forEach(row=>{row.style.borderBottom="";row.style.marginBottom="";row.style.paddingBottom="";});
+  if(lastVisible){lastVisible.style.borderBottom="none";lastVisible.style.marginBottom="0";lastVisible.style.paddingBottom="0";}
 }
 document.querySelectorAll(".team-btn").forEach(b=>b.addEventListener("click",()=>applyTeam(b.dataset.team)));
 
