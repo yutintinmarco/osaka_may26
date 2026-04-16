@@ -17,7 +17,7 @@
     .bg-fixed {
       position: fixed; inset: 0;
       background:
-        linear-gradient(rgba(255,255,255,0.40), rgba(255,255,255,0.40)),
+        linear-gradient(rgba(255,255,255,0.22), rgba(255,255,255,0.22)),
         url("assets/bg/bg_trip.png") center center / cover no-repeat;
       z-index: -1;
     }
@@ -40,6 +40,8 @@
     .font-controls { display: flex; gap: 6px; align-items: center; }
     .font-btn { width: 30px; height: 30px; border-radius: 999px; border: 1px solid #dadada; background: #f9f9fb; display: flex; align-items: center; justify-content: center; padding: 0; font-weight: 600; line-height: 1; }
     .font-btn:active, .refresh-btn:active { background: #ececf1; }
+    .theme-btn { width: 30px; height: 30px; border-radius: 999px; border: 1px solid #dadada; background: #f9f9fb; display: flex; align-items: center; justify-content: center; padding: 0; font-size: 15px; line-height: 1; }
+    .theme-btn:active { background: #ececf1; }
     .status-square { min-width: 88px; min-height: 44px; padding: 4px 8px; border-radius: 12px; background: rgba(245,245,247,0.55); border: 1px solid rgba(255,255,255,0.45); box-shadow: 0 4px 10px rgba(15,23,42,0.05); text-align: center; display: none; flex-direction: column; justify-content: center; align-items: center; }
     .status-main { font-size: calc(12px * var(--font-scale)); font-weight: 600; margin-bottom: 1px; color: #222; }
     .status-sub { font-size: calc(9px * var(--font-scale)); color: #666; }
@@ -158,7 +160,315 @@
     .fab-item { width: 40px; height: 40px; border-radius: 50%; border: 1px solid rgba(200,200,205,0.9); background: rgba(255,255,255,0.78); display: flex; align-items: center; justify-content: center; font-size: 18px; }
     .fab-item.active { background: rgba(17,17,17,0.88); border-color: rgba(17,17,17,0.88); }
     .title-accent { color: var(--accent-color, #d93025); }
-  </style>
+
+    /* ── Dark Mode ───────────────────────────────────────────────────── */
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --accent-color: #ff6b52;
+        --team1-color: #6aaff5;
+        --team2-color: #f5c84a;
+      }
+
+      body { color: #f0f0f2; }
+
+      /* Background: darker overlay so image is visible but softer */
+      .bg-fixed {
+        background:
+          linear-gradient(rgba(0,0,0,0.52), rgba(0,0,0,0.52)),
+          url("assets/bg/bg_trip.png") center center / cover no-repeat;
+      }
+
+      /* Header */
+      .header {
+        background: rgba(28,28,32,0.72);
+        border-color: rgba(255,255,255,0.10);
+        box-shadow: 0 10px 24px rgba(0,0,0,0.35);
+      }
+      .header-title-small { color: rgba(240,240,242,0.75); text-shadow: none; }
+      .header-title-main { color: #f0f0f2; text-shadow: 0 1px 3px rgba(0,0,0,0.4); }
+      .header-sub-text { color: rgba(240,240,242,0.75); }
+
+      /* Chips & buttons */
+      .today-chip {
+        background: rgba(40,40,46,0.80);
+        border-color: rgba(255,255,255,0.14);
+        color: rgba(240,240,242,0.85);
+        box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      }
+      .today-chip.active {
+        background: rgba(92,67,0,0.75);
+        border-color: #c9a030;
+        color: #ffe9a0;
+      }
+      .font-btn, .refresh-btn {
+        background: rgba(44,44,50,0.80);
+        border-color: rgba(255,255,255,0.14);
+        color: #e0e0e4;
+      }
+      .font-btn:active, .refresh-btn:active { background: rgba(60,60,68,0.90); }
+
+      /* Status square */
+      .status-square {
+        background: rgba(30,30,36,0.72);
+        border-color: rgba(255,255,255,0.10);
+      }
+      .status-main { color: #f0f0f2; }
+      .status-sub { color: rgba(200,200,210,0.75); }
+
+      /* Pull indicator */
+      .pull-indicator { color: rgba(200,200,210,0.70); }
+
+      /* Team bar */
+      .team-btn {
+        background: rgba(36,36,42,0.75);
+        border-color: rgba(255,255,255,0.12);
+        color: rgba(220,220,228,0.80);
+      }
+      .team-btn.active-all {
+        background: rgba(240,240,242,0.92);
+        border-color: rgba(240,240,242,0.92);
+        color: #111;
+      }
+      /* team1 / team2 active stays vivid — colours already adjusted via :root */
+
+      /* Cards */
+      .card {
+        background: rgba(24,24,30,0.62);
+        border-color: rgba(255,255,255,0.09);
+        box-shadow: 0 10px 28px rgba(0,0,0,0.40);
+      }
+
+      /* Flight */
+      .trip-row { color: rgba(220,220,228,0.88); }
+      .trip-col-title { color: rgba(180,180,195,0.70); }
+      .trip-col-sub { color: rgba(190,190,205,0.72); }
+      .flight-team-row { border-bottom-color: rgba(255,255,255,0.10); }
+
+      /* Weather */
+      .weather-title { color: #f0f0f2; }
+      .weather-updated { color: rgba(180,180,195,0.65); }
+      .weather-today { color: rgba(230,230,238,0.92); }
+      .weather-sun { color: rgba(190,190,205,0.72); }
+      .weather-day {
+        background: rgba(32,32,40,0.75);
+        border-color: rgba(255,255,255,0.10);
+        color: rgba(220,220,228,0.88);
+      }
+      .weather-day-label { color: #f0f0f2; }
+      .weather-cond { color: rgba(190,190,205,0.80); }
+      .weather-temp { color: rgba(210,210,222,0.85); }
+
+      /* City tabs */
+      .city-tab {
+        background: rgba(36,36,44,0.72);
+        border-color: rgba(255,255,255,0.12);
+        color: rgba(210,210,222,0.80);
+      }
+      .city-tab.active-kyoto {
+        background: rgba(42,90,42,0.70);
+        border-color: #5a9e5a;
+        color: #a8dba8;
+      }
+      .city-tab.active-osaka {
+        background: rgba(100,40,20,0.70);
+        border-color: #e06040;
+        color: #ffb09a;
+      }
+
+      /* Day tabs */
+      .day-tab {
+        background: rgba(36,36,44,0.70);
+        border-color: rgba(255,255,255,0.12);
+        color: rgba(200,200,215,0.78);
+      }
+      .day-tab.active {
+        background: rgba(120,96,10,0.75);
+        border-color: #c9a030;
+        color: #ffe9a0;
+      }
+      .day-tab.city-kyoto.active {
+        background: rgba(38,80,38,0.75);
+        border-color: #5a9e5a;
+        color: #a8dba8;
+      }
+      .day-tab.city-osaka.active {
+        background: rgba(100,40,20,0.75);
+        border-color: #e06040;
+        color: #ffb09a;
+      }
+      .day-tab.city-both.active {
+        background: linear-gradient(to right, rgba(38,80,38,0.75) 50%, rgba(100,40,20,0.75) 50%);
+        color: #e8e8e8;
+      }
+      .day-tab.city-both.active::before {
+        background: linear-gradient(to right, #5a9e5a 50%, #e06040 50%);
+        -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+      }
+
+      /* Section titles */
+      .section-title { color: #f0f0f2; text-shadow: 0 1px 3px rgba(0,0,0,0.4); }
+      .section-sub { color: rgba(200,200,215,0.78); text-shadow: none; }
+
+      /* City badges */
+      .city-badge-kyoto {
+        background: rgba(42,90,42,0.65);
+        color: #a8dba8;
+        border-color: #5a9e5a;
+      }
+      .city-badge-osaka {
+        background: rgba(100,40,20,0.65);
+        color: #ffb09a;
+        border-color: #e06040;
+      }
+
+      /* Timeline items */
+      .timeline-item {
+        background: rgba(24,24,32,0.58);
+        border-color: rgba(255,255,255,0.09);
+        box-shadow: 0 4px 14px rgba(0,0,0,0.30);
+      }
+      .time { color: rgba(170,170,188,0.80); }
+      .content-title { color: #f0f0f2; }
+      .content-note { color: rgba(180,180,200,0.78); }
+
+      /* Who tags */
+      .who-tag-team1 { background: rgba(106,175,245,0.18); color: #6aaff5; }
+      .who-tag-team2 { background: rgba(245,200,74,0.18); color: #f5c84a; }
+
+      /* Footer */
+      .footer-note { color: rgba(160,160,180,0.60); }
+
+      /* Pass badges */
+      .pass-jr { background: rgba(0,90,180,0.22); color: #7ab4f5; border-color: rgba(100,170,255,0.30); }
+      .pass-icoca { background: rgba(0,140,100,0.22); color: #6adbb8; border-color: rgba(80,200,150,0.30); }
+      .pass-metro { background: rgba(160,0,140,0.22); color: #d880d0; border-color: rgba(200,80,180,0.30); }
+
+      /* Modal */
+      .modal-backdrop { background: rgba(0,0,0,0.60); }
+      .modal {
+        background: rgba(26,26,34,0.96);
+        border: 1px solid rgba(255,255,255,0.10);
+        box-shadow: 0 24px 56px rgba(0,0,0,0.60);
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+      }
+      .modal-title { color: #f0f0f2; }
+      .modal-time { color: rgba(170,170,190,0.75); }
+      .modal-body { color: rgba(200,200,218,0.88); }
+      .modal-dot { background: rgba(255,255,255,0.20); }
+      .modal-dot.active { background: rgba(240,240,242,0.88); }
+      .modal-link-btn {
+        background: rgba(240,240,242,0.92);
+        color: #111;
+      }
+      .modal-close-btn {
+        background: rgba(40,40,50,0.80);
+        border-color: rgba(255,255,255,0.14);
+        color: rgba(220,220,230,0.88);
+      }
+
+      /* FAB */
+      .fab {
+        background: rgba(32,32,40,0.88);
+        border-color: rgba(255,255,255,0.14);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.40);
+      }
+      .fab-menu {
+        background: rgba(28,28,36,0.92);
+        border-color: rgba(255,255,255,0.12);
+        box-shadow: 0 16px 36px rgba(0,0,0,0.50);
+      }
+      .fab-item {
+        background: rgba(40,40,50,0.80);
+        border-color: rgba(255,255,255,0.12);
+      }
+      .fab-item.active {
+        background: rgba(230,230,238,0.90);
+        border-color: rgba(230,230,238,0.90);
+      }
+
+      /* Theme button in dark mode */
+      .theme-btn { background: rgba(44,44,50,0.80); border-color: rgba(255,255,255,0.14); color: #e0e0e4; }
+      .theme-btn:active { background: rgba(60,60,68,0.90); }
+    }
+
+    /* ── Force dark (user picked 🌙) ─────────────────────────────────── */
+    html.theme-dark {
+      --accent-color: #ff6b52;
+      --team1-color: #6aaff5;
+      --team2-color: #f5c84a;
+    }
+    html.theme-dark body { color: #f0f0f2; }
+    html.theme-dark .bg-fixed { background: linear-gradient(rgba(0,0,0,0.52),rgba(0,0,0,0.52)), url("assets/bg/bg_trip.png") center center / cover no-repeat; }
+    html.theme-dark .header { background: rgba(28,28,32,0.72); border-color: rgba(255,255,255,0.10); box-shadow: 0 10px 24px rgba(0,0,0,0.35); }
+    html.theme-dark .header-title-small { color: rgba(240,240,242,0.75); text-shadow: none; }
+    html.theme-dark .header-title-main { color: #f0f0f2; text-shadow: 0 1px 3px rgba(0,0,0,0.4); }
+    html.theme-dark .header-sub-text { color: rgba(240,240,242,0.75); }
+    html.theme-dark .today-chip { background: rgba(40,40,46,0.80); border-color: rgba(255,255,255,0.14); color: rgba(240,240,242,0.85); }
+    html.theme-dark .today-chip.active { background: rgba(92,67,0,0.75); border-color: #c9a030; color: #ffe9a0; }
+    html.theme-dark .font-btn, html.theme-dark .refresh-btn, html.theme-dark .theme-btn { background: rgba(44,44,50,0.80); border-color: rgba(255,255,255,0.14); color: #e0e0e4; }
+    html.theme-dark .font-btn:active, html.theme-dark .refresh-btn:active, html.theme-dark .theme-btn:active { background: rgba(60,60,68,0.90); }
+    html.theme-dark .status-square { background: rgba(30,30,36,0.72); border-color: rgba(255,255,255,0.10); }
+    html.theme-dark .status-main { color: #f0f0f2; }
+    html.theme-dark .status-sub { color: rgba(200,200,210,0.75); }
+    html.theme-dark .pull-indicator { color: rgba(200,200,210,0.70); }
+    html.theme-dark .team-btn { background: rgba(36,36,42,0.75); border-color: rgba(255,255,255,0.12); color: rgba(220,220,228,0.80); }
+    html.theme-dark .team-btn.active-all { background: rgba(240,240,242,0.92); border-color: rgba(240,240,242,0.92); color: #111; }
+    html.theme-dark .card { background: rgba(24,24,30,0.62); border-color: rgba(255,255,255,0.09); box-shadow: 0 10px 28px rgba(0,0,0,0.40); }
+    html.theme-dark .trip-row { color: rgba(220,220,228,0.88); }
+    html.theme-dark .trip-col-title { color: rgba(180,180,195,0.70); }
+    html.theme-dark .trip-col-sub { color: rgba(190,190,205,0.72); }
+    html.theme-dark .flight-team-row { border-bottom-color: rgba(255,255,255,0.10); }
+    html.theme-dark .weather-title { color: #f0f0f2; }
+    html.theme-dark .weather-updated { color: rgba(180,180,195,0.65); }
+    html.theme-dark .weather-today { color: rgba(230,230,238,0.92); }
+    html.theme-dark .weather-sun { color: rgba(190,190,205,0.72); }
+    html.theme-dark .weather-day { background: rgba(32,32,40,0.75); border-color: rgba(255,255,255,0.10); color: rgba(220,220,228,0.88); }
+    html.theme-dark .weather-day-label { color: #f0f0f2; }
+    html.theme-dark .weather-cond { color: rgba(190,190,205,0.80); }
+    html.theme-dark .weather-temp { color: rgba(210,210,222,0.85); }
+    html.theme-dark .city-tab { background: rgba(36,36,44,0.72); border-color: rgba(255,255,255,0.12); color: rgba(210,210,222,0.80); }
+    html.theme-dark .city-tab.active-kyoto { background: rgba(42,90,42,0.70); border-color: #5a9e5a; color: #a8dba8; }
+    html.theme-dark .city-tab.active-osaka { background: rgba(100,40,20,0.70); border-color: #e06040; color: #ffb09a; }
+    html.theme-dark .day-tab { background: rgba(36,36,44,0.70); border-color: rgba(255,255,255,0.12); color: rgba(200,200,215,0.78); }
+    html.theme-dark .day-tab.active { background: rgba(120,96,10,0.75); border-color: #c9a030; color: #ffe9a0; }
+    html.theme-dark .day-tab.city-kyoto.active { background: rgba(38,80,38,0.75); border-color: #5a9e5a; color: #a8dba8; }
+    html.theme-dark .day-tab.city-osaka.active { background: rgba(100,40,20,0.75); border-color: #e06040; color: #ffb09a; }
+    html.theme-dark .day-tab.city-both.active { background: linear-gradient(to right,rgba(38,80,38,0.75) 50%,rgba(100,40,20,0.75) 50%); color: #e8e8e8; }
+    html.theme-dark .section-title { color: #f0f0f2; text-shadow: 0 1px 3px rgba(0,0,0,0.4); }
+    html.theme-dark .section-sub { color: rgba(200,200,215,0.78); text-shadow: none; }
+    html.theme-dark .city-badge-kyoto { background: rgba(42,90,42,0.65); color: #a8dba8; border-color: #5a9e5a; }
+    html.theme-dark .city-badge-osaka { background: rgba(100,40,20,0.65); color: #ffb09a; border-color: #e06040; }
+    html.theme-dark .timeline-item { background: rgba(24,24,32,0.58); border-color: rgba(255,255,255,0.09); box-shadow: 0 4px 14px rgba(0,0,0,0.30); }
+    html.theme-dark .time { color: rgba(170,170,188,0.80); }
+    html.theme-dark .content-title { color: #f0f0f2; }
+    html.theme-dark .content-note { color: rgba(180,180,200,0.78); }
+    html.theme-dark .who-tag-team1 { background: rgba(106,175,245,0.18); color: #6aaff5; }
+    html.theme-dark .who-tag-team2 { background: rgba(245,200,74,0.18); color: #f5c84a; }
+    html.theme-dark .footer-note { color: rgba(160,160,180,0.60); }
+    html.theme-dark .pass-jr { background: rgba(0,90,180,0.22); color: #7ab4f5; border-color: rgba(100,170,255,0.30); }
+    html.theme-dark .pass-icoca { background: rgba(0,140,100,0.22); color: #6adbb8; border-color: rgba(80,200,150,0.30); }
+    html.theme-dark .pass-metro { background: rgba(160,0,140,0.22); color: #d880d0; border-color: rgba(200,80,180,0.30); }
+    html.theme-dark .modal-backdrop { background: rgba(0,0,0,0.60); }
+    html.theme-dark .modal { background: rgba(26,26,34,0.96); border: 1px solid rgba(255,255,255,0.10); box-shadow: 0 24px 56px rgba(0,0,0,0.60); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); }
+    html.theme-dark .modal-title { color: #f0f0f2; }
+    html.theme-dark .modal-time { color: rgba(170,170,190,0.75); }
+    html.theme-dark .modal-body { color: rgba(200,200,218,0.88); }
+    html.theme-dark .modal-dot { background: rgba(255,255,255,0.20); }
+    html.theme-dark .modal-dot.active { background: rgba(240,240,242,0.88); }
+    html.theme-dark .modal-link-btn { background: rgba(240,240,242,0.92); color: #111; }
+    html.theme-dark .modal-close-btn { background: rgba(40,40,50,0.80); border-color: rgba(255,255,255,0.14); color: rgba(220,220,230,0.88); }
+    html.theme-dark .fab { background: rgba(32,32,40,0.88); border-color: rgba(255,255,255,0.14); box-shadow: 0 8px 20px rgba(0,0,0,0.40); }
+    html.theme-dark .fab-menu { background: rgba(28,28,36,0.92); border-color: rgba(255,255,255,0.12); box-shadow: 0 16px 36px rgba(0,0,0,0.50); }
+    html.theme-dark .fab-item { background: rgba(40,40,50,0.80); border-color: rgba(255,255,255,0.12); }
+    html.theme-dark .fab-item.active { background: rgba(230,230,238,0.90); border-color: rgba(230,230,238,0.90); }
+
+    /* ── Force light (user picked ☀️) ────────────────────────────────── */
+    html.theme-light { color-scheme: light; }
+    html.theme-light body { color: #111; }
+    html.theme-light .bg-fixed { background: linear-gradient(rgba(255,255,255,0.22),rgba(255,255,255,0.22)), url("assets/bg/bg_trip.png") center center / cover no-repeat; }
   <link rel="manifest" href="manifest.webmanifest" />
   <meta name="theme-color" content="#e05a2b" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -183,6 +493,7 @@
           <div class="font-controls">
             <button class="font-btn" id="font-smaller">A−</button>
             <button class="font-btn" id="font-larger">A+</button>
+            <button class="theme-btn" id="theme-btn" title="切換主題">☀️</button>
             <button class="refresh-btn" id="refresh-btn">⟳</button>
           </div>
         </div>
@@ -274,6 +585,23 @@ function applyFont(s){s=clamp(s,FMIN,FMAX);document.documentElement.style.setPro
 let fs=applyFont(parseFloat(localStorage.getItem("trip_font_scale"))||1);
 document.getElementById("font-smaller").addEventListener("click",()=>{fs=applyFont(fs-FSTEP);});
 document.getElementById("font-larger").addEventListener("click",()=>{fs=applyFont(fs+FSTEP);});
+
+// Theme toggle: auto → light → dark → auto
+const THEMES=["auto","light","dark"];
+const THEME_ICONS={"auto":"🌗","light":"☀️","dark":"🌙"};
+function applyTheme(t){
+  document.documentElement.classList.remove("theme-light","theme-dark");
+  if(t==="dark")document.documentElement.classList.add("theme-dark");
+  else if(t==="light")document.documentElement.classList.add("theme-light");
+  document.getElementById("theme-btn").textContent=THEME_ICONS[t];
+  try{localStorage.setItem("trip_theme",t);}catch(e){}
+}
+let currentTheme=localStorage.getItem("trip_theme")||"auto";
+applyTheme(currentTheme);
+document.getElementById("theme-btn").addEventListener("click",()=>{
+  currentTheme=THEMES[(THEMES.indexOf(currentTheme)+1)%THEMES.length];
+  applyTheme(currentTheme);
+});
 
 // Pull to refresh
 const ss=document.getElementById("scroll-shell"),pi=document.getElementById("pull-indicator");
