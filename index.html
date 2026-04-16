@@ -34,31 +34,45 @@
     .header-right { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; }
     .today-chip { font-size: calc(11px * var(--font-scale)); padding: 3px 10px; border-radius: 999px; background: rgba(255,255,255,0.82); border: 1px solid rgba(255,255,255,0.72); color: #333; max-width: 150px; text-align: right; line-height: 1.4; box-shadow: 0 2px 6px rgba(15,23,42,0.08); }
     .today-chip.active { border-color: #f5c542; background: #fff7d1; color: #5c4300; }
-    .refresh-btn, .theme-btn { width: 30px; height: 30px; border-radius: 999px; border: 1px solid #dadada; background: #f9f9fb; display: flex; align-items: center; justify-content: center; padding: 0; appearance: none; -webkit-appearance: none; color: #222; -webkit-text-fill-color: #222; }
-    .refresh-btn { font-size: calc(16px * var(--font-scale)); }
-    .font-controls { display: flex; gap: 6px; align-items: center; }
-    .font-btn { width: 30px; height: 30px; border-radius: 999px; border: 1px solid #dadada; background: #f9f9fb; display: flex; align-items: center; justify-content: center; padding: 0; font-weight: 600; line-height: 1; }
-    .font-btn:active, .refresh-btn:active { background: #ececf1; }
-    .theme-btn { font-size: 15px; line-height: 1; position: relative; font-family: "Apple Color Emoji", "Segoe UI Emoji", sans-serif; }
-    .theme-btn:active { background: #ececf1; }
-    .refresh-btn,
-    .theme-btn {
-      font-family: "Apple Color Emoji", "Segoe UI Emoji", sans-serif;
+    .refresh-btn {
+      width: 30px;
+      height: 30px;
+      border-radius: 999px;
+      border: 1px solid #dadada;
+      background: #f9f9fb;
+      font-size: calc(16px * var(--font-scale));
       display: flex;
       align-items: center;
       justify-content: center;
-      line-height: 1;
       padding: 0;
+      line-height: 1;
+      color: #4A90D9;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif;
     }
-    .refresh-emoji,
+    .font-controls { display: flex; gap: 6px; align-items: center; justify-content: flex-end; }
+    .font-btn { width: 30px; height: 30px; border-radius: 999px; border: 1px solid #dadada; background: #f9f9fb; display: flex; align-items: center; justify-content: center; padding: 0; font-weight: 600; line-height: 1; }
+    .font-btn:active, .refresh-btn:active { background: #ececf1; }
+    .theme-btn {
+      width: 30px;
+      height: 30px;
+      border-radius: 999px;
+      border: 1px solid #dadada;
+      background: #f9f9fb;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      line-height: 1;
+      color: #4A90D9;
+      font-family: "Apple Color Emoji", "Segoe UI Emoji", sans-serif;
+      font-size: 15px;
+    }
+    .theme-btn:active { background: #ececf1; }
     .theme-emoji {
       display: block;
       line-height: 1;
-      color: inherit;
-      -webkit-text-fill-color: inherit;
+      transform: translateY(0);
     }
-    .refresh-emoji { font-size: calc(16px * var(--font-scale)); transform: translateY(-0.5px); }
-    .theme-emoji { font-size: 15px; transform: translateY(0); }
     .theme-btn[data-theme="auto"] .theme-emoji { transform: translateY(0.5px); }
     .theme-btn[data-theme="light"] .theme-emoji { transform: translateY(-0.5px) translateX(0.5px); }
     .theme-btn[data-theme="dark"] .theme-emoji { transform: translateY(-0.5px); }
@@ -381,7 +395,7 @@
             <button class="font-btn" id="font-smaller">A−</button>
             <button class="font-btn" id="font-larger">A+</button>
             <button class="theme-btn" id="theme-btn" type="button" title="切換主題" data-theme="auto"><span class="theme-emoji" id="theme-emoji" aria-hidden="true">🌗</span></button>
-            <button class="refresh-btn" id="refresh-btn" type="button" aria-label="Refresh"><span class="refresh-emoji" aria-hidden="true">⟳</span></button>
+            <button class="refresh-btn" id="refresh-btn" type="button" aria-label="Refresh">⟳</button>
           </div>
         </div>
       </div>
