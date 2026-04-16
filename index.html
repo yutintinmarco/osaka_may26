@@ -17,7 +17,7 @@
     .bg-fixed {
       position: fixed; inset: 0;
       background:
-        linear-gradient(rgba(255,255,255,0.40), rgba(255,255,255,0.40)),
+        linear-gradient(rgba(255,255,255,0.22), rgba(255,255,255,0.22)),
         url("assets/bg/bg_trip.png") center center / cover no-repeat;
       z-index: -1;
     }
@@ -30,7 +30,7 @@
     .header { margin-bottom: 10px; background: rgba(255,255,255,0.28); border: 1px solid rgba(255,255,255,0.55); border-radius: 16px; padding: 10px 12px; backdrop-filter: blur(28px) saturate(1.15); -webkit-backdrop-filter: blur(28px) saturate(1.15); box-shadow: 0 10px 24px rgba(15,23,42,0.10); }
     .header-top { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-bottom: 4px; }
     .header-title-small { font-size: calc(13px * var(--font-scale)); color: #111; margin-bottom: 2px; text-shadow: 0 1px 1px rgba(255,255,255,0.18); }
-    .header-title-main { font-size: calc(20px * var(--font-scale)); font-weight: 600; margin-bottom: 2px; }
+    .header-title-main { font-size: calc(20px * var(--font-scale)); font-weight: 700; margin-bottom: 2px; text-shadow: 0 1px 3px rgba(0,0,0,0.10); }
     .header-sub-row { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; margin-top: 6px; }
     .header-sub-text { font-size: calc(12px * var(--font-scale)); color: #000; line-height: 1.5; flex: 1; }
     .header-right { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; }
@@ -40,9 +40,9 @@
     .font-controls { display: flex; gap: 6px; align-items: center; }
     .font-btn { width: 30px; height: 30px; border-radius: 999px; border: 1px solid #dadada; background: #f9f9fb; display: flex; align-items: center; justify-content: center; padding: 0; font-weight: 600; line-height: 1; }
     .font-btn:active, .refresh-btn:active { background: #ececf1; }
-    .status-square { min-width: 120px; min-height: 60px; padding: 6px 10px; border-radius: 14px; background: #eee9f2; border: 1px solid #e5e5ea; box-shadow: 0 6px 14px rgba(15,23,42,0.08); text-align: center; display: none; flex-direction: column; justify-content: center; align-items: center; }
-    .status-main { font-size: calc(15px * var(--font-scale)); font-weight: 600; margin-bottom: 2px; color: #222; }
-    .status-sub { font-size: calc(11px * var(--font-scale)); color: #777; }
+    .status-square { min-width: 88px; min-height: 44px; padding: 4px 8px; border-radius: 12px; background: rgba(245,245,247,0.55); border: 1px solid rgba(255,255,255,0.45); box-shadow: 0 4px 10px rgba(15,23,42,0.05); text-align: center; display: none; flex-direction: column; justify-content: center; align-items: center; }
+    .status-main { font-size: calc(12px * var(--font-scale)); font-weight: 600; margin-bottom: 1px; color: #222; }
+    .status-sub { font-size: calc(9px * var(--font-scale)); color: #666; }
     .pull-indicator { font-size: calc(11px * var(--font-scale)); color: #777; text-align: center; margin-bottom: 8px; opacity: 0; transform: translateY(-6px); transition: opacity 0.15s ease, transform 0.15s ease; }
     .pull-indicator.show { opacity: 1; transform: translateY(0); }
 
@@ -99,8 +99,8 @@
     .day-tab.city-both.active::before { content: ""; position: absolute; inset: -1px; border-radius: 999px; padding: 1px; background: linear-gradient(to right, #5a9e5a 50%, #e06040 50%); -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; }
     .day-content { display: none; }
     .day-content.active { display: block; }
-    .section-title { font-size: calc(14px * var(--font-scale)); font-weight: 600; margin-bottom: 4px; color: #000; }
-    .section-sub { font-size: calc(11px * var(--font-scale)); color: #000; margin-bottom: 8px; }
+    .section-title { font-size: calc(15px * var(--font-scale)); font-weight: 700; margin-bottom: 6px; color: #111; text-shadow: 0 1px 2px rgba(255,255,255,0.30); }
+    .section-sub { font-size: calc(11px * var(--font-scale)); color: rgba(17,17,17,0.82); margin-bottom: 12px; text-shadow: 0 1px 2px rgba(255,255,255,0.24); }
     .city-badge { display: inline-block; margin-left: 8px; padding: 2px 8px; font-size: calc(10px * var(--font-scale)); border-radius: 999px; font-weight: 600; vertical-align: middle; }
     .city-badge-kyoto { background: #d4ecd4; color: #2a5a2a; border: 1px solid #5a9e5a; }
     .city-badge-osaka { background: #ffddd4; color: #6a2010; border: 1px solid #e06040; }
