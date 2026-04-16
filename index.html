@@ -93,7 +93,8 @@
     .day-tab.active { background: #ffe58f; border-color: #f5c542; color: #111; font-weight: 600; }
     .day-tab.city-kyoto.active { background: #d4ecd4; border-color: #5a9e5a; color: #2a5a2a; }
     .day-tab.city-osaka.active { background: #ffddd4; border-color: #e06040; color: #6a2010; }
-    .day-tab.city-both.active { background: linear-gradient(to right, #d4ecd4 50%, #ffddd4 50%); border-color: #999; color: #333; font-weight: 600; }
+    .day-tab.city-both.active { background: linear-gradient(to right, #d4ecd4 50%, #ffddd4 50%); border-color: transparent; color: #333; font-weight: 600; position: relative; }
+    .day-tab.city-both.active::before { content: ""; position: absolute; inset: -1px; border-radius: 999px; padding: 1px; background: linear-gradient(to right, #5a9e5a 50%, #e06040 50%); -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; }
     .day-content { display: none; }
     .day-content.active { display: block; }
     .section-title { font-size: calc(14px * var(--font-scale)); font-weight: 600; margin-bottom: 4px; color: #000; }
