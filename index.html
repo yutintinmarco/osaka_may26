@@ -496,8 +496,16 @@ function render(data){
 
   data.days.forEach((day,idx)=>{
     // Find which city/cities this day belongs to
-    const matchedCities=day.city?[day.city]:cityKeys.filter(k=>{const cd=cities[k];return cd.startIso&&cd.endIso&&day.isoDate&&day.isoDate>=cd.startIso&&day.isoDate<=cd.endIso;});
-    const ck=matchedCities.length===1?matchedCities[0]:(matchedCities.length>1?"both":null);
+    // Support explicit "both", single city key, or auto-detect from date ranges
+    let matchedCities, ck;
+    if(day.city==="both"){
+      matchedCities=cityKeys; ck="both";
+    } else if(day.city&&day.city!=="both"){
+      matchedCities=[day.city]; ck=day.city;
+    } else {
+      matchedCities=cityKeys.filter(k=>{const cd=cities[k];return cd.startIso&&cd.endIso&&day.isoDate&&day.isoDate>=cd.startIso&&day.isoDate<=cd.endIso;});
+      ck=matchedCities.length===1?matchedCities[0]:(matchedCities.length>1?"both":null);
+    }
     const ci=ck&&ck!=="both"?cities[ck]:null;
 
     const tab=document.createElement("button");
