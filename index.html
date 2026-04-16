@@ -266,7 +266,7 @@
 </div>
 
 <script>
-function getTripJsonUrl(){const p=new URLSearchParams(location.search);return p.get("data")||((p.get("trip")||"")&&p.get("trip")+".json")||"trip.json";}
+function getTripJsonUrl(){const p=new URLSearchParams(location.search);const d=p.get("data");if(d)return d;const t=p.get("trip");if(t)return t+".json";return"trip.json";}
 function clamp(v,a,b){return Math.max(a,Math.min(b,v));}
 function fmtMMDD(iso){return iso.slice(5).replace("-","/");}
 function dateInTZ(tz){try{return new Intl.DateTimeFormat("en-CA",{timeZone:tz||"UTC",year:"numeric",month:"2-digit",day:"2-digit"}).format(new Date());}catch(e){return new Date().toISOString().slice(0,10);}}
@@ -581,7 +581,7 @@ document.addEventListener("click",()=>fm.classList.remove("open"),{passive:true}
 fetch(getTripJsonUrl())
   .then(r=>{if(!r.ok)throw new Error("HTTP "+r.status);return r.json();})
   .then(data=>{window.tripData=data;render(data);renderWeather(data);})
-  .catch(()=>{document.getElementById("today-chip").textContent="無法載入行程資料";document.getElementById("header-title-main").textContent="無法載入行程資料";});
+  .catch((err)=>{document.getElementById("today-chip").textContent="無法載入行程資料";document.getElementById("header-title-main").textContent="無法載入行程資料";console.error("Trip JSON load error:",err,getTripJsonUrl());});
 </script>
 
 </body>
