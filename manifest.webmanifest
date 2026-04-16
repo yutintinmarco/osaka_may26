@@ -1,6 +1,6 @@
 {
   "name": "京都・大阪之旅",
-  "short_name": "京都大阪",
+  "short_name": "京都・大阪之旅",
   "description": "京都大阪旅程 Web App",
   "start_url": "./index.html",
   "scope": "./",
