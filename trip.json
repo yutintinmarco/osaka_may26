@@ -9,13 +9,13 @@
 
     "travellers": {
       "team1": {
-        "label": "Team 1",
-        "members": "Marco / Alex / Carol",
+        "label": "Team Ian",
+        "members": "",
         "color": "#4A90D9"
       },
       "team2": {
-        "label": "Team 2",
-        "members": "美芝姐姐 / 老公",
+        "label": "Team Edan",
+        "members": "",
         "color": "#E8A838"
       }
     },
