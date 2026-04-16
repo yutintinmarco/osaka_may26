@@ -1,4 +1,4 @@
-const CACHE_NAME = “kyoto-osaka-trip-v3”;
+const CACHE_NAME = “kyoto-osaka-trip-v4”;
 const ASSETS_TO_CACHE = [
 “./index.html”,
 “./trip.json”,
