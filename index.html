@@ -308,12 +308,7 @@
     html.theme-dark .fab-item.active { background: rgba(230,230,238,0.90); border-color: rgba(230,230,238,0.90); }
 
   </style>
-  <link rel="manifest" href="manifest.webmanifest">
-  <meta name="theme-color" content="#e05a2b">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  <meta name="apple-mobile-web-app-title" content="京都大阪之旅">
-  <link rel="apple-touch-icon" href="assets/icon/trip_icon.png">
+            <link rel="apple-touch-icon" href="assets/icon/trip_icon.png">
   <link rel="icon" type="image/png" href="assets/icon/trip_icon.png">
 </head>
 <body>
@@ -752,16 +747,6 @@ const ft=document.getElementById("fab-toggle"),fm=document.getElementById("fab-m
 ft.addEventListener("click",e=>{e.stopPropagation();fm.classList.toggle("open");});
 document.addEventListener("click",()=>fm.classList.remove("open"),{passive:true});
 
-
-// 主動清除所有舊 Service Worker 及 cache，確保永遠載入最新版本
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.getRegistrations().then(regs => {
-    regs.forEach(reg => reg.unregister());
-  });
-}
-if (typeof caches !== 'undefined') {
-  caches.keys().then(keys => keys.forEach(k => caches.delete(k)));
-}
 
 // Load
 fetch(getTripJsonUrl())
