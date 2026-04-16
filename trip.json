@@ -1,0 +1,463 @@
+{
+  "meta": {
+    "titleSmall": "Spring Trip 2026",
+    "titleMain": "京都 <span class=\"title-accent\">·</span> 大阪之旅",
+    "accentColor": "#e05a2b",
+    "dateRange": "5月23日 至 5月28日",
+    "tripStartIso": "2026-05-23",
+    "tripEndIso": "2026-05-28",
+
+    "travellers": {
+      "team1": {
+        "label": "Team 1",
+        "members": "Marco / Alex / Carol",
+        "color": "#4A90D9"
+      },
+      "team2": {
+        "label": "Team 2",
+        "members": "美芝姐姐 / 老公",
+        "color": "#E8A838"
+      }
+    },
+
+    "cities": {
+      "kyoto": {
+        "label": "京都",
+        "latitude": 35.0116,
+        "longitude": 135.7681,
+        "timezone": "Asia/Tokyo",
+        "startIso": "2026-05-23",
+        "endIso": "2026-05-26"
+      },
+      "osaka": {
+        "label": "大阪",
+        "latitude": 34.6937,
+        "longitude": 135.5023,
+        "timezone": "Asia/Tokyo",
+        "startIso": "2026-05-26",
+        "endIso": "2026-05-28"
+      }
+    },
+
+    "flights": [
+      {
+        "teamKey": "team1",
+        "outbound": {
+          "date": "5月23日",
+          "flight": "待定",
+          "route": "香港 至 大阪",
+          "time": "待定"
+        },
+        "inbound": {
+          "date": "5月28日",
+          "flight": "待定",
+          "route": "大阪 至 香港",
+          "time": "待定"
+        }
+      },
+      {
+        "teamKey": "team2",
+        "outbound": {
+          "date": "5月23日",
+          "flight": "待定",
+          "route": "香港 至 大阪",
+          "time": "待定"
+        },
+        "inbound": {
+          "date": "5月28日",
+          "flight": "待定",
+          "route": "大阪 至 香港",
+          "time": "待定"
+        }
+      }
+    ],
+
+    "footerNote": "點擊景點可查看詳細資訊  藍色左邊 = Team 1  橙色左邊 = Team 2"
+  },
+
+  "days": [
+    {
+      "label": "Day 1",
+      "date": "5月23日",
+      "title": "抵達京都",
+      "subtitle": "辦理入住  附近晚餐",
+      "isoDate": "2026-05-23",
+      "city": "kyoto",
+      "items": [
+        {
+          "time": "待定",
+          "icon": "✈️",
+          "title": "Team 1 抵達關西機場",
+          "note": "航班待確認",
+          "who": "team1",
+          "popup": true,
+          "detail": "Team 1 航班資料待填入。抵達後建議乘搭 Haruka 特急或巴士前往京都市區。",
+          "maps": "https://www.google.com/maps/search/?api=1&query=Kansai+International+Airport"
+        },
+        {
+          "time": "待定",
+          "icon": "✈️",
+          "title": "Team 2 抵達關西機場",
+          "note": "航班待確認",
+          "who": "team2",
+          "popup": true,
+          "detail": "Team 2 航班資料待填入。抵達後建議乘搭 Haruka 特急或巴士前往京都市區。",
+          "maps": "https://www.google.com/maps/search/?api=1&query=Kansai+International+Airport"
+        },
+        {
+          "time": "待定",
+          "icon": "🏨",
+          "title": "酒店辦理入住",
+          "note": "放低行李  稍作休息",
+          "who": "all",
+          "popup": true,
+          "detail": "酒店資料待填入。",
+          "maps": ""
+        },
+        {
+          "time": "19:00",
+          "icon": "🍽️",
+          "title": "附近晚餐",
+          "note": "第一餐  輕鬆為主",
+          "who": "all",
+          "popup": true,
+          "detail": "餐廳待定。",
+          "maps": ""
+        }
+      ]
+    },
+    {
+      "label": "Day 2",
+      "date": "5月24日",
+      "title": "京都東部",
+      "subtitle": "清水寺  祇園  南禪寺",
+      "isoDate": "2026-05-24",
+      "city": "kyoto",
+      "items": [
+        {
+          "time": "09:00",
+          "icon": "⛩️",
+          "title": "清水寺",
+          "note": "早去人少，可欣賞清晨景色",
+          "who": "all",
+          "popup": true,
+          "detail": "京都著名古剎，建議早上前往避開人潮。清水舞台一帶景色優美，可俯瞰京都市區。",
+          "maps": "https://www.google.com/maps/search/?api=1&query=Kiyomizu-dera+Kyoto"
+        },
+        {
+          "time": "11:00",
+          "icon": "🏮",
+          "title": "祇園散策",
+          "note": "石板路老街  打卡必去",
+          "who": "all",
+          "popup": true,
+          "detail": "祇園花見小路一帶係京都最具代表性嘅街道，適合慢慢行，感受舊日風情。",
+          "maps": "https://www.google.com/maps/search/?api=1&query=Gion+Kyoto"
+        },
+        {
+          "time": "12:30",
+          "icon": "🍽️",
+          "title": "午餐",
+          "note": "待定",
+          "who": "all",
+          "popup": true,
+          "detail": "餐廳待定。",
+          "maps": ""
+        },
+        {
+          "time": "14:00",
+          "icon": "⛩️",
+          "title": "南禪寺",
+          "note": "大型禪寺  水路閣打卡位",
+          "who": "all",
+          "popup": true,
+          "detail": "南禪寺係京都規模最大嘅禪寺之一，境內嘅明治時代水路閣係熱門打卡位。",
+          "maps": "https://www.google.com/maps/search/?api=1&query=Nanzen-ji+Kyoto"
+        },
+        {
+          "time": "19:00",
+          "icon": "🍽️",
+          "title": "晚餐",
+          "note": "待定",
+          "who": "all",
+          "popup": true,
+          "detail": "餐廳待定。",
+          "maps": ""
+        }
+      ]
+    },
+    {
+      "label": "Day 3",
+      "date": "5月25日",
+      "title": "京都西部 / 嵐山",
+      "subtitle": "嵐山竹林  天龍寺  各自自由活動",
+      "isoDate": "2026-05-25",
+      "city": "kyoto",
+      "items": [
+        {
+          "time": "09:00",
+          "icon": "🎋",
+          "title": "嵐山竹林",
+          "note": "早去人少，光線最靚",
+          "who": "all",
+          "popup": true,
+          "detail": "嵐山竹林係京都標誌性景點，早上光線穿透竹葉效果最佳，人流亦相對較少。",
+          "maps": "https://www.google.com/maps/search/?api=1&query=Arashiyama+Bamboo+Grove+Kyoto"
+        },
+        {
+          "time": "10:00",
+          "icon": "⛩️",
+          "title": "天龍寺",
+          "note": "世界文化遺產  日式庭園",
+          "who": "all",
+          "popup": true,
+          "detail": "天龍寺係嵐山一帶最重要嘅禪寺，庭園以借景嵐山著稱，係世界文化遺產。",
+          "maps": "https://www.google.com/maps/search/?api=1&query=Tenryu-ji+Kyoto"
+        },
+        {
+          "time": "12:00",
+          "icon": "🍽️",
+          "title": "嵐山午餐",
+          "note": "待定",
+          "who": "all",
+          "popup": true,
+          "detail": "餐廳待定。",
+          "maps": ""
+        },
+        {
+          "time": "14:00",
+          "icon": "🗺️",
+          "title": "Team 1 自由活動",
+          "note": "行程待定",
+          "who": "team1",
+          "popup": true,
+          "detail": "Team 1 下午自由活動，行程待填入。",
+          "maps": ""
+        },
+        {
+          "time": "14:00",
+          "icon": "🗺️",
+          "title": "Team 2 自由活動",
+          "note": "行程待定",
+          "who": "team2",
+          "popup": true,
+          "detail": "Team 2 下午自由活動，行程待填入。",
+          "maps": ""
+        },
+        {
+          "time": "19:00",
+          "icon": "🍽️",
+          "title": "晚餐（大家合流）",
+          "note": "待定",
+          "who": "all",
+          "popup": true,
+          "detail": "餐廳待定。",
+          "maps": ""
+        }
+      ]
+    },
+    {
+      "label": "Day 4",
+      "date": "5月26日",
+      "title": "京都 → 大阪",
+      "subtitle": "上午京都  下午移動大阪  check in",
+      "isoDate": "2026-05-26",
+      "city": "osaka",
+      "items": [
+        {
+          "time": "09:00",
+          "icon": "⛩️",
+          "title": "上午京都自由活動",
+          "note": "可補去未去嘅景點",
+          "who": "all",
+          "popup": true,
+          "detail": "上午可按個人喜好補去未去嘅景點，或者喺附近咖啡店歎個早餐。",
+          "maps": ""
+        },
+        {
+          "time": "13:00",
+          "icon": "🚅",
+          "title": "移動至大阪",
+          "note": "JR 新快速 約 15 分鐘",
+          "who": "all",
+          "popup": true,
+          "detail": "京都至大阪可搭 JR 新快速，約 15 分鐘抵達大阪站。車費約 570 円。",
+          "maps": "https://www.google.com/maps/search/?api=1&query=Kyoto+Station"
+        },
+        {
+          "time": "14:00",
+          "icon": "🏨",
+          "title": "大阪酒店 Check In",
+          "note": "放低行李  準備下午行程",
+          "who": "all",
+          "popup": true,
+          "detail": "大阪酒店資料待填入。",
+          "maps": ""
+        },
+        {
+          "time": "15:00",
+          "icon": "🛍️",
+          "title": "心齋橋 / 道頓堀",
+          "note": "大阪最熱鬧購物區",
+          "who": "all",
+          "popup": true,
+          "detail": "心齋橋係大阪主要購物街，附近道頓堀則以美食聞名，格力高霓虹燈牌係打卡必去。",
+          "maps": "https://www.google.com/maps/search/?api=1&query=Dotonbori+Osaka"
+        },
+        {
+          "time": "19:00",
+          "icon": "🍽️",
+          "title": "大阪初晚餐",
+          "note": "道頓堀一帶  待定",
+          "who": "all",
+          "popup": true,
+          "detail": "餐廳待定。道頓堀一帶選擇豐富，可按當日情況決定。",
+          "maps": "https://www.google.com/maps/search/?api=1&query=Dotonbori+Osaka+restaurants"
+        }
+      ]
+    },
+    {
+      "label": "Day 5",
+      "date": "5月27日",
+      "title": "大阪市區",
+      "subtitle": "大阪城  黑門市場  各自活動",
+      "isoDate": "2026-05-27",
+      "city": "osaka",
+      "items": [
+        {
+          "time": "09:00",
+          "icon": "🏯",
+          "title": "大阪城",
+          "note": "日本三大名城之一",
+          "who": "all",
+          "popup": true,
+          "detail": "大阪城係大阪最具代表性嘅地標，天守閣內有豐臣秀吉相關展覽。建議早去，人流較少。",
+          "maps": "https://www.google.com/maps/search/?api=1&query=Osaka+Castle"
+        },
+        {
+          "time": "11:30",
+          "icon": "🛒",
+          "title": "黑門市場",
+          "note": "大阪廚房  海鮮即買即食",
+          "who": "all",
+          "popup": true,
+          "detail": "黑門市場素有「大阪廚房」之稱，海鮮、肉類、熟食應有盡有，適合邊行邊食。",
+          "maps": "https://www.google.com/maps/search/?api=1&query=Kuromon+Market+Osaka"
+        },
+        {
+          "time": "13:00",
+          "icon": "🗺️",
+          "title": "Team 1 下午自由活動",
+          "note": "行程待定",
+          "who": "team1",
+          "popup": true,
+          "detail": "Team 1 下午自由活動，行程待填入。",
+          "maps": ""
+        },
+        {
+          "time": "13:00",
+          "icon": "🗺️",
+          "title": "Team 2 下午自由活動",
+          "note": "行程待定",
+          "who": "team2",
+          "popup": true,
+          "detail": "Team 2 下午自由活動，行程待填入。",
+          "maps": ""
+        },
+        {
+          "time": "18:00",
+          "icon": "🍽️",
+          "title": "最後晚餐（大家合流）",
+          "note": "好好食一頓  明天回程",
+          "who": "all",
+          "popup": true,
+          "detail": "最後晚餐，餐廳待定。建議選一間大家都想去嘅地方，好好慶祝！",
+          "maps": ""
+        }
+      ]
+    },
+    {
+      "label": "Day 6",
+      "date": "5月28日",
+      "title": "回程",
+      "subtitle": "前往機場  返港",
+      "isoDate": "2026-05-28",
+      "city": "osaka",
+      "items": [
+        {
+          "time": "待定",
+          "icon": "🛒",
+          "title": "最後購物 / 手信",
+          "note": "視乎航班時間",
+          "who": "all",
+          "popup": true,
+          "detail": "視乎航班時間決定是否有時間最後購物，建議前一日已完成手信採購。",
+          "maps": ""
+        },
+        {
+          "time": "待定",
+          "icon": "🚌",
+          "title": "Team 1 前往機場",
+          "note": "航班待確認  預留充足時間",
+          "who": "team1",
+          "popup": true,
+          "detail": "Team 1 航班待確認。由大阪市區前往關西機場可搭 Haruka 特急或南海電鐵，建議預留 90 分鐘。",
+          "maps": "https://www.google.com/maps/search/?api=1&query=Kansai+International+Airport"
+        },
+        {
+          "time": "待定",
+          "icon": "🚌",
+          "title": "Team 2 前往機場",
+          "note": "航班待確認  預留充足時間",
+          "who": "team2",
+          "popup": true,
+          "detail": "Team 2 航班待確認。由大阪市區前往關西機場可搭 Haruka 特急或南海電鐵，建議預留 90 分鐘。",
+          "maps": "https://www.google.com/maps/search/?api=1&query=Kansai+International+Airport"
+        }
+      ]
+    }
+  ],
+
+  "snacks": {
+    "title": "小食清單",
+    "subtitle": "路過即食  不設時間  點擊可開啟地圖",
+    "items": [
+      {
+        "title": "錦市場",
+        "area": "京都",
+        "category": "街頭小食",
+        "must": "各式串燒、豆腐",
+        "note": "京都嘅廚房，各式醃菜、豆腐、串燒任你揀",
+        "opening": "09:00-18:00",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Nishiki+Market+Kyoto"
+      },
+      {
+        "title": "章魚燒（道頓堀）",
+        "area": "大阪",
+        "category": "大阪名物",
+        "must": "章魚燒",
+        "note": "大阪必食，道頓堀一帶有多間老字號",
+        "opening": "",
+        "maps": "https://www.google.com/maps/search/?api=1&query=takoyaki+Dotonbori+Osaka"
+      },
+      {
+        "title": "551 蓬萊",
+        "area": "大阪",
+        "category": "燒賣 / 手信",
+        "must": "豬肉燒賣",
+        "note": "大阪必買手信，即食熱燒賣係一絕",
+        "opening": "",
+        "maps": "https://www.google.com/maps/search/?api=1&query=551+Horai+Osaka"
+      },
+      {
+        "title": "嵐山湯豆腐",
+        "area": "京都 嵐山",
+        "category": "京料理",
+        "must": "湯豆腐定食",
+        "note": "嵐山一帶有多間提供傳統湯豆腐定食嘅食店",
+        "opening": "",
+        "maps": "https://www.google.com/maps/search/?api=1&query=yudofu+Arashiyama+Kyoto"
+      }
+    ]
+  }
+}
