@@ -181,6 +181,29 @@
     .fab-item.active { background: rgba(17,17,17,0.88); border-color: rgba(17,17,17,0.88); }
     .title-accent { color: var(--accent-color, #d93025); }
 
+    /* Refresh / Theme button icon color sync */
+    .refresh-btn,
+    .theme-btn {
+      color: #4A90D9;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      html:not(.theme-light):not(.theme-dark) .refresh-btn,
+      html:not(.theme-light):not(.theme-dark) .theme-btn {
+        color: #e0e0e4;
+      }
+    }
+
+    html.theme-dark .refresh-btn,
+    html.theme-dark .theme-btn {
+      color: #e0e0e4;
+    }
+
+    html.theme-light .refresh-btn,
+    html.theme-light .theme-btn {
+      color: #4A90D9;
+    }
+
 
     /* Dark Mode */
     @media (prefers-color-scheme: dark) {
