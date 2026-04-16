@@ -39,21 +39,29 @@
     .font-controls { display: flex; gap: 6px; align-items: center; }
     .font-btn { width: 30px; height: 30px; border-radius: 999px; border: 1px solid #dadada; background: #f9f9fb; display: flex; align-items: center; justify-content: center; padding: 0; font-weight: 600; line-height: 1; }
     .font-btn:active, .refresh-btn:active { background: #ececf1; }
-    .theme-btn { font-size: 15px; line-height: 1; }
+    .theme-btn { font-size: 15px; line-height: 1; position: relative; font-family: "Apple Color Emoji", "Segoe UI Emoji", sans-serif; }
     .theme-btn:active { background: #ececf1; }
-    .theme-btn { position: relative; font-family: "Apple Color Emoji", "Segoe UI Emoji", sans-serif; }
-    .theme-btn .theme-emoji { display: inline-block; line-height: 1; transform: translateY(0); }
-    .theme-btn[data-theme="auto"] .theme-emoji { transform: translateY(0.5px); }
-    .theme-btn[data-theme="light"] .theme-emoji { transform: translateY(-0.5px) translateX(0.5px); }
-    .theme-btn[data-theme="dark"] .theme-emoji { transform: translateY(-0.5px); }
-    .refresh-btn { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif; }
-    .control-icon { display: inline-flex; align-items: center; justify-content: center; width: 100%; height: 100%; color: inherit; -webkit-text-fill-color: inherit; line-height: 1; }
-    .refresh-icon { font-size: calc(16px * var(--font-scale)); font-family: "Apple Color Emoji", "Segoe UI Emoji", sans-serif; }
     .refresh-btn,
     .theme-btn {
       font-family: "Apple Color Emoji", "Segoe UI Emoji", sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
+      padding: 0;
     }
-    .theme-icon { font-size: 15px; }
+    .refresh-emoji,
+    .theme-emoji {
+      display: block;
+      line-height: 1;
+      color: inherit;
+      -webkit-text-fill-color: inherit;
+    }
+    .refresh-emoji { font-size: calc(16px * var(--font-scale)); transform: translateY(-0.5px); }
+    .theme-emoji { font-size: 15px; transform: translateY(0); }
+    .theme-btn[data-theme="auto"] .theme-emoji { transform: translateY(0.5px); }
+    .theme-btn[data-theme="light"] .theme-emoji { transform: translateY(-0.5px) translateX(0.5px); }
+    .theme-btn[data-theme="dark"] .theme-emoji { transform: translateY(-0.5px); }
     .status-square { min-width: 88px; min-height: 44px; padding: 4px 8px; border-radius: 12px; background: rgba(245,245,247,0.55); border: 1px solid rgba(255,255,255,0.45); box-shadow: 0 4px 10px rgba(15,23,42,0.05); text-align: center; display: none; flex-direction: column; justify-content: center; align-items: center; }
     .status-main { font-size: calc(12px * var(--font-scale)); font-weight: 600; margin-bottom: 1px; color: #222; }
     .status-sub { font-size: calc(9px * var(--font-scale)); color: #666; }
@@ -349,8 +357,8 @@
           <div class="font-controls">
             <button class="font-btn" id="font-smaller">A−</button>
             <button class="font-btn" id="font-larger">A+</button>
-            <button class="theme-btn" id="theme-btn" title="切換主題"><span class="control-icon theme-icon">🌗</span></button>
-            <button class="refresh-btn" id="refresh-btn"><span class="control-icon refresh-icon">⟳</span></button>
+            <button class="theme-btn" id="theme-btn" type="button" title="切換主題" data-theme="auto"><span class="theme-emoji" id="theme-emoji" aria-hidden="true">🌗</span></button>
+            <button class="refresh-btn" id="refresh-btn" type="button" aria-label="Refresh"><span class="refresh-emoji" aria-hidden="true">⟳</span></button>
           </div>
         </div>
       </div>
@@ -451,7 +459,9 @@ function applyTheme(t){
     if(t==="dark")document.documentElement.classList.add("theme-dark");
     else if(t==="light")document.documentElement.classList.add("theme-light");
     const btn=document.getElementById("theme-btn");
-    if(btn){ const icon=btn.querySelector(".theme-icon")||btn; icon.textContent=THEME_ICONS[t]||"🌗"; }
+    const emoji=document.getElementById("theme-emoji");
+    if(btn) btn.setAttribute("data-theme", t);
+    if(emoji) emoji.textContent=THEME_ICONS[t]||"🌗";
     localStorage.setItem("trip_theme",t);
   }catch(e){}
 }
