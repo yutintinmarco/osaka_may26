@@ -93,7 +93,7 @@
     .day-tab.active { background: #ffe58f; border-color: #f5c542; color: #111; font-weight: 600; }
     .day-tab.city-kyoto.active { background: #d4ecd4; border-color: #5a9e5a; color: #2a5a2a; }
     .day-tab.city-osaka.active { background: #ffddd4; border-color: #e06040; color: #6a2010; }
-    .day-tab.city-both.active { background: linear-gradient(to right, #d4ecd4 50%, #ffddd4 50%); border-color: #8aaa8a; color: #333; font-weight: 600; overflow: hidden; }
+    .day-tab.city-both.active { background: linear-gradient(to right, #d4ecd4 50%, #ffddd4 50%); border-left-color: #5a9e5a; border-top-color: #5a9e5a; border-bottom-color: #5a9e5a; border-right-color: #e06040; color: #333; font-weight: 600; overflow: hidden; }
     .day-content { display: none; }
     .day-content.active { display: block; }
     .section-title { font-size: calc(14px * var(--font-scale)); font-weight: 600; margin-bottom: 4px; color: #000; }
@@ -189,7 +189,6 @@
     </div>
 
     <div class="team-bar" id="team-bar" style="display:none;">
-      <div class="team-bar-label">顯示：</div>
       <button class="team-btn active-all" id="tb-all" data-team="all">全部</button>
       <button class="team-btn" id="tb-team1" data-team="team1">Team 1</button>
       <button class="team-btn" id="tb-team2" data-team="team2">Team 2</button>
