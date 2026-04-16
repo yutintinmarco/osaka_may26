@@ -753,11 +753,14 @@ ft.addEventListener("click",e=>{e.stopPropagation();fm.classList.toggle("open");
 document.addEventListener("click",()=>fm.classList.remove("open"),{passive:true});
 
 
-// PWA
+// 主動清除所有舊 Service Worker 及 cache，確保永遠載入最新版本
 if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('./sw.js').catch(() => {});
+  navigator.serviceWorker.getRegistrations().then(regs => {
+    regs.forEach(reg => reg.unregister());
   });
+}
+if (typeof caches !== 'undefined') {
+  caches.keys().then(keys => keys.forEach(k => caches.delete(k)));
 }
 
 // Load
