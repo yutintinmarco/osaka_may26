@@ -40,6 +40,8 @@
     .font-btn:active, .refresh-btn:active { background: #ececf1; }
     .theme-btn { width: 30px; height: 30px; border-radius: 999px; border: 1px solid #dadada; background: #f9f9fb; display: flex; align-items: center; justify-content: center; padding: 0; font-size: 15px; line-height: 1; }
     .theme-btn:active { background: #ececf1; }
+.refresh-btn,
+    .theme-btn { color: #222; }
     .status-square { min-width: 88px; min-height: 44px; padding: 4px 8px; border-radius: 12px; background: rgba(245,245,247,0.55); border: 1px solid rgba(255,255,255,0.45); box-shadow: 0 4px 10px rgba(15,23,42,0.05); text-align: center; display: none; flex-direction: column; justify-content: center; align-items: center; }
     .status-main { font-size: calc(12px * var(--font-scale)); font-weight: 600; margin-bottom: 1px; color: #222; }
     .status-sub { font-size: calc(9px * var(--font-scale)); color: #666; }
@@ -181,6 +183,8 @@
       html:not(.theme-light):not(.theme-dark) .today-chip { background: rgba(40,40,46,0.80); border-color: rgba(255,255,255,0.14); color: rgba(240,240,242,0.85); box-shadow: 0 2px 8px rgba(0,0,0,0.3); }
       html:not(.theme-light):not(.theme-dark) .today-chip.active { background: rgba(92,67,0,0.75); border-color: #c9a030; color: #ffe9a0; }
       html:not(.theme-light):not(.theme-dark) .font-btn, .refresh-btn, .theme-btn { background: rgba(44,44,50,0.80); border-color: rgba(255,255,255,0.14); color: #e0e0e4; }
+      html:not(.theme-light):not(.theme-dark) .refresh-btn,
+      html:not(.theme-light):not(.theme-dark) .theme-btn { color: #f0f0f2; }
       html:not(.theme-light):not(.theme-dark) .font-btn:active, .refresh-btn:active, .theme-btn:active { background: rgba(60,60,68,0.90); }
       html:not(.theme-light):not(.theme-dark) .status-square { background: rgba(30,30,36,0.72); border-color: rgba(255,255,255,0.10); }
       html:not(.theme-light):not(.theme-dark) .status-main { color: #f0f0f2; }
@@ -308,6 +312,13 @@
     html.theme-dark .fab-menu { background: rgba(28,28,36,0.92); border-color: rgba(255,255,255,0.12); box-shadow: 0 16px 36px rgba(0,0,0,0.50); }
     html.theme-dark .fab-item { background: rgba(40,40,50,0.80); border-color: rgba(255,255,255,0.12); }
     html.theme-dark .fab-item.active { background: rgba(230,230,238,0.90); border-color: rgba(230,230,238,0.90); }
+    html.theme-dark .refresh-btn,
+    html.theme-dark .theme-btn { color: #f0f0f2; }
+
+
+  
+    html.theme-light .refresh-btn,
+    html.theme-light .theme-btn { color: #222; }
 
   </style>
             <link rel="apple-touch-icon" href="assets/icon/trip_icon.png">
