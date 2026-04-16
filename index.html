@@ -17,7 +17,7 @@
     .bg-fixed {
       position: fixed; inset: 0;
       background:
-        linear-gradient(rgba(255,255,255,0.40), rgba(255,255,255,0.40)),
+        linear-gradient(rgba(255,255,255,0.22), rgba(255,255,255,0.22)),
         url("assets/bg/bg_trip.png") center center / cover no-repeat;
       z-index: -1;
     }
@@ -159,6 +159,11 @@
     .fab-item.active { background: rgba(17,17,17,0.88); border-color: rgba(17,17,17,0.88); }
     .title-accent { color: var(--accent-color, #d93025); }
   </style>
+  <link rel="manifest" href="manifest.webmanifest" />
+  <meta name="theme-color" content="#e05a2b" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="京都大阪之旅" />
   <link rel="apple-touch-icon" href="assets/icon/trip_icon.png" />
   <link rel="icon" type="image/png" href="assets/icon/trip_icon.png" />
 </head>
@@ -574,6 +579,15 @@ bti.addEventListener("click",()=>setView("itinerary"));bts.addEventListener("cli
 const ft=document.getElementById("fab-toggle"),fm=document.getElementById("fab-menu");
 ft.addEventListener("click",e=>{e.stopPropagation();fm.classList.toggle("open");});
 document.addEventListener("click",()=>fm.classList.remove("open"),{passive:true});
+
+
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('sw.js').catch(err => {
+      console.warn('Service worker registration failed:', err);
+    });
+  });
+}
 
 // Load
 fetch(getTripJsonUrl())
