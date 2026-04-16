@@ -34,14 +34,20 @@
     .header-right { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; }
     .today-chip { font-size: calc(11px * var(--font-scale)); padding: 3px 10px; border-radius: 999px; background: rgba(255,255,255,0.82); border: 1px solid rgba(255,255,255,0.72); color: #333; max-width: 150px; text-align: right; line-height: 1.4; box-shadow: 0 2px 6px rgba(15,23,42,0.08); }
     .today-chip.active { border-color: #f5c542; background: #fff7d1; color: #5c4300; }
-    .refresh-btn { width: 30px; height: 30px; border-radius: 999px; border: 1px solid #dadada; background: #f9f9fb; font-size: calc(16px * var(--font-scale)); display: flex; align-items: center; justify-content: center; padding: 0; }
+    .refresh-btn, .theme-btn { width: 30px; height: 30px; border-radius: 999px; border: 1px solid #dadada; background: #f9f9fb; display: flex; align-items: center; justify-content: center; padding: 0; appearance: none; -webkit-appearance: none; color: #222; -webkit-text-fill-color: #222; }
+    .refresh-btn { font-size: calc(16px * var(--font-scale)); }
     .font-controls { display: flex; gap: 6px; align-items: center; }
     .font-btn { width: 30px; height: 30px; border-radius: 999px; border: 1px solid #dadada; background: #f9f9fb; display: flex; align-items: center; justify-content: center; padding: 0; font-weight: 600; line-height: 1; }
     .font-btn:active, .refresh-btn:active { background: #ececf1; }
-    .theme-btn { width: 30px; height: 30px; border-radius: 999px; border: 1px solid #dadada; background: #f9f9fb; display: flex; align-items: center; justify-content: center; padding: 0; font-size: 15px; line-height: 1; }
+    .theme-btn { font-size: 15px; line-height: 1; }
     .theme-btn:active { background: #ececf1; }
-.refresh-btn,
-    .theme-btn { color: #222; }
+    .control-icon { display: inline-flex; align-items: center; justify-content: center; width: 100%; height: 100%; color: inherit; -webkit-text-fill-color: inherit; line-height: 1; }
+    .refresh-icon { font-size: calc(16px * var(--font-scale)); font-family: "Apple Color Emoji", "Segoe UI Emoji", sans-serif; }
+    .refresh-btn,
+    .theme-btn {
+      font-family: "Apple Color Emoji", "Segoe UI Emoji", sans-serif;
+    }
+    .theme-icon { font-size: 15px; }
     .status-square { min-width: 88px; min-height: 44px; padding: 4px 8px; border-radius: 12px; background: rgba(245,245,247,0.55); border: 1px solid rgba(255,255,255,0.45); box-shadow: 0 4px 10px rgba(15,23,42,0.05); text-align: center; display: none; flex-direction: column; justify-content: center; align-items: center; }
     .status-main { font-size: calc(12px * var(--font-scale)); font-weight: 600; margin-bottom: 1px; color: #222; }
     .status-sub { font-size: calc(9px * var(--font-scale)); color: #666; }
@@ -182,10 +188,12 @@
       html:not(.theme-light):not(.theme-dark) .header-sub-text { color: rgba(240,240,242,0.75); }
       html:not(.theme-light):not(.theme-dark) .today-chip { background: rgba(40,40,46,0.80); border-color: rgba(255,255,255,0.14); color: rgba(240,240,242,0.85); box-shadow: 0 2px 8px rgba(0,0,0,0.3); }
       html:not(.theme-light):not(.theme-dark) .today-chip.active { background: rgba(92,67,0,0.75); border-color: #c9a030; color: #ffe9a0; }
-      html:not(.theme-light):not(.theme-dark) .font-btn, .refresh-btn, .theme-btn { background: rgba(44,44,50,0.80); border-color: rgba(255,255,255,0.14); color: #e0e0e4; }
+      html:not(.theme-light):not(.theme-dark) .font-btn,
       html:not(.theme-light):not(.theme-dark) .refresh-btn,
-      html:not(.theme-light):not(.theme-dark) .theme-btn { color: #f0f0f2; }
-      html:not(.theme-light):not(.theme-dark) .font-btn:active, .refresh-btn:active, .theme-btn:active { background: rgba(60,60,68,0.90); }
+      html:not(.theme-light):not(.theme-dark) .theme-btn { background: rgba(44,44,50,0.80); border-color: rgba(255,255,255,0.14); color: #e0e0e4; -webkit-text-fill-color: #e0e0e4; }
+      html:not(.theme-light):not(.theme-dark) .font-btn:active,
+      html:not(.theme-light):not(.theme-dark) .refresh-btn:active,
+      html:not(.theme-light):not(.theme-dark) .theme-btn:active { background: rgba(60,60,68,0.90); }
       html:not(.theme-light):not(.theme-dark) .status-square { background: rgba(30,30,36,0.72); border-color: rgba(255,255,255,0.10); }
       html:not(.theme-light):not(.theme-dark) .status-main { color: #f0f0f2; }
       html:not(.theme-light):not(.theme-dark) .status-sub { color: rgba(200,200,210,0.75); }
@@ -256,7 +264,7 @@
     html.theme-dark .header-sub-text { color: rgba(240,240,242,0.75); }
     html.theme-dark .today-chip { background: rgba(40,40,46,0.80); border-color: rgba(255,255,255,0.14); color: rgba(240,240,242,0.85); }
     html.theme-dark .today-chip.active { background: rgba(92,67,0,0.75); border-color: #c9a030; color: #ffe9a0; }
-    html.theme-dark .font-btn, html.theme-dark .refresh-btn, html.theme-dark .theme-btn { background: rgba(44,44,50,0.80); border-color: rgba(255,255,255,0.14); color: #e0e0e4; }
+    html.theme-dark .font-btn, html.theme-dark .refresh-btn, html.theme-dark .theme-btn { background: rgba(44,44,50,0.80); border-color: rgba(255,255,255,0.14); color: #e0e0e4; -webkit-text-fill-color: #e0e0e4; }
     html.theme-dark .font-btn:active, html.theme-dark .refresh-btn:active, html.theme-dark .theme-btn:active { background: rgba(60,60,68,0.90); }
     html.theme-dark .status-square { background: rgba(30,30,36,0.72); border-color: rgba(255,255,255,0.10); }
     html.theme-dark .status-main { color: #f0f0f2; }
@@ -312,13 +320,8 @@
     html.theme-dark .fab-menu { background: rgba(28,28,36,0.92); border-color: rgba(255,255,255,0.12); box-shadow: 0 16px 36px rgba(0,0,0,0.50); }
     html.theme-dark .fab-item { background: rgba(40,40,50,0.80); border-color: rgba(255,255,255,0.12); }
     html.theme-dark .fab-item.active { background: rgba(230,230,238,0.90); border-color: rgba(230,230,238,0.90); }
-    html.theme-dark .refresh-btn,
-    html.theme-dark .theme-btn { color: #f0f0f2; }
 
-
-  
-    html.theme-light .refresh-btn,
-    html.theme-light .theme-btn { color: #222; }
+    html.theme-light .refresh-btn, html.theme-light .theme-btn { color: #222; -webkit-text-fill-color: #222; }
 
   </style>
             <link rel="apple-touch-icon" href="assets/icon/trip_icon.png">
@@ -340,8 +343,8 @@
           <div class="font-controls">
             <button class="font-btn" id="font-smaller">A−</button>
             <button class="font-btn" id="font-larger">A+</button>
-            <button class="theme-btn" id="theme-btn" title="切換主題">🌗</button>
-            <button class="refresh-btn" id="refresh-btn">⟳</button>
+            <button class="theme-btn" id="theme-btn" title="切換主題"><span class="control-icon theme-icon">🌗</span></button>
+            <button class="refresh-btn" id="refresh-btn"><span class="control-icon refresh-icon">🔄</span></button>
           </div>
         </div>
       </div>
@@ -442,7 +445,7 @@ function applyTheme(t){
     if(t==="dark")document.documentElement.classList.add("theme-dark");
     else if(t==="light")document.documentElement.classList.add("theme-light");
     const btn=document.getElementById("theme-btn");
-    if(btn)btn.textContent=THEME_ICONS[t]||"🌗";
+    if(btn){ const icon=btn.querySelector(".theme-icon")||btn; icon.textContent=THEME_ICONS[t]||"🌗"; }
     localStorage.setItem("trip_theme",t);
   }catch(e){}
 }
