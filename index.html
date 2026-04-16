@@ -17,7 +17,7 @@
     .bg-fixed {
       position: fixed; inset: 0;
       background:
-        linear-gradient(rgba(255,255,255,0.28), rgba(255,255,255,0.28)),
+        linear-gradient(rgba(255,255,255,0.22), rgba(255,255,255,0.22)),
         url("assets/bg/bg_trip.png") center center / cover no-repeat;
       z-index: -1;
     }
@@ -29,12 +29,12 @@
     /* Header */
     .header { margin-bottom: 10px; background: rgba(255,255,255,0.28); border: 1px solid rgba(255,255,255,0.55); border-radius: 16px; padding: 10px 12px; backdrop-filter: blur(28px) saturate(1.15); -webkit-backdrop-filter: blur(28px) saturate(1.15); box-shadow: 0 10px 24px rgba(15,23,42,0.10); }
     .header-top { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-bottom: 4px; }
-    .header-title-small { font-size: calc(13px * var(--font-scale)); color: #000; margin-bottom: 2px; }
+    .header-title-small { font-size: calc(13px * var(--font-scale)); color: #111; margin-bottom: 2px; text-shadow: 0 1px 1px rgba(255,255,255,0.18); }
     .header-title-main { font-size: calc(20px * var(--font-scale)); font-weight: 600; margin-bottom: 2px; }
     .header-sub-row { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; margin-top: 6px; }
     .header-sub-text { font-size: calc(12px * var(--font-scale)); color: #000; line-height: 1.5; flex: 1; }
     .header-right { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; }
-    .today-chip { font-size: calc(11px * var(--font-scale)); padding: 3px 10px; border-radius: 999px; background: #f9f9fb; border: 1px solid #e0e0e0; color: #555; max-width: 150px; text-align: right; line-height: 1.4; box-shadow: 0 2px 6px rgba(15,23,42,0.06); }
+    .today-chip { font-size: calc(11px * var(--font-scale)); padding: 3px 10px; border-radius: 999px; background: rgba(255,255,255,0.82); border: 1px solid rgba(255,255,255,0.72); color: #333; max-width: 150px; text-align: right; line-height: 1.4; box-shadow: 0 2px 6px rgba(15,23,42,0.08); }
     .today-chip.active { border-color: #f5c542; background: #fff7d1; color: #5c4300; }
     .refresh-btn { width: 30px; height: 30px; border-radius: 999px; border: 1px solid #dadada; background: #f9f9fb; font-size: calc(16px * var(--font-scale)); display: flex; align-items: center; justify-content: center; padding: 0; }
     .font-controls { display: flex; gap: 6px; align-items: center; }
@@ -48,7 +48,7 @@
 
     /* Team bar */
     .team-bar { display: flex; gap: 8px; margin-bottom: 12px; align-items: center; }
-    .team-bar-label { font-size: calc(11px * var(--font-scale)); color: #999; white-space: nowrap; }
+    .team-bar-label { font-size: calc(11px * var(--font-scale)); color: #666; white-space: nowrap; }
     .team-btn { flex: 1; padding: 6px 0; text-align: center; font-size: calc(12px * var(--font-scale)); border-radius: 999px; border: 1px solid #dadada; background: #f8f8fa; color: #555; font-weight: 500; }
     .team-btn.active-all  { background: #111; border-color: #111; color: #fff; font-weight: 700; }
     .team-btn.active-t1   { background: var(--team1-color); border-color: var(--team1-color); color: #fff; font-weight: 700; }
@@ -64,9 +64,9 @@
     .trip-col-right { text-align: right; }
     .trip-logo-col { flex: 0 0 auto; display: flex; align-items: center; justify-content: center; padding: 0 6px; }
     .trip-logo-img { max-height: 28px; width: auto; display: block; }
-    .trip-col-title { font-size: calc(11px * var(--font-scale)); color: #999; margin-bottom: 2px; }
+    .trip-col-title { font-size: calc(11px * var(--font-scale)); color: #666; margin-bottom: 2px; }
     .trip-col-main { font-size: calc(13px * var(--font-scale)); }
-    .trip-col-sub { font-size: calc(11px * var(--font-scale)); color: #777; margin-top: 2px; }
+    .trip-col-sub { font-size: calc(11px * var(--font-scale)); color: #555; margin-top: 2px; }
     .flight-team-row { margin-bottom: 10px; padding-bottom: 10px; border-bottom: 1px solid #e0e0e0; }
     .flight-team-row:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
     .flight-team-row[style*="display: none"] + .flight-team-row,
@@ -76,13 +76,13 @@
     /* Weather */
     .weather-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px; }
     .weather-title { font-size: calc(13px * var(--font-scale)); font-weight: 600; }
-    .weather-updated { font-size: calc(10px * var(--font-scale)); color: #999; }
+    .weather-updated { font-size: calc(10px * var(--font-scale)); color: #666; }
     .weather-today { font-size: calc(12px * var(--font-scale)); margin-bottom: 4px; color: #333; }
-    .weather-sun { font-size: calc(11px * var(--font-scale)); margin-bottom: 6px; color: #777; }
+    .weather-sun { font-size: calc(11px * var(--font-scale)); margin-bottom: 6px; color: #555; }
     .weather-days { display: flex; overflow-x: auto; gap: 8px; }
     .weather-day { min-width: 70px; padding: 6px 8px; border-radius: 10px; border: 1px solid #e5e5ea; background: #fff; font-size: calc(11px * var(--font-scale)); text-align: center; }
     .weather-day-label { font-weight: 600; margin-bottom: 2px; }
-    .weather-cond { margin-top: 2px; color: #555; }
+    .weather-cond { margin-top: 2px; color: #444; }
     .weather-temp { margin-top: 2px; }
     .city-tabs { display: flex; gap: 6px; margin-bottom: 8px; }
     .city-tab { padding: 4px 12px; border-radius: 999px; font-size: calc(11px * var(--font-scale)); border: 1px solid #dadada; background: #f8f8fa; color: #555; }
@@ -111,15 +111,15 @@
     .timeline-item.who-team1 { border-left: 3px solid var(--team1-color); }
     .timeline-item.who-team2 { border-left: 3px solid var(--team2-color); }
     .timeline-item.hidden-item { display: none !important; }
-    .time { width: 70px; font-size: calc(13px * var(--font-scale)); color: #666; font-variant-numeric: tabular-nums; }
+    .time { width: 70px; font-size: calc(13px * var(--font-scale)); color: #4a4a4a; font-variant-numeric: tabular-nums; }
     .icon { width: 22px; font-size: calc(20px * var(--font-scale)); line-height: 22px; }
     .content { flex: 1; }
     .content-title { font-size: calc(14px * var(--font-scale)); margin-bottom: 2px; }
-    .content-note { font-size: calc(11px * var(--font-scale)); color: #777; }
+    .content-note { font-size: calc(11px * var(--font-scale)); color: #4f4f4f; }
     .who-tag { display: inline-block; font-size: calc(10px * var(--font-scale)); padding: 1px 6px; border-radius: 999px; margin-top: 3px; font-weight: 600; }
     .who-tag-team1 { background: rgba(74,144,217,0.15); color: var(--team1-color); }
     .who-tag-team2 { background: rgba(232,168,56,0.15); color: #b07800; }
-    .footer-note { margin-top: 18px; font-size: calc(10px * var(--font-scale)); color: #999; text-align: center; }
+    .footer-note { margin-top: 18px; font-size: calc(10px * var(--font-scale)); color: #666; text-align: center; }
 
     /* Pass badges */
     .pass-badge { display: inline-block; margin-left: 10px; padding: 3px 10px; font-size: calc(11px * var(--font-scale)); border-radius: 999px; font-weight: 700; letter-spacing: 0.3px; vertical-align: middle; line-height: 1.4; white-space: nowrap; }
