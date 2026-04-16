@@ -473,6 +473,7 @@ html.theme-light body { color: #111; }
 html.theme-light .bg-fixed { background: linear-gradient(rgba(255,255,255,0.22),rgba(255,255,255,0.22)), url("assets/bg/bg_trip.png") center center / cover no-repeat; }
 ```
 
+  </style>
   <link rel="manifest" href="manifest.webmanifest" />
   <meta name="theme-color" content="#e05a2b" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -921,12 +922,12 @@ ft.addEventListener("click",e=>{e.stopPropagation();fm.classList.toggle("open");
 document.addEventListener("click",()=>fm.classList.remove("open"),{passive:true});
 
 
+// 主動登出所有舊 Service Worker，清除 cache
 if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('sw.js').catch(err => {
-      console.warn('Service worker registration failed:', err);
-    });
+  navigator.serviceWorker.getRegistrations().then(regs => {
+    regs.forEach(reg => reg.unregister());
   });
+  caches.keys().then(keys => keys.forEach(k => caches.delete(k)));
 }
 
 // Load
