@@ -20,6 +20,11 @@
       background: url("assets/bg/bg_trip.png") center center / cover no-repeat;
       z-index: -1;
     }
+    .bg-fixed::after {
+      content: "";
+      position: absolute; inset: 0;
+      background: rgba(255,255,255,0.45);
+    }
     body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif; background: transparent; color: #111; height: 100vh; overflow: hidden; }
     html { background: transparent; }
     .scroll-shell { height: 100vh; overflow-y: auto; -webkit-overflow-scrolling: touch; padding-top: env(safe-area-inset-top); background: transparent; }
