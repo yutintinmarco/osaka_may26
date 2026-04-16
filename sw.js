@@ -1,7 +1,7 @@
-const CACHE_NAME = "kyoto-osaka-trip-v1";
+const CACHE_NAME = "kyoto-osaka-trip-v2";
 const ASSETS_TO_CACHE = [
   "./index.html",
-  "./trip_v11.json",
+  "./trip.json",
   "./manifest.webmanifest",
   "./assets/bg/bg_trip.png",
   "./assets/icon/trip_icon.png",
