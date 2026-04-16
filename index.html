@@ -27,7 +27,7 @@
 
 ```
 /* Header */
-.header { margin-bottom: 10px; background: rgba(245,245,247,0.50); border-radius: 16px; padding: 10px 12px; backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
+.header { margin-bottom: 10px; background: rgba(245,245,247,0.40); border-radius: 16px; padding: 10px 12px; backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
 .header-top { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-bottom: 4px; }
 .header-title-small { font-size: calc(13px * var(--font-scale)); color: #000; margin-bottom: 2px; }
 .header-title-main { font-size: calc(20px * var(--font-scale)); font-weight: 600; margin-bottom: 2px; }
@@ -55,7 +55,7 @@
 .team-btn.active-t2   { background: var(--team2-color); border-color: var(--team2-color); color: #fff; font-weight: 700; }
 
 /* Cards */
-.card { background: rgba(245,242,248,0.52); border-radius: 16px; padding: 12px 14px; box-shadow: 0 8px 20px rgba(15,23,42,0.08); margin-bottom: 14px; border: 1px solid rgba(255,255,255,0.5); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
+.card { background: rgba(245,242,248,0.55); border-radius: 16px; padding: 12px 14px; box-shadow: 0 8px 20px rgba(15,23,42,0.10); margin-bottom: 14px; border: 1px solid rgba(255,255,255,0.5); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
 
 /* Flight */
 .trip-row { display: flex; justify-content: space-between; font-size: calc(12px * var(--font-scale)); color: #333; }
@@ -99,14 +99,14 @@
 .day-tab.city-both.active::before { content: ""; position: absolute; inset: -1px; border-radius: 999px; padding: 1px; background: linear-gradient(to right, #5a9e5a 50%, #e06040 50%); -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; }
 .day-content { display: none; }
 .day-content.active { display: block; }
-.section-title { font-size: calc(14px * var(--font-scale)); font-weight: 700; margin-bottom: 4px; color: #111; background: rgba(255,255,255,0.65); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); padding: 6px 10px; border-radius: 10px; }
-.section-sub { font-size: calc(11px * var(--font-scale)); color: #333; margin-bottom: 8px; padding: 0 2px; }
+.section-title { font-size: calc(14px * var(--font-scale)); font-weight: 600; margin-bottom: 4px; color: #000; }
+.section-sub { font-size: calc(11px * var(--font-scale)); color: #000; margin-bottom: 8px; }
 .city-badge { display: inline-block; margin-left: 8px; padding: 2px 8px; font-size: calc(10px * var(--font-scale)); border-radius: 999px; font-weight: 600; vertical-align: middle; }
 .city-badge-kyoto { background: #d4ecd4; color: #2a5a2a; border: 1px solid #5a9e5a; }
 .city-badge-osaka { background: #ffddd4; color: #6a2010; border: 1px solid #e06040; }
 
 /* Timeline */
-.timeline-item { display: flex; gap: 10px; padding: 10px 8px; border-radius: 12px; background: rgba(245,242,248,0.52); margin-bottom: 6px; border: 1px solid rgba(255,255,255,0.5); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
+.timeline-item { display: flex; gap: 10px; padding: 10px 8px; border-radius: 12px; background: rgba(245,242,248,0.55); margin-bottom: 6px; border: 1px solid rgba(255,255,255,0.5); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
 .timeline-item.clickable { cursor: pointer; }
 .timeline-item.who-team1 { border-left: 3px solid var(--team1-color); }
 .timeline-item.who-team2 { border-left: 3px solid var(--team2-color); }
@@ -503,16 +503,8 @@ function render(data){
 
   data.days.forEach((day,idx)=>{
     // Find which city/cities this day belongs to
-    // Support explicit "both", single city key, or auto-detect from date ranges
-    let matchedCities, ck;
-    if(day.city==="both"){
-      matchedCities=cityKeys; ck="both";
-    } else if(day.city&&day.city!=="both"){
-      matchedCities=[day.city]; ck=day.city;
-    } else {
-      matchedCities=cityKeys.filter(k=>{const cd=cities[k];return cd.startIso&&cd.endIso&&day.isoDate&&day.isoDate>=cd.startIso&&day.isoDate<=cd.endIso;});
-      ck=matchedCities.length===1?matchedCities[0]:(matchedCities.length>1?"both":null);
-    }
+    const matchedCities=day.city?[day.city]:cityKeys.filter(k=>{const cd=cities[k];return cd.startIso&&cd.endIso&&day.isoDate&&day.isoDate>=cd.startIso&&day.isoDate<=cd.endIso;});
+    const ck=matchedCities.length===1?matchedCities[0]:(matchedCities.length>1?"both":null);
     const ci=ck&&ck!=="both"?cities[ck]:null;
 
     const tab=document.createElement("button");
