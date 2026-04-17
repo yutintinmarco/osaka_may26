@@ -467,11 +467,7 @@ html.theme-dark .info-hint { color: rgba(150,150,175,0.65); }
     </div>
 
 
-<div class="team-bar" id="team-bar" style="display:none;">
-  <button class="team-btn active-all" id="tb-all" data-team="all">全部</button>
-  <button class="team-btn" id="tb-team1" data-team="team1">Team Ian</button>
-  <button class="team-btn" id="tb-team2" data-team="team2">Team Edan</button>
-</div>
+<div class="team-bar" id="team-bar" style="display:none;"></div>
 
 <div class="card" id="flight-card" style="display:none;"><div id="flight-content"></div></div>
 
@@ -697,28 +693,26 @@ document.getElementById("detail-booking-btn").addEventListener("click",()=>{if(c
 let activeTeam="all";
 function applyTeam(team){
   activeTeam=team;
-  document.querySelectorAll(".team-btn").forEach(b=>{b.className="team-btn";if(b.dataset.team===team){if(team==="all")b.classList.add("active-all");else if(team==="team1")b.classList.add("active-t1");else if(team==="team2")b.classList.add("active-t2");}});
+  // Update button active states — generic, works for any traveller key
+  document.querySelectorAll(".team-btn").forEach(b=>{
+    b.className="team-btn";
+    b.style.background="";b.style.borderColor="";b.style.color="";b.style.fontWeight="";b.style.border="";
+    if(b.dataset.team===team){
+      if(team==="all"){b.classList.add("active-all");}
+      else{const c=b.dataset.color||"#888";b.style.background=c;b.style.border=`1px solid ${c}`;b.style.color="#fff";b.style.fontWeight="700";}
+    }
+  });
   // Filter timeline items
   document.querySelectorAll(".timeline-item[data-who]").forEach(item=>{const who=item.getAttribute("data-who");item.classList.toggle("hidden-item",!(team==="all"||who==="all"||who===team));});
   // Filter flight rows + fix last visible row border
   const flightRows=document.querySelectorAll(".flight-team-row[data-team]");
   let lastVisible=null;
-  flightRows.forEach(row=>{
-    const t=row.getAttribute("data-team");
-    const show=team==="all"||t===team;
-    row.style.display=show?"block":"none";
-    if(show)lastVisible=row;
-  });
-  // Reset all borders then remove from last visible
+  flightRows.forEach(row=>{const t=row.getAttribute("data-team");const show=team==="all"||t===team;row.style.display=show?"block":"none";if(show)lastVisible=row;});
   flightRows.forEach(row=>{row.style.borderBottom="";row.style.marginBottom="";row.style.paddingBottom="";});
   if(lastVisible){lastVisible.style.borderBottom="none";lastVisible.style.marginBottom="0";lastVisible.style.paddingBottom="0";}
   // Filter info cards
-  document.querySelectorAll(".info-team-card[data-team]").forEach(card=>{
-    const t=card.getAttribute("data-team");
-    card.style.display=(team==="all"||t===team)?"block":"none";
-  });
+  document.querySelectorAll(".info-team-card[data-team]").forEach(card=>{const t=card.getAttribute("data-team");card.style.display=(team==="all"||t===team)?"block":"none";});
 }
-document.querySelectorAll(".team-btn").forEach(b=>b.addEventListener("click",()=>applyTeam(b.dataset.team)));
 
 // Today chip
 function updateChip(data){
@@ -904,14 +898,26 @@ function fallbackCopy(txt,btn){
 function render(data){
   const meta=data.meta||{},travellers=meta.travellers||{},cities=meta.cities||{};
   if(meta.accentColor)document.documentElement.style.setProperty("--accent-color",meta.accentColor);
-  if(travellers.team1?.color)document.documentElement.style.setProperty("--team1-color",travellers.team1.color);
-  if(travellers.team2?.color)document.documentElement.style.setProperty("--team2-color",travellers.team2.color);
+  // Set CSS colour variables for every traveller key dynamically (e.g. --team1-color, --solo-color)
+  Object.entries(travellers).forEach(([tk,ti])=>{if(ti.color)document.documentElement.style.setProperty(`--${tk}-color`,ti.color);});
 
-  // Team bar
-  if(Object.keys(travellers).length){
-    document.getElementById("team-bar").style.display="flex";
-    if(travellers.team1)document.getElementById("tb-team1").textContent=travellers.team1.label||"Team Ian";
-    if(travellers.team2)document.getElementById("tb-team2").textContent=travellers.team2.label||"Team Edan";
+  // Team bar — fully dynamic from JSON travellers, only shown if 2+ travellers
+  const teamBar=document.getElementById("team-bar");
+  teamBar.innerHTML="";
+  const tKeys=Object.keys(travellers);
+  if(tKeys.length>=2){
+    teamBar.style.display="flex";
+    const allBtn=document.createElement("button");
+    allBtn.className="team-btn active-all";allBtn.dataset.team="all";allBtn.textContent="全部";
+    teamBar.appendChild(allBtn);
+    tKeys.forEach(tk=>{
+      const ti=travellers[tk];
+      const btn=document.createElement("button");
+      btn.className="team-btn";btn.dataset.team=tk;btn.dataset.color=ti.color||"#888";
+      btn.textContent=ti.label||tk;
+      teamBar.appendChild(btn);
+    });
+    teamBar.querySelectorAll(".team-btn").forEach(b=>b.addEventListener("click",()=>applyTeam(b.dataset.team)));
   }
 
   document.getElementById("page-title").textContent=meta.titleMain?.replace(/<[^>]*>/g,"")||"行程";
