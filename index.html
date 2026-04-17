@@ -387,34 +387,49 @@ html.theme-light .theme-btn { color: #555; -webkit-text-fill-color: #555; }
 
 /* Info View */
 .info-view-title { font-size: calc(13px * var(--font-scale)); font-weight: 700; color: #555; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 12px; }
-.info-team-card { background: rgba(255,255,255,0.30); border-radius: 16px; padding: 14px; box-shadow: 0 10px 24px rgba(15,23,42,0.10); margin-bottom: 14px; border: 1px solid rgba(255,255,255,0.60); backdrop-filter: blur(28px) saturate(1.12); -webkit-backdrop-filter: blur(28px) saturate(1.12); }
+.info-team-card { background: rgba(255,255,255,0.30); border-radius: 16px; padding: 14px; box-shadow: 0 10px 24px rgba(15,23,42,0.10); margin-bottom: 14px; border: 1px solid rgba(255,255,255,0.60); border-left-width: 4px; backdrop-filter: blur(28px) saturate(1.12); -webkit-backdrop-filter: blur(28px) saturate(1.12); }
 .info-team-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
 .info-team-label { font-size: calc(13px * var(--font-scale)); font-weight: 700; padding: 4px 12px; border-radius: 999px; color: #fff; }
-.info-copy-btn { font-size: calc(11px * var(--font-scale)); padding: 5px 12px; border-radius: 999px; border: 1px solid rgba(0,0,0,0.15); background: rgba(255,255,255,0.70); color: #333; font-weight: 600; display: flex; align-items: center; gap: 4px; }
+.info-copy-btn { font-size: calc(11px * var(--font-scale)); padding: 5px 12px; border-radius: 999px; border: 1px solid rgba(0,0,0,0.15); background: rgba(255,255,255,0.70); color: #333; font-weight: 600; display: flex; align-items: center; gap: 4px; cursor: pointer; }
 .info-copy-btn.copied { background: #d4edda; border-color: #5a9e5a; color: #2a5a2a; }
+.info-mini-copy { font-size: calc(10px * var(--font-scale)); padding: 2px 8px; border-radius: 999px; border: 1px solid rgba(0,0,0,0.12); background: rgba(255,255,255,0.65); color: #555; font-weight: 600; cursor: pointer; white-space: nowrap; flex-shrink: 0; }
+.info-mini-copy.copied { background: #d4edda; border-color: #5a9e5a; color: #2a5a2a; }
 .info-section { margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px solid rgba(0,0,0,0.08); }
 .info-section:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
-.info-section-title { font-size: calc(10px * var(--font-scale)); font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px; color: #888; margin-bottom: 6px; }
-.info-row { display: flex; gap: 6px; margin-bottom: 4px; font-size: calc(12px * var(--font-scale)); line-height: 1.5; }
+.info-section-title { font-size: calc(10px * var(--font-scale)); font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px; color: #888; margin-bottom: 8px; }
+.info-flight-block { border-left: 3px solid transparent; border-radius: 0 8px 8px 0; padding: 8px 10px; margin-bottom: 8px; background: rgba(255,255,255,0.18); }
+.info-flight-block:last-child { margin-bottom: 0; }
+.info-flight-dir { font-size: calc(10px * var(--font-scale)); font-weight: 700; letter-spacing: 0.5px; margin-bottom: 5px; }
+.info-row { display: flex; gap: 6px; margin-bottom: 3px; font-size: calc(12px * var(--font-scale)); line-height: 1.5; }
 .info-row-label { color: #666; white-space: nowrap; min-width: 70px; flex-shrink: 0; }
 .info-row-value { color: #111; font-weight: 500; flex: 1; }
-.info-hotel-row { margin-bottom: 6px; }
-.info-hotel-city { font-size: calc(11px * var(--font-scale)); font-weight: 700; color: #555; margin-bottom: 2px; }
-.info-hotel-name { font-size: calc(12px * var(--font-scale)); color: #111; font-weight: 500; }
-.info-hotel-dates { font-size: calc(11px * var(--font-scale)); color: #666; }
+.info-hotel-row { margin-bottom: 8px; padding-bottom: 8px; border-bottom: 1px solid rgba(0,0,0,0.06); }
+.info-hotel-row:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+.info-hotel-city { font-size: calc(11px * var(--font-scale)); font-weight: 700; color: #555; margin-bottom: 4px; }
+.info-hotel-name-row { display: flex; align-items: center; gap: 6px; margin-bottom: 2px; }
+.info-hotel-name { font-size: calc(12px * var(--font-scale)); color: #111; font-weight: 600; flex: 1; }
+.info-hotel-addr-row { display: flex; align-items: flex-start; gap: 6px; margin-bottom: 2px; }
+.info-hotel-addr { font-size: calc(11px * var(--font-scale)); color: #555; flex: 1; line-height: 1.4; }
+.info-hotel-dates { font-size: calc(11px * var(--font-scale)); color: #777; margin-top: 3px; }
 .info-hint { font-size: calc(11px * var(--font-scale)); color: #888; text-align: center; margin-top: 6px; line-height: 1.5; }
 
 html.theme-dark .info-team-card { background: rgba(24,24,30,0.62); border-color: rgba(255,255,255,0.09); box-shadow: 0 10px 28px rgba(0,0,0,0.40); }
 html.theme-dark .info-view-title { color: rgba(180,180,200,0.70); }
 html.theme-dark .info-section { border-bottom-color: rgba(255,255,255,0.08); }
 html.theme-dark .info-section-title { color: rgba(160,160,185,0.65); }
+html.theme-dark .info-flight-block { background: rgba(255,255,255,0.06); }
+html.theme-dark .info-flight-dir { color: rgba(180,180,200,0.80); }
 html.theme-dark .info-row-label { color: rgba(170,170,190,0.70); }
 html.theme-dark .info-row-value { color: #f0f0f2; }
 html.theme-dark .info-hotel-city { color: rgba(180,180,200,0.70); }
 html.theme-dark .info-hotel-name { color: #f0f0f2; }
-html.theme-dark .info-hotel-dates { color: rgba(170,170,190,0.70); }
+html.theme-dark .info-hotel-addr { color: rgba(180,180,200,0.75); }
+html.theme-dark .info-hotel-row { border-bottom-color: rgba(255,255,255,0.07); }
+html.theme-dark .info-hotel-dates { color: rgba(160,160,185,0.65); }
 html.theme-dark .info-copy-btn { background: rgba(44,44,52,0.80); border-color: rgba(255,255,255,0.14); color: rgba(220,220,230,0.88); }
 html.theme-dark .info-copy-btn.copied { background: rgba(42,90,42,0.65); border-color: #5a9e5a; color: #a8dba8; }
+html.theme-dark .info-mini-copy { background: rgba(44,44,52,0.80); border-color: rgba(255,255,255,0.14); color: rgba(200,200,218,0.85); }
+html.theme-dark .info-mini-copy.copied { background: rgba(42,90,42,0.65); border-color: #5a9e5a; color: #a8dba8; }
 html.theme-dark .info-hint { color: rgba(150,150,175,0.65); }
 
   </style>
@@ -697,6 +712,11 @@ function applyTeam(team){
   // Reset all borders then remove from last visible
   flightRows.forEach(row=>{row.style.borderBottom="";row.style.marginBottom="";row.style.paddingBottom="";});
   if(lastVisible){lastVisible.style.borderBottom="none";lastVisible.style.marginBottom="0";lastVisible.style.paddingBottom="0";}
+  // Filter info cards
+  document.querySelectorAll(".info-team-card[data-team]").forEach(card=>{
+    const t=card.getAttribute("data-team");
+    card.style.display=(team==="all"||t===team)?"block":"none";
+  });
 }
 document.querySelectorAll(".team-btn").forEach(b=>b.addEventListener("click",()=>applyTeam(b.dataset.team)));
 
@@ -748,37 +768,48 @@ function renderSnacks(data){
 }
 
 // Info View
+function miniCopyBtn(textFn){
+  const btn=document.createElement("button");btn.className="info-mini-copy";btn.textContent="📋";
+  btn.addEventListener("click",e=>{
+    e.stopPropagation();const txt=textFn();
+    const ok=()=>{btn.textContent="✅";btn.classList.add("copied");setTimeout(()=>{btn.textContent="📋";btn.classList.remove("copied");},1800);};
+    if(navigator.clipboard?.writeText){navigator.clipboard.writeText(txt).then(ok).catch(()=>{fallbackCopy(txt,btn);});}else{fallbackCopy(txt,btn);}
+  });
+  return btn;
+}
 function renderInfo(data){
   const meta=data.meta||{},travellers=meta.travellers||{},cities=meta.cities||{},hotels=meta.hotels||{},flights=meta.flights||[];
   const container=document.getElementById("info-content");if(!container)return;
   container.innerHTML="";
-
-  // Helper: format date ISO to readable
   function fmtDate(iso){if(!iso)return"";const[y,m,d]=iso.split("-");return`${y}年${parseInt(m)}月${parseInt(d)}日`;}
-  // Hotel check-in/out dates per city
   const cityKeys=Object.keys(cities);
   function hotelDates(cKey){const c=cities[cKey];if(!c)return{in:"",out:""};return{in:fmtDate(c.startIso),out:fmtDate(c.endIso)};}
+  function hotelObj(val){if(!val)return{name:"",address:""};if(typeof val==="string")return{name:val,address:""};return{name:val.name||"",address:val.address||""};}
+  function addRow(sec,label,val){const r=document.createElement("div");r.className="info-row";r.innerHTML=`<span class="info-row-label">${label}</span><span class="info-row-value">${val||"—"}</span>`;sec.appendChild(r);}
 
-  // Build per-team sections
   const teamKeys=Object.keys(travellers);
   if(!teamKeys.length){container.innerHTML="<div class='info-hint'>沒有旅遊者資料</div>";return;}
 
   teamKeys.forEach(tk=>{
     const ti=travellers[tk];
+    const teamColor=ti.color||"#888";
     const tf=flights.find(f=>f.teamKey===tk)||null;
-    const card=document.createElement("div");card.className="info-team-card";
+    const card=document.createElement("div");
+    card.className="info-team-card";
+    card.setAttribute("data-team",tk);
+    // Left border with team colour
+    card.style.borderLeftColor=teamColor;
 
     // Header
     const hdr=document.createElement("div");hdr.className="info-team-header";
-    const lbl=document.createElement("div");lbl.className="info-team-label";lbl.style.background=ti.color||"#888";
+    const lbl=document.createElement("div");lbl.className="info-team-label";lbl.style.background=teamColor;
     lbl.textContent=(ti.label||tk)+(ti.members?` ${ti.members}`:"");
-    const copyBtn=document.createElement("button");copyBtn.className="info-copy-btn";copyBtn.innerHTML="📋 複製";
+    const copyBtn=document.createElement("button");copyBtn.className="info-copy-btn";copyBtn.innerHTML="📋 複製全部";
     hdr.append(lbl,copyBtn);card.appendChild(hdr);
 
-    // Trip dates section
+    // Trip overview section
     const tripSec=document.createElement("div");tripSec.className="info-section";
     tripSec.innerHTML=`<div class="info-section-title">🗓️ 旅遊概覽</div>`;
-    function addRow(sec,label,val){const r=document.createElement("div");r.className="info-row";r.innerHTML=`<span class="info-row-label">${label}</span><span class="info-row-value">${val||"—"}</span>`;sec.appendChild(r);}
     addRow(tripSec,"目的地",cityKeys.map(k=>cities[k].label||k).join("、"));
     addRow(tripSec,"出發日期",fmtDate(meta.tripStartIso));
     addRow(tripSec,"回程日期",fmtDate(meta.tripEndIso));
@@ -786,41 +817,56 @@ function renderInfo(data){
     addRow(tripSec,"入境機場","關西國際機場（KIX）");
     card.appendChild(tripSec);
 
-    // Flights section
+    // Flights section — each sub-block has team color left border
     if(tf){
       const flSec=document.createElement("div");flSec.className="info-section";
       flSec.innerHTML=`<div class="info-section-title">✈️ 航班資料</div>`;
-      if(tf.outbound){
-        const ob=tf.outbound;
-        const obDiv=document.createElement("div");obDiv.style.marginBottom="8px";
-        obDiv.innerHTML=`<div class="info-hotel-city">去程</div>`;
-        addRow(obDiv,"航班號碼",ob.flight);addRow(obDiv,"日期",ob.date);addRow(obDiv,"路線",ob.route);addRow(obDiv,"時間",ob.time);
-        flSec.appendChild(obDiv);
-      }
-      if(tf.inbound){
-        const ib=tf.inbound;
-        const ibDiv=document.createElement("div");
-        ibDiv.innerHTML=`<div class="info-hotel-city">回程</div>`;
-        addRow(ibDiv,"航班號碼",ib.flight);addRow(ibDiv,"日期",ib.date);addRow(ibDiv,"路線",ib.route);addRow(ibDiv,"時間",ib.time);
-        flSec.appendChild(ibDiv);
-      }
+      [[tf.outbound,"去程"],[tf.inbound,"回程"]].forEach(([fl,dir])=>{
+        if(!fl)return;
+        const blk=document.createElement("div");blk.className="info-flight-block";
+        blk.style.borderLeftColor=teamColor;
+        const dirEl=document.createElement("div");dirEl.className="info-flight-dir";dirEl.style.color=teamColor;dirEl.textContent=dir;
+        blk.appendChild(dirEl);
+        addRow(blk,"航班號碼",fl.flight);addRow(blk,"日期",fl.date);addRow(blk,"路線",fl.route);addRow(blk,"時間",fl.time);
+        flSec.appendChild(blk);
+      });
       card.appendChild(flSec);
     }
 
-    // Hotels section
+    // Hotels section — with address + individual copy buttons
     if(Object.keys(hotels).length){
       const htSec=document.createElement("div");htSec.className="info-section";
       htSec.innerHTML=`<div class="info-section-title">🏨 住宿安排</div>`;
-      Object.entries(hotels).forEach(([cKey,hName])=>{
+      Object.entries(hotels).forEach(([cKey,hRaw])=>{
         const hd=hotelDates(cKey);const cLabel=cities[cKey]?.label||cKey;
+        const h=hotelObj(hRaw);
         const hRow=document.createElement("div");hRow.className="info-hotel-row";
-        hRow.innerHTML=`<div class="info-hotel-city">${cLabel}</div><div class="info-hotel-name">${hName}</div><div class="info-hotel-dates">${hd.in?`入住 ${hd.in}`:""} ${hd.out?` → 退房 ${hd.out}`:""}</div>`;
+        // City label
+        const cityLbl=document.createElement("div");cityLbl.className="info-hotel-city";cityLbl.textContent=cLabel;hRow.appendChild(cityLbl);
+        // Name row with mini copy
+        const nameRow=document.createElement("div");nameRow.className="info-hotel-name-row";
+        const nameEl=document.createElement("div");nameEl.className="info-hotel-name";nameEl.textContent=h.name;
+        const nameCopy=miniCopyBtn(()=>h.name);
+        nameRow.append(nameEl,nameCopy);hRow.appendChild(nameRow);
+        // Address row with mini copy (if exists)
+        if(h.address){
+          const addrRow=document.createElement("div");addrRow.className="info-hotel-addr-row";
+          const addrEl=document.createElement("div");addrEl.className="info-hotel-addr";addrEl.textContent=h.address;
+          const addrCopy=miniCopyBtn(()=>h.address);
+          addrRow.append(addrEl,addrCopy);hRow.appendChild(addrRow);
+        }
+        // Check-in/out dates
+        if(hd.in||hd.out){
+          const datesEl=document.createElement("div");datesEl.className="info-hotel-dates";
+          datesEl.textContent=`${hd.in?"入住 "+hd.in:""}${hd.in&&hd.out?"  →  ":""}${hd.out?"退房 "+hd.out:""}`;
+          hRow.appendChild(datesEl);
+        }
         htSec.appendChild(hRow);
       });
       card.appendChild(htSec);
     }
 
-    // Copy logic
+    // Copy all logic
     copyBtn.addEventListener("click",()=>{
       const ob=tf?.outbound,ib=tf?.inbound;
       const cityList=cityKeys.map(k=>cities[k].label||k).join("、");
@@ -829,20 +875,19 @@ function renderInfo(data){
       txt+=`旅遊期間：${fmtDate(meta.tripStartIso)} 至 ${fmtDate(meta.tripEndIso)}`;
       if(nights)txt+=`（${nights+1}日${nights}晚）`;
       txt+=`\n目的地：${cityList}\n入境機場：關西國際機場（KIX）\n\n`;
-      if(ob){txt+=`✈️ 去程航班\n航班號碼：${ob.flight||"—"}\n日期：${ob.date||"—"}\n路線：${ob.route||"—"}\n時間：${ob.time||"—"}\n\n`;}
-      if(ib){txt+=`✈️ 回程航班\n航班號碼：${ib.flight||"—"}\n日期：${ib.date||"—"}\n路線：${ib.route||"—"}\n時間：${ib.time||"—"}\n\n`;}
+      if(ob)txt+=`✈️ 去程航班\n航班號碼：${ob.flight||"—"}\n日期：${ob.date||"—"}\n路線：${ob.route||"—"}\n時間：${ob.time||"—"}\n\n`;
+      if(ib)txt+=`✈️ 回程航班\n航班號碼：${ib.flight||"—"}\n日期：${ib.date||"—"}\n路線：${ib.route||"—"}\n時間：${ib.time||"—"}\n\n`;
       if(Object.keys(hotels).length){
         txt+="🏨 住宿安排\n";
-        Object.entries(hotels).forEach(([cKey,hName])=>{
-          const hd=hotelDates(cKey);const cLabel=cities[cKey]?.label||cKey;
-          txt+=`【${cLabel}】${hName}`;
+        Object.entries(hotels).forEach(([cKey,hRaw])=>{
+          const hd=hotelDates(cKey);const cLabel=cities[cKey]?.label||cKey;const h=hotelObj(hRaw);
+          txt+=`【${cLabel}】${h.name}`;
+          if(h.address)txt+=`\n地址：${h.address}`;
           if(hd.in)txt+=`\n入住：${hd.in}`;if(hd.out)txt+=`  退房：${hd.out}`;txt+="\n";
         });
       }
       txt=txt.trim();
-      if(navigator.clipboard?.writeText){
-        navigator.clipboard.writeText(txt).then(()=>{copyBtn.innerHTML="✅ 已複製";copyBtn.classList.add("copied");setTimeout(()=>{copyBtn.innerHTML="📋 複製";copyBtn.classList.remove("copied");},2200);}).catch(()=>{fallbackCopy(txt,copyBtn);});
-      } else {fallbackCopy(txt,copyBtn);}
+      if(navigator.clipboard?.writeText){navigator.clipboard.writeText(txt).then(()=>{copyBtn.innerHTML="✅ 已複製";copyBtn.classList.add("copied");setTimeout(()=>{copyBtn.innerHTML="📋 複製全部";copyBtn.classList.remove("copied");},2200);}).catch(()=>{fallbackCopy(txt,copyBtn);});}else{fallbackCopy(txt,copyBtn);}
     });
 
     container.appendChild(card);
