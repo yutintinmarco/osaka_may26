@@ -423,8 +423,8 @@ html.theme-light .theme-btn { color: #555; -webkit-text-fill-color: #555; }
 
 <div class="team-bar" id="team-bar" style="display:none;">
   <button class="team-btn active-all" id="tb-all" data-team="all">全部</button>
-  <button class="team-btn" id="tb-team1" data-team="team1">Team 1</button>
-  <button class="team-btn" id="tb-team2" data-team="team2">Team 2</button>
+  <button class="team-btn" id="tb-team1" data-team="team1">Team Ian</button>
+  <button class="team-btn" id="tb-team2" data-team="team2">Team Edan</button>
 </div>
 
 <div class="card" id="flight-card" style="display:none;"><div id="flight-content"></div></div>
@@ -720,8 +720,8 @@ function render(data){
   // Team bar
   if(Object.keys(travellers).length){
     document.getElementById("team-bar").style.display="flex";
-    if(travellers.team1)document.getElementById("tb-team1").textContent=travellers.team1.label||"Team 1";
-    if(travellers.team2)document.getElementById("tb-team2").textContent=travellers.team2.label||"Team 2";
+    if(travellers.team1)document.getElementById("tb-team1").textContent=travellers.team1.label||"Team Ian";
+    if(travellers.team2)document.getElementById("tb-team2").textContent=travellers.team2.label||"Team Edan";
   }
 
   document.getElementById("page-title").textContent=meta.titleMain?.replace(/<[^>]*>/g,"")||"行程";
