@@ -154,8 +154,9 @@
 .icon { width: 22px; font-size: calc(20px * var(--font-scale)); line-height: 22px; }
 .content { flex: 1; }
 .content-title { font-size: calc(14px * var(--font-scale)); margin-bottom: 2px; }
+.content-note-row { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
 .content-note { font-size: calc(11px * var(--font-scale)); color: #4f4f4f; }
-.who-tag { display: inline-block; font-size: calc(10px * var(--font-scale)); padding: 1px 6px; border-radius: 999px; margin-top: 3px; font-weight: 600; }
+.who-tag { display: inline-flex; align-items: center; font-size: calc(10px * var(--font-scale)); padding: 1px 7px; border-radius: 999px; font-weight: 600; white-space: nowrap; flex-shrink: 0; }
 .who-tag-team1 { background: rgba(74,144,217,0.15); color: var(--team1-color); }
 .who-tag-team2 { background: rgba(232,168,56,0.15); color: #b07800; }
 .footer-note { margin-top: 18px; font-size: calc(10px * var(--font-scale)); color: #666; text-align: center; }
@@ -169,7 +170,7 @@
 /* Modal */
 .modal-backdrop { position: fixed; inset: 0; background: rgba(0,0,0,0.35); display: none; align-items: center; justify-content: center; z-index: 999; }
 .modal-backdrop.active { display: flex; }
-.modal { width: 90%; max-width: 420px; background: #fff; border-radius: 18px; padding: 14px 16px 12px 16px; box-shadow: 0 18px 40px rgba(15,23,42,0.3); }
+.modal { width: 90%; max-width: 420px; background: #fff; border-radius: 18px; padding: 14px 16px 12px 16px; box-shadow: 0 18px 40px rgba(15,23,42,0.3); border: 2px solid transparent; }
 .modal-img-wrapper { margin: -2px 0 8px 0; }
 .modal-img-wrapper img { width: 100%; border-radius: 14px; display: block; transition: opacity 0.25s ease, transform 0.25s ease; }
 .modal-img-wrapper img.fade-out { opacity: 0; transform: translateX(-8px); }
@@ -615,6 +616,12 @@ function setupClicks(){
       document.getElementById("detail-maps-btn").style.display=curMaps?"inline-block":"none";
       document.getElementById("detail-dianping-btn").style.display=curDP?"inline-block":"none";
       document.getElementById("detail-booking-btn").style.display=curBook?"inline-block":"none";
+      // Team colour border on modal
+      const modalEl=document.querySelector("#detail-backdrop .modal");
+      const whoVal=clone.getAttribute("data-who")||"all";
+      const teamColors={"team1":"var(--team1-color)","team2":"var(--team2-color)"};
+      if(teamColors[whoVal]){modalEl.style.borderColor=teamColors[whoVal];modalEl.style.borderWidth="2px";modalEl.style.borderStyle="solid";}
+      else{modalEl.style.borderColor="";modalEl.style.borderWidth="";modalEl.style.borderStyle="";}
       document.getElementById("detail-backdrop").classList.add("active");lockScroll();
     });
   });
@@ -790,6 +797,7 @@ function render(data){
       if(item.popup){
         el.classList.add("clickable");
         el.setAttribute("data-title",item.title||"");el.setAttribute("data-time",item.time||"");el.setAttribute("data-detail",item.detail||"");
+        el.setAttribute("data-who",who);
         if(item.detailLines)el.setAttribute("data-detail-lines",JSON.stringify(item.detailLines));
         el.setAttribute("data-maps",item.maps||"");
         const mg=[...normGallery(item.gallery),...normGallery(item.booking?.gallery)];
@@ -799,8 +807,11 @@ function render(data){
         else if(item.bookingPdf)el.setAttribute("data-booking-pdf",item.bookingPdf);
       }
       const cw=document.createElement("div");cw.className="content";
-      cw.innerHTML=`<div class="content-title">${item.title||""}</div>${item.note?`<div class="content-note">${item.note}</div>`:""}`;
-      if(who!=="all"&&travellers[who]){const tag=document.createElement("div");tag.className=`who-tag who-tag-${who}`;tag.textContent=travellers[who].label||who;cw.appendChild(tag);}
+      const noteRow=document.createElement("div");noteRow.className="content-note-row";
+      if(item.note){const n=document.createElement("div");n.className="content-note";n.textContent=item.note;noteRow.appendChild(n);}
+      if(who!=="all"&&travellers[who]){const tag=document.createElement("div");tag.className=`who-tag who-tag-${who}`;tag.textContent=travellers[who].label||who;noteRow.appendChild(tag);}
+      cw.innerHTML=`<div class="content-title">${item.title||""}</div>`;
+      cw.appendChild(noteRow);
       const timeEl=document.createElement("div");timeEl.className="time";timeEl.textContent=item.time||"";
       const iconEl=document.createElement("div");iconEl.className="icon";iconEl.textContent=item.icon||"";
       el.append(timeEl,iconEl,cw);content.appendChild(el);
