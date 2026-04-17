@@ -385,6 +385,37 @@ html.theme-dark .fab-item.active { background: rgba(230,230,238,0.90); border-co
 html.theme-light .refresh-btn { color: #4A90D9; -webkit-text-fill-color: #4A90D9; }
 html.theme-light .theme-btn { color: #555; -webkit-text-fill-color: #555; }
 
+/* Info View */
+.info-view-title { font-size: calc(13px * var(--font-scale)); font-weight: 700; color: #555; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 12px; }
+.info-team-card { background: rgba(255,255,255,0.30); border-radius: 16px; padding: 14px; box-shadow: 0 10px 24px rgba(15,23,42,0.10); margin-bottom: 14px; border: 1px solid rgba(255,255,255,0.60); backdrop-filter: blur(28px) saturate(1.12); -webkit-backdrop-filter: blur(28px) saturate(1.12); }
+.info-team-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+.info-team-label { font-size: calc(13px * var(--font-scale)); font-weight: 700; padding: 4px 12px; border-radius: 999px; color: #fff; }
+.info-copy-btn { font-size: calc(11px * var(--font-scale)); padding: 5px 12px; border-radius: 999px; border: 1px solid rgba(0,0,0,0.15); background: rgba(255,255,255,0.70); color: #333; font-weight: 600; display: flex; align-items: center; gap: 4px; }
+.info-copy-btn.copied { background: #d4edda; border-color: #5a9e5a; color: #2a5a2a; }
+.info-section { margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px solid rgba(0,0,0,0.08); }
+.info-section:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+.info-section-title { font-size: calc(10px * var(--font-scale)); font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px; color: #888; margin-bottom: 6px; }
+.info-row { display: flex; gap: 6px; margin-bottom: 4px; font-size: calc(12px * var(--font-scale)); line-height: 1.5; }
+.info-row-label { color: #666; white-space: nowrap; min-width: 70px; flex-shrink: 0; }
+.info-row-value { color: #111; font-weight: 500; flex: 1; }
+.info-hotel-row { margin-bottom: 6px; }
+.info-hotel-city { font-size: calc(11px * var(--font-scale)); font-weight: 700; color: #555; margin-bottom: 2px; }
+.info-hotel-name { font-size: calc(12px * var(--font-scale)); color: #111; font-weight: 500; }
+.info-hotel-dates { font-size: calc(11px * var(--font-scale)); color: #666; }
+.info-hint { font-size: calc(11px * var(--font-scale)); color: #888; text-align: center; margin-top: 6px; line-height: 1.5; }
+
+html.theme-dark .info-team-card { background: rgba(24,24,30,0.62); border-color: rgba(255,255,255,0.09); box-shadow: 0 10px 28px rgba(0,0,0,0.40); }
+html.theme-dark .info-view-title { color: rgba(180,180,200,0.70); }
+html.theme-dark .info-section { border-bottom-color: rgba(255,255,255,0.08); }
+html.theme-dark .info-section-title { color: rgba(160,160,185,0.65); }
+html.theme-dark .info-row-label { color: rgba(170,170,190,0.70); }
+html.theme-dark .info-row-value { color: #f0f0f2; }
+html.theme-dark .info-hotel-city { color: rgba(180,180,200,0.70); }
+html.theme-dark .info-hotel-name { color: #f0f0f2; }
+html.theme-dark .info-hotel-dates { color: rgba(170,170,190,0.70); }
+html.theme-dark .info-copy-btn { background: rgba(44,44,52,0.80); border-color: rgba(255,255,255,0.14); color: rgba(220,220,230,0.88); }
+html.theme-dark .info-copy-btn.copied { background: rgba(42,90,42,0.65); border-color: #5a9e5a; color: #a8dba8; }
+html.theme-dark .info-hint { color: rgba(150,150,175,0.65); }
 
   </style>
             <link rel="apple-touch-icon" href="assets/icon/trip_icon.png">
@@ -455,6 +486,11 @@ html.theme-light .theme-btn { color: #555; -webkit-text-fill-color: #555; }
     <div id="snacks-list"></div>
   </div>
 </div>
+
+<div id="info-view" style="display:none;">
+  <div id="info-content"></div>
+  <div class="info-hint">以上資料可用於填寫 Visit Japan Web / 電子簽證申請<br>請按實際情況核實所有資料</div>
+</div>
 <div class="footer-note" id="footer-note"></div>
 
 
@@ -465,6 +501,7 @@ html.theme-light .theme-btn { color: #555; -webkit-text-fill-color: #555; }
     <div class="fab-menu" id="fab-menu">
       <button class="fab-item active" id="bt-itinerary">🗓️</button>
       <button class="fab-item" id="bt-snacks" style="display:none;">🍡</button>
+      <button class="fab-item" id="bt-info">📋</button>
     </div>
   </div>
 </div>
@@ -710,6 +747,113 @@ function renderSnacks(data){
   setupClicks();
 }
 
+// Info View
+function renderInfo(data){
+  const meta=data.meta||{},travellers=meta.travellers||{},cities=meta.cities||{},hotels=meta.hotels||{},flights=meta.flights||[];
+  const container=document.getElementById("info-content");if(!container)return;
+  container.innerHTML="";
+
+  // Helper: format date ISO to readable
+  function fmtDate(iso){if(!iso)return"";const[y,m,d]=iso.split("-");return`${y}年${parseInt(m)}月${parseInt(d)}日`;}
+  // Hotel check-in/out dates per city
+  const cityKeys=Object.keys(cities);
+  function hotelDates(cKey){const c=cities[cKey];if(!c)return{in:"",out:""};return{in:fmtDate(c.startIso),out:fmtDate(c.endIso)};}
+
+  // Build per-team sections
+  const teamKeys=Object.keys(travellers);
+  if(!teamKeys.length){container.innerHTML="<div class='info-hint'>沒有旅遊者資料</div>";return;}
+
+  teamKeys.forEach(tk=>{
+    const ti=travellers[tk];
+    const tf=flights.find(f=>f.teamKey===tk)||null;
+    const card=document.createElement("div");card.className="info-team-card";
+
+    // Header
+    const hdr=document.createElement("div");hdr.className="info-team-header";
+    const lbl=document.createElement("div");lbl.className="info-team-label";lbl.style.background=ti.color||"#888";
+    lbl.textContent=(ti.label||tk)+(ti.members?` ${ti.members}`:"");
+    const copyBtn=document.createElement("button");copyBtn.className="info-copy-btn";copyBtn.innerHTML="📋 複製";
+    hdr.append(lbl,copyBtn);card.appendChild(hdr);
+
+    // Trip dates section
+    const tripSec=document.createElement("div");tripSec.className="info-section";
+    tripSec.innerHTML=`<div class="info-section-title">🗓️ 旅遊概覽</div>`;
+    function addRow(sec,label,val){const r=document.createElement("div");r.className="info-row";r.innerHTML=`<span class="info-row-label">${label}</span><span class="info-row-value">${val||"—"}</span>`;sec.appendChild(r);}
+    addRow(tripSec,"目的地",cityKeys.map(k=>cities[k].label||k).join("、"));
+    addRow(tripSec,"出發日期",fmtDate(meta.tripStartIso));
+    addRow(tripSec,"回程日期",fmtDate(meta.tripEndIso));
+    if(meta.tripStartIso&&meta.tripEndIso){const nights=Math.round((new Date(meta.tripEndIso)-new Date(meta.tripStartIso))/86400000);addRow(tripSec,"旅遊天數",`${nights+1}日${nights}晚`);}
+    addRow(tripSec,"入境機場","關西國際機場（KIX）");
+    card.appendChild(tripSec);
+
+    // Flights section
+    if(tf){
+      const flSec=document.createElement("div");flSec.className="info-section";
+      flSec.innerHTML=`<div class="info-section-title">✈️ 航班資料</div>`;
+      if(tf.outbound){
+        const ob=tf.outbound;
+        const obDiv=document.createElement("div");obDiv.style.marginBottom="8px";
+        obDiv.innerHTML=`<div class="info-hotel-city">去程</div>`;
+        addRow(obDiv,"航班號碼",ob.flight);addRow(obDiv,"日期",ob.date);addRow(obDiv,"路線",ob.route);addRow(obDiv,"時間",ob.time);
+        flSec.appendChild(obDiv);
+      }
+      if(tf.inbound){
+        const ib=tf.inbound;
+        const ibDiv=document.createElement("div");
+        ibDiv.innerHTML=`<div class="info-hotel-city">回程</div>`;
+        addRow(ibDiv,"航班號碼",ib.flight);addRow(ibDiv,"日期",ib.date);addRow(ibDiv,"路線",ib.route);addRow(ibDiv,"時間",ib.time);
+        flSec.appendChild(ibDiv);
+      }
+      card.appendChild(flSec);
+    }
+
+    // Hotels section
+    if(Object.keys(hotels).length){
+      const htSec=document.createElement("div");htSec.className="info-section";
+      htSec.innerHTML=`<div class="info-section-title">🏨 住宿安排</div>`;
+      Object.entries(hotels).forEach(([cKey,hName])=>{
+        const hd=hotelDates(cKey);const cLabel=cities[cKey]?.label||cKey;
+        const hRow=document.createElement("div");hRow.className="info-hotel-row";
+        hRow.innerHTML=`<div class="info-hotel-city">${cLabel}</div><div class="info-hotel-name">${hName}</div><div class="info-hotel-dates">${hd.in?`入住 ${hd.in}`:""} ${hd.out?` → 退房 ${hd.out}`:""}</div>`;
+        htSec.appendChild(hRow);
+      });
+      card.appendChild(htSec);
+    }
+
+    // Copy logic
+    copyBtn.addEventListener("click",()=>{
+      const ob=tf?.outbound,ib=tf?.inbound;
+      const cityList=cityKeys.map(k=>cities[k].label||k).join("、");
+      const nights=meta.tripStartIso&&meta.tripEndIso?Math.round((new Date(meta.tripEndIso)-new Date(meta.tripStartIso))/86400000):null;
+      let txt=`【${ti.label||tk}】${meta.titleMain?.replace(/<[^>]*>/g,"")||"行程資料"}\n\n`;
+      txt+=`旅遊期間：${fmtDate(meta.tripStartIso)} 至 ${fmtDate(meta.tripEndIso)}`;
+      if(nights)txt+=`（${nights+1}日${nights}晚）`;
+      txt+=`\n目的地：${cityList}\n入境機場：關西國際機場（KIX）\n\n`;
+      if(ob){txt+=`✈️ 去程航班\n航班號碼：${ob.flight||"—"}\n日期：${ob.date||"—"}\n路線：${ob.route||"—"}\n時間：${ob.time||"—"}\n\n`;}
+      if(ib){txt+=`✈️ 回程航班\n航班號碼：${ib.flight||"—"}\n日期：${ib.date||"—"}\n路線：${ib.route||"—"}\n時間：${ib.time||"—"}\n\n`;}
+      if(Object.keys(hotels).length){
+        txt+="🏨 住宿安排\n";
+        Object.entries(hotels).forEach(([cKey,hName])=>{
+          const hd=hotelDates(cKey);const cLabel=cities[cKey]?.label||cKey;
+          txt+=`【${cLabel}】${hName}`;
+          if(hd.in)txt+=`\n入住：${hd.in}`;if(hd.out)txt+=`  退房：${hd.out}`;txt+="\n";
+        });
+      }
+      txt=txt.trim();
+      if(navigator.clipboard?.writeText){
+        navigator.clipboard.writeText(txt).then(()=>{copyBtn.innerHTML="✅ 已複製";copyBtn.classList.add("copied");setTimeout(()=>{copyBtn.innerHTML="📋 複製";copyBtn.classList.remove("copied");},2200);}).catch(()=>{fallbackCopy(txt,copyBtn);});
+      } else {fallbackCopy(txt,copyBtn);}
+    });
+
+    container.appendChild(card);
+  });
+}
+function fallbackCopy(txt,btn){
+  const ta=document.createElement("textarea");ta.value=txt;ta.style.cssText="position:fixed;left:-9999px;top:-9999px;opacity:0;";document.body.appendChild(ta);ta.focus();ta.select();
+  try{document.execCommand("copy");btn.innerHTML="✅ 已複製";btn.classList.add("copied");setTimeout(()=>{btn.innerHTML="📋 複製";btn.classList.remove("copied");},2200);}catch(e){btn.innerHTML="❌ 請手動複製";}
+  document.body.removeChild(ta);
+}
+
 // Main render
 function render(data){
   const meta=data.meta||{},travellers=meta.travellers||{},cities=meta.cities||{};
@@ -833,10 +977,17 @@ function render(data){
 }
 
 // FAB
-const ivw=document.getElementById("itinerary-view"),svw=document.getElementById("snacks-view");
-const bti=document.getElementById("bt-itinerary"),bts=document.getElementById("bt-snacks");
-function setView(v){if(v==="snacks"){bti.classList.remove("active");bts.classList.add("active");ivw.style.display="none";svw.style.display="block";}else{bts.classList.remove("active");bti.classList.add("active");svw.style.display="none";ivw.style.display="block";}ss.scrollTo({top:0,behavior:"smooth"});}
-bti.addEventListener("click",()=>setView("itinerary"));bts.addEventListener("click",()=>setView("snacks"));
+const ivw=document.getElementById("itinerary-view"),svw=document.getElementById("snacks-view"),infvw=document.getElementById("info-view");
+const bti=document.getElementById("bt-itinerary"),bts=document.getElementById("bt-snacks"),btinfo=document.getElementById("bt-info");
+function setView(v){
+  bti.classList.remove("active");bts.classList.remove("active");btinfo.classList.remove("active");
+  ivw.style.display="none";svw.style.display="none";infvw.style.display="none";
+  if(v==="snacks"){bts.classList.add("active");svw.style.display="block";}
+  else if(v==="info"){btinfo.classList.add("active");infvw.style.display="block";}
+  else{bti.classList.add("active");ivw.style.display="block";}
+  ss.scrollTo({top:0,behavior:"smooth"});
+}
+bti.addEventListener("click",()=>setView("itinerary"));bts.addEventListener("click",()=>setView("snacks"));btinfo.addEventListener("click",()=>setView("info"));
 const ft=document.getElementById("fab-toggle"),fm=document.getElementById("fab-menu");
 ft.addEventListener("click",e=>{e.stopPropagation();fm.classList.toggle("open");});
 document.addEventListener("click",()=>fm.classList.remove("open"),{passive:true});
@@ -845,7 +996,7 @@ document.addEventListener("click",()=>fm.classList.remove("open"),{passive:true}
 // Load
 fetch(getTripJsonUrl())
   .then(r=>{if(!r.ok)throw new Error("HTTP "+r.status);return r.json();})
-  .then(data=>{window.tripData=data;render(data);renderWeather(data);})
+  .then(data=>{window.tripData=data;render(data);renderWeather(data);renderInfo(data);})
   .catch(()=>{document.getElementById("today-chip").textContent="無法載入行程資料";document.getElementById("header-title-main").textContent="無法載入行程資料";});
 </script>
 
