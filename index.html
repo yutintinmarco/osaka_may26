@@ -47,7 +47,7 @@
   justify-content: center;
   padding: 0;
   line-height: 1;
-  color: #555;
+  color: #4A90D9;
 }
 .font-controls { display: flex; gap: 6px; align-items: center; justify-content: flex-end; }
 .font-btn { width: 30px; height: 30px; border-radius: 999px; border: 1px solid #dadada; background: #f9f9fb; display: flex; align-items: center; justify-content: center; padding: 0; font-weight: 600; line-height: 1; }
@@ -199,10 +199,8 @@
 .title-accent { color: var(--accent-color, #d93025); }
 
 /* Refresh / Theme button icon color sync */
-.refresh-btn,
-.theme-btn {
-  color: #555;
-}
+.refresh-btn { color: #4A90D9; }
+.theme-btn { color: #555; }
 
 @media (prefers-color-scheme: dark) {
   html:not(.theme-light):not(.theme-dark) .refresh-btn,
@@ -216,10 +214,8 @@ html.theme-dark .theme-btn {
   color: #e0e0e4;
 }
 
-html.theme-light .refresh-btn,
-html.theme-light .theme-btn {
-  color: #555;
-}
+html.theme-light .refresh-btn { color: #4A90D9; }
+html.theme-light .theme-btn { color: #555; }
 
 
 /* Dark Mode */
@@ -383,7 +379,8 @@ html.theme-dark .fab-menu { background: rgba(28,28,36,0.92); border-color: rgba(
 html.theme-dark .fab-item { background: rgba(40,40,50,0.80); border-color: rgba(255,255,255,0.12); }
 html.theme-dark .fab-item.active { background: rgba(230,230,238,0.90); border-color: rgba(230,230,238,0.90); }
 
-html.theme-light .refresh-btn, html.theme-light .theme-btn { color: #555; -webkit-text-fill-color: #555; }
+html.theme-light .refresh-btn { color: #4A90D9; -webkit-text-fill-color: #4A90D9; }
+html.theme-light .theme-btn { color: #555; -webkit-text-fill-color: #555; }
 ```
 
   </style>
@@ -407,7 +404,7 @@ html.theme-light .refresh-btn, html.theme-light .theme-btn { color: #555; -webki
             <button class="font-btn" id="font-smaller">A−</button>
             <button class="font-btn" id="font-larger">A+</button>
             <button class="theme-btn" id="theme-btn" type="button" title="切換主題" data-theme="auto"><span class="theme-emoji" id="theme-emoji" aria-hidden="true">🌗</span></button>
-            <button class="refresh-btn" id="refresh-btn" type="button" aria-label="Refresh"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block;"><path d="M12.5 2.5A6 6 0 1 0 13 7" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><polyline points="9.5,0.5 13,2.5 11,6" fill="currentColor" stroke="none"/></svg></button>
+            <button class="refresh-btn" id="refresh-btn" type="button" aria-label="Refresh"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block;flex-shrink:0;"><path d="M13 7.5a5.5 5.5 0 1 1-1.17-3.4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><polyline points="8.5,1.5 11.8,4.1 9.2,6.8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></button>
           </div>
         </div>
       </div>
