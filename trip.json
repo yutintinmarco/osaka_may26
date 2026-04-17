@@ -44,13 +44,13 @@
           "date": "23/5",
           "flight": "CX566",
           "route": "香港 至 大阪",
-          "time": "待定"
+          "time": "01:55 - 06:40"
         },
         "inbound": {
           "date": "28/5",
           "flight": "CX595",
           "route": "大阪 至 香港",
-          "time": "待定"
+          "time": "18:30 - 21:40"
         }
       },
       {
@@ -86,13 +86,13 @@
       "city": "kyoto",
       "items": [
         {
-          "time": "待定",
+          "time": "06:40",
           "icon": "✈️",
           "title": "Team Ian 抵達關西機場",
-          "note": "CX566",
+          "note": "CX566  01:55 - 06:40",
           "who": "team1",
           "popup": true,
-          "detail": "Team Ian 航班 CX566，23/5 抵達關西機場。抵達後建議乘搭 Haruka 特急或巴士前往京都市區。",
+          "detail": "Team Ian 乘搭 CX566 於 23/5 01:55 起飛，06:40 抵達關西機場。抵達後建議乘搭 Haruka 特急或巴士前往京都市區。",
           "maps": "https://www.google.com/maps/search/?api=1&query=Kansai+International+Airport"
         },
         {
@@ -399,10 +399,10 @@
           "time": "待定",
           "icon": "🚌",
           "title": "Team Ian 前往機場",
-          "note": "CX595  預留充足時間",
+          "note": "CX595  18:30 - 21:40",
           "who": "team1",
           "popup": true,
-          "detail": "Team Ian 回程航班 CX595，28/5 由大阪返港。由大阪市區前往關西機場可搭 Haruka 特急或南海電鐵，建議預留 90 分鐘。",
+          "detail": "Team Ian 乘搭 CX595 於 28/5 18:30 由大阪回港，21:40 抵達香港。建議預留充足時間前往關西機場辦理登機。",
           "maps": "https://www.google.com/maps/search/?api=1&query=Kansai+International+Airport"
         },
         {
