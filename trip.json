@@ -6,7 +6,6 @@
     "dateRange": "5月23日 至 5月28日",
     "tripStartIso": "2026-05-23",
     "tripEndIso": "2026-05-28",
-
     "travellers": {
       "team1": {
         "label": "Team Ian",
@@ -19,7 +18,6 @@
         "color": "#E8A838"
       }
     },
-
     "cities": {
       "kyoto": {
         "label": "京都",
@@ -38,20 +36,19 @@
         "endIso": "2026-05-28"
       }
     },
-
     "flights": [
       {
         "teamKey": "team1",
         "airlineLogo": "assets/icon/cx_logo.png",
         "outbound": {
-          "date": "5月23日",
-          "flight": "待定",
+          "date": "23/5",
+          "flight": "CX566",
           "route": "香港 至 大阪",
           "time": "待定"
         },
         "inbound": {
-          "date": "5月28日",
-          "flight": "待定",
+          "date": "28/5",
+          "flight": "CX595",
           "route": "大阪 至 香港",
           "time": "待定"
         }
@@ -73,10 +70,12 @@
         }
       }
     ],
-
-    "footerNote": "點擊景點可查看詳細資訊  藍色左邊 = Team 1  橙色左邊 = Team 2"
+    "footerNote": "點擊景點可查看詳細資訊  藍色左邊 = Team Ian  橙色左邊 = Team Edan",
+    "hotels": {
+      "kyoto": "Daiwa Roynet Hotel Kyoto Shijo Karasuma",
+      "osaka": "Apartment Hotel 11 Shinimamiya 1"
+    }
   },
-
   "days": [
     {
       "label": "Day 1",
@@ -89,21 +88,21 @@
         {
           "time": "待定",
           "icon": "✈️",
-          "title": "Team 1 抵達關西機場",
-          "note": "航班待確認",
+          "title": "Team Ian 抵達關西機場",
+          "note": "CX566",
           "who": "team1",
           "popup": true,
-          "detail": "Team 1 航班資料待填入。抵達後建議乘搭 Haruka 特急或巴士前往京都市區。",
+          "detail": "Team Ian 航班 CX566，23/5 抵達關西機場。抵達後建議乘搭 Haruka 特急或巴士前往京都市區。",
           "maps": "https://www.google.com/maps/search/?api=1&query=Kansai+International+Airport"
         },
         {
           "time": "待定",
           "icon": "✈️",
-          "title": "Team 2 抵達關西機場",
+          "title": "Team Edan 抵達關西機場",
           "note": "航班待確認",
           "who": "team2",
           "popup": true,
-          "detail": "Team 2 航班資料待填入。抵達後建議乘搭 Haruka 特急或巴士前往京都市區。",
+          "detail": "Team Edan 航班資料待填入。抵達後建議乘搭 Haruka 特急或巴士前往京都市區。",
           "maps": "https://www.google.com/maps/search/?api=1&query=Kansai+International+Airport"
         },
         {
@@ -113,7 +112,7 @@
           "note": "放低行李  稍作休息",
           "who": "all",
           "popup": true,
-          "detail": "酒店資料待填入。",
+          "detail": "京都酒店：Daiwa Roynet Hotel Kyoto Shijo Karasuma",
           "maps": ""
         },
         {
@@ -132,7 +131,7 @@
       "label": "Day 2",
       "date": "5月24日",
       "title": "京都東部",
-      "subtitle": "清水寺  祇園  南禪寺",
+      "subtitle": "清水寺  Nintendo Museum  祇園",
       "isoDate": "2026-05-24",
       "city": "kyoto",
       "items": [
@@ -148,6 +147,26 @@
         },
         {
           "time": "11:00",
+          "icon": "🎮",
+          "title": "Nintendo Museum",
+          "note": "已預約門票  11:00 至 11:30 入場",
+          "who": "all",
+          "popup": true,
+          "detail": "已預約 Nintendo Museum 入場時段：2026年5月24日（日）11:00 AM 至 11:30 AM（JST）。建議預早到場，並預留交通時間前往宇治。",
+          "maps": "https://www.google.com/maps/search/?api=1&query=Nintendo+Museum+Uji+Kyoto"
+        },
+        {
+          "time": "13:30",
+          "icon": "🍽️",
+          "title": "午餐",
+          "note": "可於宇治 / 返回市區後安排",
+          "who": "all",
+          "popup": true,
+          "detail": "餐廳待定，可按 Nintendo Museum 參觀後再決定於宇治或返回京都市區用餐。",
+          "maps": "https://www.google.com/maps/search/?api=1&query=Uji+Kyoto+restaurants"
+        },
+        {
+          "time": "15:30",
           "icon": "🏮",
           "title": "祇園散策",
           "note": "石板路老街  打卡必去",
@@ -155,26 +174,6 @@
           "popup": true,
           "detail": "祇園花見小路一帶係京都最具代表性嘅街道，適合慢慢行，感受舊日風情。",
           "maps": "https://www.google.com/maps/search/?api=1&query=Gion+Kyoto"
-        },
-        {
-          "time": "12:30",
-          "icon": "🍽️",
-          "title": "午餐",
-          "note": "待定",
-          "who": "all",
-          "popup": true,
-          "detail": "餐廳待定。",
-          "maps": ""
-        },
-        {
-          "time": "14:00",
-          "icon": "⛩️",
-          "title": "南禪寺",
-          "note": "大型禪寺  水路閣打卡位",
-          "who": "all",
-          "popup": true,
-          "detail": "南禪寺係京都規模最大嘅禪寺之一，境內嘅明治時代水路閣係熱門打卡位。",
-          "maps": "https://www.google.com/maps/search/?api=1&query=Nanzen-ji+Kyoto"
         },
         {
           "time": "19:00",
@@ -229,21 +228,21 @@
         {
           "time": "14:00",
           "icon": "🗺️",
-          "title": "Team 1 自由活動",
+          "title": "Team Ian 自由活動",
           "note": "行程待定",
           "who": "team1",
           "popup": true,
-          "detail": "Team 1 下午自由活動，行程待填入。",
+          "detail": "Team Ian 下午自由活動，行程待填入。",
           "maps": ""
         },
         {
           "time": "14:00",
           "icon": "🗺️",
-          "title": "Team 2 自由活動",
+          "title": "Team Edan 自由活動",
           "note": "行程待定",
           "who": "team2",
           "popup": true,
-          "detail": "Team 2 下午自由活動，行程待填入。",
+          "detail": "Team Edan 下午自由活動，行程待填入。",
           "maps": ""
         },
         {
@@ -293,7 +292,7 @@
           "note": "放低行李  準備下午行程",
           "who": "all",
           "popup": true,
-          "detail": "大阪酒店資料待填入。",
+          "detail": "大阪酒店：Apartment Hotel 11 Shinimamiya 1",
           "maps": ""
         },
         {
@@ -349,21 +348,21 @@
         {
           "time": "13:00",
           "icon": "🗺️",
-          "title": "Team 1 下午自由活動",
+          "title": "Team Ian 下午自由活動",
           "note": "行程待定",
           "who": "team1",
           "popup": true,
-          "detail": "Team 1 下午自由活動，行程待填入。",
+          "detail": "Team Ian 下午自由活動，行程待填入。",
           "maps": ""
         },
         {
           "time": "13:00",
           "icon": "🗺️",
-          "title": "Team 2 下午自由活動",
+          "title": "Team Edan 下午自由活動",
           "note": "行程待定",
           "who": "team2",
           "popup": true,
-          "detail": "Team 2 下午自由活動，行程待填入。",
+          "detail": "Team Edan 下午自由活動，行程待填入。",
           "maps": ""
         },
         {
@@ -399,27 +398,26 @@
         {
           "time": "待定",
           "icon": "🚌",
-          "title": "Team 1 前往機場",
-          "note": "航班待確認  預留充足時間",
+          "title": "Team Ian 前往機場",
+          "note": "CX595  預留充足時間",
           "who": "team1",
           "popup": true,
-          "detail": "Team 1 航班待確認。由大阪市區前往關西機場可搭 Haruka 特急或南海電鐵，建議預留 90 分鐘。",
+          "detail": "Team Ian 回程航班 CX595，28/5 由大阪返港。由大阪市區前往關西機場可搭 Haruka 特急或南海電鐵，建議預留 90 分鐘。",
           "maps": "https://www.google.com/maps/search/?api=1&query=Kansai+International+Airport"
         },
         {
           "time": "待定",
           "icon": "🚌",
-          "title": "Team 2 前往機場",
+          "title": "Team Edan 前往機場",
           "note": "航班待確認  預留充足時間",
           "who": "team2",
           "popup": true,
-          "detail": "Team 2 航班待確認。由大阪市區前往關西機場可搭 Haruka 特急或南海電鐵，建議預留 90 分鐘。",
+          "detail": "Team Edan 航班待確認。由大阪市區前往關西機場可搭 Haruka 特急或南海電鐵，建議預留 90 分鐘。",
           "maps": "https://www.google.com/maps/search/?api=1&query=Kansai+International+Airport"
         }
       ]
     }
   ],
-
   "snacks": {
     "title": "小食清單",
     "subtitle": "路過即食  不設時間  點擊可開啟地圖",
