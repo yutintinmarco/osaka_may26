@@ -387,7 +387,7 @@ html.theme-dark .fab-item { background: rgba(40,40,50,0.80); border-color: rgba(
 html.theme-dark .fab-item.active { background: rgba(230,230,238,0.90); border-color: rgba(230,230,238,0.90); }
 
 html.theme-light .refresh-btn { color: #4A90D9; -webkit-text-fill-color: #4A90D9; }
-html.theme-light .theme-btn { color: #555; -webkit-text-fill-color: #555; }
+html.theme-light .theme-btn { color: #111; -webkit-text-fill-color: #111; }
 
 /* Info View */
 .info-view-title { font-size: calc(13px * var(--font-scale)); font-weight: 700; color: #555; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 12px; }
@@ -668,11 +668,11 @@ function setupClicks(){
       document.getElementById("detail-maps-btn").style.display=curMaps?"inline-block":"none";
       document.getElementById("detail-dianping-btn").style.display=curDP?"inline-block":"none";
       document.getElementById("detail-booking-btn").style.display=curBook?"inline-block":"none";
-      // Team colour border on modal
+      // Team colour border on modal — dynamic, works for any traveller key
       const modalEl=document.querySelector("#detail-backdrop .modal");
       const whoVal=clone.getAttribute("data-who")||"all";
-      const teamColors={"team1":"var(--team1-color)","team2":"var(--team2-color)"};
-      if(teamColors[whoVal]){modalEl.style.borderColor=teamColors[whoVal];modalEl.style.borderWidth="2px";modalEl.style.borderStyle="solid";}
+      const travCol=window.tripData?.meta?.travellers?.[whoVal]?.color;
+      if(travCol){modalEl.style.borderColor=travCol;modalEl.style.borderWidth="2px";modalEl.style.borderStyle="solid";}
       else{modalEl.style.borderColor="";modalEl.style.borderWidth="";modalEl.style.borderStyle="";}
       document.getElementById("detail-backdrop").classList.add("active");lockScroll();
     });
@@ -993,7 +993,7 @@ function render(data){
     (day.items||[]).forEach(item=>{
       const el=document.createElement("div");el.className="timeline-item";
       const who=item.who||"all";el.setAttribute("data-who",who);
-      if(who==="team1")el.classList.add("who-team1");else if(who==="team2")el.classList.add("who-team2");
+      if(who!=="all"&&travellers[who]?.color){el.style.borderLeft=`3px solid ${travellers[who].color}`;}
       if(item.popup){
         el.classList.add("clickable");
         el.setAttribute("data-title",item.title||"");el.setAttribute("data-time",item.time||"");el.setAttribute("data-detail",item.detail||"");
@@ -1009,7 +1009,7 @@ function render(data){
       const cw=document.createElement("div");cw.className="content";
       const noteRow=document.createElement("div");noteRow.className="content-note-row";
       if(item.note){const n=document.createElement("div");n.className="content-note";n.textContent=item.note;noteRow.appendChild(n);}
-      if(who!=="all"&&travellers[who]){const tag=document.createElement("div");tag.className=`who-tag who-tag-${who}`;tag.textContent=travellers[who].label||who;noteRow.appendChild(tag);}
+      if(who!=="all"&&travellers[who]){const tag=document.createElement("div");tag.className="who-tag";const tc=travellers[who].color||"#888";tag.style.background=`${tc}22`;tag.style.color=tc;tag.textContent=travellers[who].label||who;noteRow.appendChild(tag);}
       cw.innerHTML=`<div class="content-title">${item.title||""}</div>`;
       cw.appendChild(noteRow);
       const timeEl=document.createElement("div");timeEl.className="time";timeEl.textContent=item.time||"";
