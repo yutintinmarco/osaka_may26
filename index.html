@@ -557,11 +557,21 @@ document.getElementById("font-larger").addEventListener("click",()=>{fs=applyFon
 // Theme toggle: auto → light → dark → auto
 const THEMES=["auto","light","dark"];
 const THEME_ICONS={"auto":"🌗","light":"☀️","dark":"🌙"};
+let autoSunrise=null,autoSunset=null;
 function applyTheme(t){
   try{
     document.documentElement.classList.remove("theme-light","theme-dark");
-    if(t==="dark")document.documentElement.classList.add("theme-dark");
-    else if(t==="light")document.documentElement.classList.add("theme-light");
+    if(t==="dark"){document.documentElement.classList.add("theme-dark");}
+    else if(t==="light"){document.documentElement.classList.add("theme-light");}
+    else{
+      // Auto: use sunrise/sunset if available, else fall back to system preference
+      if(autoSunrise&&autoSunset){
+        const now=new Date();
+        if(now>=autoSunrise&&now<autoSunset){document.documentElement.classList.add("theme-light");}
+        else{document.documentElement.classList.add("theme-dark");}
+      }
+      // else: no class added, CSS media query handles system preference
+    }
     const btn=document.getElementById("theme-btn");
     const emoji=document.getElementById("theme-emoji");
     if(btn) btn.setAttribute("data-theme", t);
@@ -611,6 +621,9 @@ function renderW(wd,tripDates){
   document.getElementById("weather-today").textContent=`今日（${fmtMMDD(dates[0])}）  ${i0.icon} ${i0.label}  高 ${Math.round(maxT[0])}°C  低 ${Math.round(minT[0])}°C`;
   document.getElementById("weather-sun").textContent=`日出 ${new Date(sunrise[0]).toTimeString().slice(0,5)}  日落 ${new Date(sunset[0]).toTimeString().slice(0,5)}`;
   const now=new Date();document.getElementById("weather-updated").textContent=`更新 ${String(now.getHours()).padStart(2,"0")}:${String(now.getMinutes()).padStart(2,"0")}`;
+  // Store today's sunrise/sunset for auto theme, then re-apply if in auto mode
+  autoSunrise=new Date(sunrise[0]);autoSunset=new Date(sunset[0]);
+  if(currentTheme==="auto")applyTheme("auto");
   const el=document.getElementById("weather-days");el.innerHTML="";
   dates.forEach((d,i)=>{
     const lbl=fmtMMDD(d);if(tripDates.length&&!tripDates.includes(lbl))return;
