@@ -66,23 +66,10 @@
   justify-content: center;
   padding: 0;
   line-height: 1;
-  font-family: "Apple Color Emoji", "Segoe UI Emoji", sans-serif;
   font-size: 14px;
   -webkit-appearance: none;
   appearance: none;
 }
-.theme-emoji {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  line-height: 1;
-  font-style: normal;
-}
-.theme-btn[data-theme="auto"] .theme-emoji { }
-.theme-btn[data-theme="light"] .theme-emoji { }
-.theme-btn[data-theme="dark"] .theme-emoji { }
 .status-square { min-width: 88px; min-height: 44px; padding: 4px 8px; border-radius: 12px; background: rgba(245,245,247,0.55); border: 1px solid rgba(255,255,255,0.45); box-shadow: 0 4px 10px rgba(15,23,42,0.05); text-align: center; display: none; flex-direction: column; justify-content: center; align-items: center; }
 .status-main { font-size: calc(12px * var(--font-scale)); font-weight: 600; margin-bottom: 1px; color: #222; }
 .status-sub { font-size: calc(9px * var(--font-scale)); color: #666; }
@@ -456,7 +443,7 @@ html.theme-dark .info-hint { color: rgba(150,150,175,0.65); }
           <div class="font-controls">
             <button class="font-btn" id="font-smaller">A−</button>
             <button class="font-btn" id="font-larger">A+</button>
-            <button class="theme-btn" id="theme-btn" type="button" title="切換主題" data-theme="auto"><span class="theme-emoji" id="theme-emoji" aria-hidden="true">🌗</span></button>
+            <button class="theme-btn" id="theme-btn" type="button" title="切換主題" data-theme="auto"></button>
             <button class="refresh-btn" id="refresh-btn" type="button" aria-label="Refresh"><svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block;flex-shrink:0;"><path d="M13 7.5a5.5 5.5 0 1 1-1.17-3.4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><polyline points="8.5,1.5 11.8,4.1 9.2,6.8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></button>
           </div>
         </div>
@@ -556,7 +543,11 @@ document.getElementById("font-larger").addEventListener("click",()=>{fs=applyFon
 
 // Theme toggle: auto → light → dark → auto
 const THEMES=["auto","light","dark"];
-const THEME_ICONS={"auto":"🌗","light":"☀️","dark":"🌙"};
+const THEME_ICONS={
+  "auto": `<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.5 2a5.5 5.5 0 1 0 0 11V2z" fill="currentColor"/><circle cx="7.5" cy="7.5" r="5.5" stroke="currentColor" stroke-width="1.4"/></svg>`,
+  "light": `<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.5 1v1M7.5 13v1M1 7.5H0M15 7.5h-1M2.93 2.93l-.71-.71M12.78 12.78l-.71-.71M2.93 12.07l-.71.71M12.78 2.22l-.71.71" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="7.5" cy="7.5" r="2.8" stroke="currentColor" stroke-width="1.5"/></svg>`,
+  "dark": `<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.5 1.5a6 6 0 1 0 6 6 4.5 4.5 0 0 1-6-6z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>`
+};
 let autoSunrise=null,autoSunset=null;
 // Restore sunrise/sunset from last fetch to avoid theme flash on reload
 try{
@@ -579,9 +570,7 @@ function applyTheme(t){
       // else: no class added, CSS media query handles system preference
     }
     const btn=document.getElementById("theme-btn");
-    const emoji=document.getElementById("theme-emoji");
-    if(btn) btn.setAttribute("data-theme", t);
-    if(emoji) emoji.textContent=THEME_ICONS[t]||"🌗";
+    if(btn){btn.setAttribute("data-theme",t);btn.innerHTML=THEME_ICONS[t]||THEME_ICONS["auto"];}
     localStorage.setItem("trip_theme",t);
   }catch(e){}
 }
