@@ -558,6 +558,12 @@ document.getElementById("font-larger").addEventListener("click",()=>{fs=applyFon
 const THEMES=["auto","light","dark"];
 const THEME_ICONS={"auto":"🌗","light":"☀️","dark":"🌙"};
 let autoSunrise=null,autoSunset=null;
+// Restore sunrise/sunset from last fetch to avoid theme flash on reload
+try{
+  const ss=JSON.parse(localStorage.getItem("trip_sun")||"null");
+  const today=new Date().toISOString().slice(0,10);
+  if(ss&&ss.date===today){autoSunrise=new Date(ss.rise);autoSunset=new Date(ss.set);}
+}catch(e){}
 function applyTheme(t){
   try{
     document.documentElement.classList.remove("theme-light","theme-dark");
@@ -623,6 +629,7 @@ function renderW(wd,tripDates){
   const now=new Date();document.getElementById("weather-updated").textContent=`更新 ${String(now.getHours()).padStart(2,"0")}:${String(now.getMinutes()).padStart(2,"0")}`;
   // Store today's sunrise/sunset for auto theme, then re-apply if in auto mode
   autoSunrise=new Date(sunrise[0]);autoSunset=new Date(sunset[0]);
+  try{localStorage.setItem("trip_sun",JSON.stringify({date:dates[0],rise:sunrise[0],set:sunset[0]}));}catch(e){}
   if(currentTheme==="auto")applyTheme("auto");
   const el=document.getElementById("weather-days");el.innerHTML="";
   dates.forEach((d,i)=>{
