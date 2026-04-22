@@ -95,7 +95,7 @@
 .trip-logo-col { flex: 0 0 auto; display: flex; align-items: center; justify-content: center; padding: 0 6px; }
 .trip-logo-img { max-height: 28px; width: auto; display: block; }
 .trip-col-title { font-size: calc(11px * var(--font-scale)); color: #666; margin-bottom: 2px; }
-.trip-col-main { font-size: calc(13px * var(--font-scale)); }
+.trip-col-main { font-size: calc(13px * var(--font-scale)); font-weight: 600; }
 .trip-col-sub { font-size: calc(11px * var(--font-scale)); color: #555; margin-top: 2px; }
 .flight-team-row { margin-bottom: 10px; padding-bottom: 10px; border-bottom: 1px solid #e0e0e0; }
 .flight-team-row:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
@@ -130,7 +130,7 @@
 .day-content { display: none; }
 .day-content.active { display: block; }
 .section-title { font-size: calc(15px * var(--font-scale)); font-weight: 700; margin-bottom: 6px; color: #111; text-shadow: 0 1px 2px rgba(255,255,255,0.30); }
-.section-sub { font-size: calc(11px * var(--font-scale)); color: rgba(17,17,17,0.82); margin-bottom: 12px; text-shadow: 0 1px 2px rgba(255,255,255,0.24); }
+.section-sub { font-size: calc(11px * var(--font-scale)); color: rgba(17,17,17,0.50); margin-bottom: 12px; text-shadow: 0 1px 2px rgba(255,255,255,0.24); }
 .city-badge { display: inline-block; margin-left: 8px; padding: 2px 8px; font-size: calc(10px * var(--font-scale)); border-radius: 999px; font-weight: 600; vertical-align: middle; }
 .city-badge-kyoto { background: #d4ecd4; color: #2a5a2a; border: 1px solid #5a9e5a; }
 .city-badge-osaka { background: #ffddd4; color: #6a2010; border: 1px solid #e06040; }
@@ -144,14 +144,21 @@
 .time { width: 70px; font-size: calc(13px * var(--font-scale)); color: #4a4a4a; font-variant-numeric: tabular-nums; }
 .icon { width: 22px; font-size: calc(20px * var(--font-scale)); line-height: 22px; }
 .content { flex: 1; }
-.content-title { font-size: calc(14px * var(--font-scale)); margin-bottom: 2px; }
+.content-title { font-size: calc(14px * var(--font-scale)); font-weight: 600; margin-bottom: 2px; }
 .content-note-row { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
-.content-note { font-size: calc(11px * var(--font-scale)); color: #4f4f4f; }
+.content-note { font-size: calc(11px * var(--font-scale)); color: #999; }
 .who-tag { display: inline-flex; align-items: center; font-size: calc(10px * var(--font-scale)); padding: 1px 7px; border-radius: 999px; font-weight: 600; white-space: nowrap; flex-shrink: 0; }
 .who-tag-team1 { background: rgba(74,144,217,0.15); color: var(--team1-color); }
 .who-tag-team2 { background: rgba(232,168,56,0.15); color: #b07800; }
 .booked-badge { display: inline-flex; align-items: center; gap: 3px; font-size: calc(10px * var(--font-scale)); padding: 1px 7px; border-radius: 999px; font-weight: 600; white-space: nowrap; flex-shrink: 0; background: rgba(52,199,89,0.12); color: #1a7f37; border: 1px solid rgba(52,199,89,0.30); }
 .footer-note { margin-top: 18px; font-size: calc(10px * var(--font-scale)); color: #666; text-align: center; }
+
+/* Now indicator */
+.now-indicator { display: flex; align-items: center; gap: 7px; margin: 2px 0 8px 0; padding: 0 4px; }
+.now-dot { width: 7px; height: 7px; border-radius: 50%; background: #FF3B30; flex-shrink: 0; box-shadow: 0 0 0 3px rgba(255,59,48,0.18); animation: now-pulse 2s ease-in-out infinite; }
+.now-label { font-size: calc(10px * var(--font-scale)); font-weight: 700; color: #FF3B30; white-space: nowrap; letter-spacing: 0.3px; }
+.now-line { flex: 1; height: 1px; background: linear-gradient(to right, rgba(255,59,48,0.4), rgba(255,59,48,0.05)); }
+@keyframes now-pulse { 0%,100% { box-shadow: 0 0 0 3px rgba(255,59,48,0.18); } 50% { box-shadow: 0 0 0 5px rgba(255,59,48,0.08); } }
 
 /* Pass badges */
 .pass-badge { display: inline-block; margin-left: 10px; padding: 3px 10px; font-size: calc(11px * var(--font-scale)); border-radius: 999px; font-weight: 700; letter-spacing: 0.3px; vertical-align: middle; line-height: 1.4; white-space: nowrap; }
@@ -726,6 +733,29 @@ function applyTeam(team){
   if(lastVisible){lastVisible.style.borderBottom="none";lastVisible.style.marginBottom="0";lastVisible.style.paddingBottom="0";}
   // Filter info cards
   document.querySelectorAll(".info-team-card[data-team]").forEach(card=>{const t=card.getAttribute("data-team");card.style.display=(team==="all"||t===team)?"block":"none";});
+  updateNowIndicator();
+}
+
+// Now indicator
+function updateNowIndicator(){
+  document.querySelectorAll(".now-indicator").forEach(el=>el.remove());
+  const chip=document.getElementById("today-chip");
+  if(!chip?.classList.contains("active"))return;
+  const activeContent=document.querySelector(".day-content.active");
+  if(!activeContent)return;
+  const nowStr=new Date().toLocaleTimeString("en-GB",{timeZone:"Asia/Tokyo",hour:"2-digit",minute:"2-digit"});
+  const items=[...activeContent.querySelectorAll(".timeline-item:not(.hidden-item):not(.snack-item)")];
+  if(!items.length)return;
+  let insertAfter=null;
+  items.forEach(item=>{
+    const t=item.querySelector(".time")?.textContent?.trim()||"";
+    const m=t.match(/^(\d{1,2}):(\d{2})/);
+    if(m){const it=m[1].padStart(2,"0")+":"+m[2];if(it<=nowStr)insertAfter=item;}
+  });
+  const ind=document.createElement("div");ind.className="now-indicator";
+  ind.innerHTML='<span class="now-dot"></span><span class="now-label">現在</span><div class="now-line"></div>';
+  if(insertAfter)insertAfter.after(ind);
+  else items[0].before(ind);
 }
 
 // Today chip
@@ -1041,6 +1071,8 @@ function render(data){
   });
 
   setupClicks();renderSnacks(data);updateChip(data);applyTeam("all");
+  // Refresh now indicator every minute
+  setInterval(updateNowIndicator, 60000);
 }
 
 // FAB
