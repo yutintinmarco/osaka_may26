@@ -164,6 +164,7 @@
           "icon": "🎮",
           "title": "Nintendo Museum",
           "note": "已預約門票  11:00 至 11:30 入場",
+          "booked": true,
           "who": "all",
           "popup": true,
           "detail": "已預約 Nintendo Museum 入場時段：2026年5月24日（日）11:00 AM 至 11:30 AM（JST）。建議預早到場，並預留交通時間前往宇治。",
