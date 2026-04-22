@@ -150,6 +150,7 @@
 .who-tag { display: inline-flex; align-items: center; font-size: calc(10px * var(--font-scale)); padding: 1px 7px; border-radius: 999px; font-weight: 600; white-space: nowrap; flex-shrink: 0; }
 .who-tag-team1 { background: rgba(74,144,217,0.15); color: var(--team1-color); }
 .who-tag-team2 { background: rgba(232,168,56,0.15); color: #b07800; }
+.booked-badge { display: inline-flex; align-items: center; gap: 3px; font-size: calc(10px * var(--font-scale)); padding: 1px 7px; border-radius: 999px; font-weight: 600; white-space: nowrap; flex-shrink: 0; background: rgba(52,199,89,0.12); color: #1a7f37; border: 1px solid rgba(52,199,89,0.30); }
 .footer-note { margin-top: 18px; font-size: calc(10px * var(--font-scale)); color: #666; text-align: center; }
 
 /* Pass badges */
@@ -1018,6 +1019,7 @@ function render(data){
       const cw=document.createElement("div");cw.className="content";
       const noteRow=document.createElement("div");noteRow.className="content-note-row";
       if(item.note){const n=document.createElement("div");n.className="content-note";n.textContent=item.note;noteRow.appendChild(n);}
+      if(item.booked){const b=document.createElement("div");b.className="booked-badge";b.textContent="✓ 已預約";noteRow.appendChild(b);}
       if(who!=="all"&&travellers[who]){const tag=document.createElement("div");tag.className="who-tag";const tc=travellers[who].color||"#888";tag.style.background=`${tc}22`;tag.style.color=tc;tag.textContent=travellers[who].label||who;noteRow.appendChild(tag);}
       cw.innerHTML=`<div class="content-title">${item.title||""}</div>`;
       cw.appendChild(noteRow);
