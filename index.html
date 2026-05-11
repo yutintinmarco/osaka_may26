@@ -137,6 +137,7 @@
 
 /* Timeline */
 .timeline-item { display: flex; gap: 10px; padding: 10px 8px; border-radius: 12px; background: rgba(255,255,255,0.20); margin-bottom: 6px; border: 1px solid rgba(255,255,255,0.52); backdrop-filter: blur(24px) saturate(1.08); -webkit-backdrop-filter: blur(24px) saturate(1.08); box-shadow: 0 6px 16px rgba(15,23,42,0.08); }
+.timeline-item.is-booked { border-left: 3px solid #22a852; background: linear-gradient(90deg, rgba(52,199,89,0.18), rgba(255,255,255,0.20) 34%); }
 .timeline-item.clickable { cursor: pointer; }
 .timeline-item.who-team1 { border-left: 3px solid var(--team1-color); }
 .timeline-item.who-team2 { border-left: 3px solid var(--team2-color); }
@@ -172,17 +173,18 @@
   font-size: calc(10px * var(--font-scale));
   padding: 2px 8px;
   border-radius: 999px;
-  font-weight: 700;
+  font-weight: 800;
   white-space: nowrap;
   flex-shrink: 0;
-  background: rgba(52,199,89,0.18);
-  color: #0b5d25;
-  border: 1px solid rgba(26,127,55,0.42);
-  backdrop-filter: blur(12px) saturate(1.12);
-  -webkit-backdrop-filter: blur(12px) saturate(1.12);
-  box-shadow: 0 1px 4px rgba(15,23,42,0.10);
+  background: linear-gradient(180deg, rgba(52,199,89,0.30), rgba(255,255,255,0.34));
+  color: #07551f;
+  border: 1px solid rgba(20,120,48,0.52);
+  border-bottom: 2px solid rgba(34,168,82,0.72);
+  backdrop-filter: blur(12px) saturate(1.16);
+  -webkit-backdrop-filter: blur(12px) saturate(1.16);
+  box-shadow: 0 1px 4px rgba(15,23,42,0.12), inset 0 -1px 0 rgba(34,168,82,0.28);
 }
-.footer-note { margin-top: 18px; font-size: calc(10px * var(--font-scale)); color: #666; text-align: center; }
+.footer-note { margin-top: 18px; font-size: calc(10px * var(--font-scale)); color: #3f3f3f; font-weight: 600; text-align: center; text-shadow: 0 1px 2px rgba(255,255,255,0.32); }
 
 /* Now indicator */
 .now-indicator { display: flex; align-items: center; gap: 7px; margin: 2px 0 8px 0; padding: 0 4px; }
@@ -312,14 +314,15 @@ html.theme-light .theme-btn { color: #111; }
   html:not(.theme-light):not(.theme-dark) .timeline-item { background: rgba(24,24,32,0.58); border-color: rgba(255,255,255,0.09); box-shadow: 0 4px 14px rgba(0,0,0,0.30); }
   html:not(.theme-light):not(.theme-dark) .timeline-item.who-team1 { border-left: 3px solid var(--team1-color); background: rgba(74,144,217,0.10); }
   html:not(.theme-light):not(.theme-dark) .timeline-item.who-team2 { border-left: 3px solid var(--team2-color); background: rgba(232,168,56,0.10); }
+  html:not(.theme-light):not(.theme-dark) .timeline-item.is-booked { border-left: 3px solid #48dc76; background: linear-gradient(90deg, rgba(72,220,118,0.16), rgba(24,24,32,0.58) 34%); }
   html:not(.theme-light):not(.theme-dark) .time { color: rgba(170,170,188,0.80); }
   html:not(.theme-light):not(.theme-dark) .content-title { color: #f0f0f2; }
   html:not(.theme-light):not(.theme-dark) .content-note { color: rgba(180,180,200,0.78); }
   html:not(.theme-light):not(.theme-dark) .who-tag { background: color-mix(in srgb, var(--badge-color, #6aaff5) 26%, rgba(28,28,36,0.68)); color: color-mix(in srgb, var(--badge-color, #6aaff5) 72%, #ffffff); border-color: color-mix(in srgb, var(--badge-color, #6aaff5) 48%, rgba(255,255,255,0.16)); box-shadow: 0 1px 4px rgba(0,0,0,0.28); }
   html:not(.theme-light):not(.theme-dark) .who-tag-team1 { --badge-color: var(--team1-color); }
   html:not(.theme-light):not(.theme-dark) .who-tag-team2 { --badge-color: var(--team2-color); }
-  html:not(.theme-light):not(.theme-dark) .booked-badge { background: rgba(72,220,118,0.20); color: #b8f0c6; border-color: rgba(72,220,118,0.42); box-shadow: 0 1px 4px rgba(0,0,0,0.28); }
-  html:not(.theme-light):not(.theme-dark) .footer-note { color: rgba(160,160,180,0.60); }
+  html:not(.theme-light):not(.theme-dark) .booked-badge { background: linear-gradient(180deg, rgba(72,220,118,0.28), rgba(28,28,36,0.62)); color: #d7ffe0; border-color: rgba(72,220,118,0.50); border-bottom-color: rgba(72,220,118,0.82); box-shadow: 0 1px 4px rgba(0,0,0,0.28), inset 0 -1px 0 rgba(72,220,118,0.24); }
+  html:not(.theme-light):not(.theme-dark) .footer-note { color: rgba(220,220,232,0.84); font-weight: 600; text-shadow: 0 1px 2px rgba(0,0,0,0.45); }
   html:not(.theme-light):not(.theme-dark) .pass-jr { background: rgba(0,90,180,0.22); color: #7ab4f5; border-color: rgba(100,170,255,0.30); }
   html:not(.theme-light):not(.theme-dark) .pass-icoca { background: rgba(0,140,100,0.22); color: #6adbb8; border-color: rgba(80,200,150,0.30); }
   html:not(.theme-light):not(.theme-dark) .pass-metro { background: rgba(160,0,140,0.22); color: #d880d0; border-color: rgba(200,80,180,0.30); }
@@ -391,14 +394,15 @@ html.theme-dark .city-badge-osaka { background: rgba(100,40,20,0.65); color: #ff
 html.theme-dark .timeline-item { background: rgba(24,24,32,0.58); border-color: rgba(255,255,255,0.09); box-shadow: 0 4px 14px rgba(0,0,0,0.30); }
 html.theme-dark .timeline-item.who-team1 { border-left: 3px solid var(--team1-color); background: rgba(74,144,217,0.10); }
 html.theme-dark .timeline-item.who-team2 { border-left: 3px solid var(--team2-color); background: rgba(232,168,56,0.10); }
+html.theme-dark .timeline-item.is-booked { border-left: 3px solid #48dc76; background: linear-gradient(90deg, rgba(72,220,118,0.16), rgba(24,24,32,0.58) 34%); }
 html.theme-dark .time { color: rgba(170,170,188,0.80); }
 html.theme-dark .content-title { color: #f0f0f2; }
 html.theme-dark .content-note { color: rgba(180,180,200,0.78); }
 html.theme-dark .who-tag { background: color-mix(in srgb, var(--badge-color, #6aaff5) 26%, rgba(28,28,36,0.68)); color: color-mix(in srgb, var(--badge-color, #6aaff5) 72%, #ffffff); border-color: color-mix(in srgb, var(--badge-color, #6aaff5) 48%, rgba(255,255,255,0.16)); box-shadow: 0 1px 4px rgba(0,0,0,0.28); }
 html.theme-dark .who-tag-team1 { --badge-color: var(--team1-color); }
 html.theme-dark .who-tag-team2 { --badge-color: var(--team2-color); }
-html.theme-dark .booked-badge { background: rgba(72,220,118,0.20); color: #b8f0c6; border-color: rgba(72,220,118,0.42); box-shadow: 0 1px 4px rgba(0,0,0,0.28); }
-html.theme-dark .footer-note { color: rgba(160,160,180,0.60); }
+html.theme-dark .booked-badge { background: linear-gradient(180deg, rgba(72,220,118,0.28), rgba(28,28,36,0.62)); color: #d7ffe0; border-color: rgba(72,220,118,0.50); border-bottom-color: rgba(72,220,118,0.82); box-shadow: 0 1px 4px rgba(0,0,0,0.28), inset 0 -1px 0 rgba(72,220,118,0.24); }
+html.theme-dark .footer-note { color: rgba(220,220,232,0.84); font-weight: 600; text-shadow: 0 1px 2px rgba(0,0,0,0.45); }
 html.theme-dark .pass-jr { background: rgba(0,90,180,0.22); color: #7ab4f5; border-color: rgba(100,170,255,0.30); }
 html.theme-dark .pass-icoca { background: rgba(0,140,100,0.22); color: #6adbb8; border-color: rgba(80,200,150,0.30); }
 html.theme-dark .pass-metro { background: rgba(160,0,140,0.22); color: #d880d0; border-color: rgba(200,80,180,0.30); }
@@ -1067,6 +1071,7 @@ function render(data){
 
     (day.items||[]).forEach(item=>{
       const el=document.createElement("div");el.className="timeline-item";
+      if(item.booked)el.classList.add("is-booked");
       const who=item.who||"all";el.setAttribute("data-who",who);
       if(who!=="all"&&travellers[who]?.color){el.style.borderLeft=`3px solid ${travellers[who].color}`;}
       if(item.popup){
