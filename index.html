@@ -147,10 +147,41 @@
 .content-title { font-size: calc(14px * var(--font-scale)); font-weight: 600; margin-bottom: 2px; }
 .content-note-row { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
 .content-note { font-size: calc(11px * var(--font-scale)); color: #999; }
-.who-tag { display: inline-flex; align-items: center; font-size: calc(10px * var(--font-scale)); padding: 1px 7px; border-radius: 999px; font-weight: 600; white-space: nowrap; flex-shrink: 0; }
-.who-tag-team1 { background: rgba(74,144,217,0.15); color: var(--team1-color); }
-.who-tag-team2 { background: rgba(232,168,56,0.15); color: #b07800; }
-.booked-badge { display: inline-flex; align-items: center; gap: 3px; font-size: calc(10px * var(--font-scale)); padding: 1px 7px; border-radius: 999px; font-weight: 600; white-space: nowrap; flex-shrink: 0; background: rgba(52,199,89,0.12); color: #1a7f37; border: 1px solid rgba(52,199,89,0.30); }
+.who-tag {
+  display: inline-flex;
+  align-items: center;
+  font-size: calc(10px * var(--font-scale));
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-weight: 700;
+  white-space: nowrap;
+  flex-shrink: 0;
+  background: color-mix(in srgb, var(--badge-color, #4A90D9) 18%, rgba(255,255,255,0.62));
+  color: color-mix(in srgb, var(--badge-color, #4A90D9) 62%, #111);
+  border: 1px solid color-mix(in srgb, var(--badge-color, #4A90D9) 42%, rgba(255,255,255,0.45));
+  backdrop-filter: blur(12px) saturate(1.12);
+  -webkit-backdrop-filter: blur(12px) saturate(1.12);
+  box-shadow: 0 1px 4px rgba(15,23,42,0.10);
+}
+.who-tag-team1 { --badge-color: var(--team1-color); }
+.who-tag-team2 { --badge-color: var(--team2-color); }
+.booked-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-size: calc(10px * var(--font-scale));
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-weight: 700;
+  white-space: nowrap;
+  flex-shrink: 0;
+  background: rgba(52,199,89,0.18);
+  color: #0b5d25;
+  border: 1px solid rgba(26,127,55,0.42);
+  backdrop-filter: blur(12px) saturate(1.12);
+  -webkit-backdrop-filter: blur(12px) saturate(1.12);
+  box-shadow: 0 1px 4px rgba(15,23,42,0.10);
+}
 .footer-note { margin-top: 18px; font-size: calc(10px * var(--font-scale)); color: #666; text-align: center; }
 
 /* Now indicator */
@@ -284,8 +315,10 @@ html.theme-light .theme-btn { color: #111; }
   html:not(.theme-light):not(.theme-dark) .time { color: rgba(170,170,188,0.80); }
   html:not(.theme-light):not(.theme-dark) .content-title { color: #f0f0f2; }
   html:not(.theme-light):not(.theme-dark) .content-note { color: rgba(180,180,200,0.78); }
-  html:not(.theme-light):not(.theme-dark) .who-tag-team1 { background: rgba(106,175,245,0.18); color: #6aaff5; }
-  html:not(.theme-light):not(.theme-dark) .who-tag-team2 { background: rgba(245,200,74,0.18); color: #f5c84a; }
+  html:not(.theme-light):not(.theme-dark) .who-tag { background: color-mix(in srgb, var(--badge-color, #6aaff5) 26%, rgba(28,28,36,0.68)); color: color-mix(in srgb, var(--badge-color, #6aaff5) 72%, #ffffff); border-color: color-mix(in srgb, var(--badge-color, #6aaff5) 48%, rgba(255,255,255,0.16)); box-shadow: 0 1px 4px rgba(0,0,0,0.28); }
+  html:not(.theme-light):not(.theme-dark) .who-tag-team1 { --badge-color: var(--team1-color); }
+  html:not(.theme-light):not(.theme-dark) .who-tag-team2 { --badge-color: var(--team2-color); }
+  html:not(.theme-light):not(.theme-dark) .booked-badge { background: rgba(72,220,118,0.20); color: #b8f0c6; border-color: rgba(72,220,118,0.42); box-shadow: 0 1px 4px rgba(0,0,0,0.28); }
   html:not(.theme-light):not(.theme-dark) .footer-note { color: rgba(160,160,180,0.60); }
   html:not(.theme-light):not(.theme-dark) .pass-jr { background: rgba(0,90,180,0.22); color: #7ab4f5; border-color: rgba(100,170,255,0.30); }
   html:not(.theme-light):not(.theme-dark) .pass-icoca { background: rgba(0,140,100,0.22); color: #6adbb8; border-color: rgba(80,200,150,0.30); }
@@ -361,8 +394,10 @@ html.theme-dark .timeline-item.who-team2 { border-left: 3px solid var(--team2-co
 html.theme-dark .time { color: rgba(170,170,188,0.80); }
 html.theme-dark .content-title { color: #f0f0f2; }
 html.theme-dark .content-note { color: rgba(180,180,200,0.78); }
-html.theme-dark .who-tag-team1 { background: rgba(106,175,245,0.18); color: #6aaff5; }
-html.theme-dark .who-tag-team2 { background: rgba(245,200,74,0.18); color: #f5c84a; }
+html.theme-dark .who-tag { background: color-mix(in srgb, var(--badge-color, #6aaff5) 26%, rgba(28,28,36,0.68)); color: color-mix(in srgb, var(--badge-color, #6aaff5) 72%, #ffffff); border-color: color-mix(in srgb, var(--badge-color, #6aaff5) 48%, rgba(255,255,255,0.16)); box-shadow: 0 1px 4px rgba(0,0,0,0.28); }
+html.theme-dark .who-tag-team1 { --badge-color: var(--team1-color); }
+html.theme-dark .who-tag-team2 { --badge-color: var(--team2-color); }
+html.theme-dark .booked-badge { background: rgba(72,220,118,0.20); color: #b8f0c6; border-color: rgba(72,220,118,0.42); box-shadow: 0 1px 4px rgba(0,0,0,0.28); }
 html.theme-dark .footer-note { color: rgba(160,160,180,0.60); }
 html.theme-dark .pass-jr { background: rgba(0,90,180,0.22); color: #7ab4f5; border-color: rgba(100,170,255,0.30); }
 html.theme-dark .pass-icoca { background: rgba(0,140,100,0.22); color: #6adbb8; border-color: rgba(80,200,150,0.30); }
@@ -1050,7 +1085,7 @@ function render(data){
       const noteRow=document.createElement("div");noteRow.className="content-note-row";
       if(item.note){const n=document.createElement("div");n.className="content-note";n.textContent=item.note;noteRow.appendChild(n);}
       if(item.booked){const b=document.createElement("div");b.className="booked-badge";b.textContent="✓ 已預約";noteRow.appendChild(b);}
-      if(who!=="all"&&travellers[who]){const tag=document.createElement("div");tag.className="who-tag";const tc=travellers[who].color||"#888";tag.style.background=`${tc}22`;tag.style.color=tc;tag.textContent=travellers[who].label||who;noteRow.appendChild(tag);}
+      if(who!=="all"&&travellers[who]){const tag=document.createElement("div");tag.className="who-tag";const tc=travellers[who].color||"#888";tag.style.setProperty("--badge-color",tc);tag.textContent=travellers[who].label||who;noteRow.appendChild(tag);}
       cw.innerHTML=`<div class="content-title">${item.title||""}</div>`;
       cw.appendChild(noteRow);
       const timeEl=document.createElement("div");timeEl.className="time";timeEl.textContent=item.time||"";
