@@ -57,13 +57,13 @@
         "teamKey": "team2",
         "airlineLogo": "assets/icon/cx_logo.png",
         "outbound": {
-          "date": "5月23日",
+          "date": "23/5",
           "flight": "待定",
           "route": "香港 至 大阪",
           "time": "待定"
         },
         "inbound": {
-          "date": "5月28日",
+          "date": "28/5",
           "flight": "待定",
           "route": "大阪 至 香港",
           "time": "待定"
@@ -84,9 +84,18 @@
     "infoCard": {
       "hint": "以上資料可用於填寫 Visit Japan Web / 電子簽證申請\n請按實際情況核實所有資料",
       "overviewRows": [
-        { "label": "入境機場", "value": "關西國際機場（KIX）" },
-        { "label": "旅遊目的", "value": "觀光" },
-        { "label": "簽證類型", "value": "免簽（香港特區護照）" }
+        {
+          "label": "入境機場",
+          "value": "關西國際機場（KIX）"
+        },
+        {
+          "label": "旅遊目的",
+          "value": "觀光"
+        },
+        {
+          "label": "簽證類型",
+          "value": "免簽（香港特區護照）"
+        }
       ]
     }
   },
@@ -95,7 +104,7 @@
       "label": "Day 1",
       "date": "5月23日",
       "title": "抵達京都",
-      "subtitle": "辦理入住  附近晚餐",
+      "subtitle": "關西機場  錦市場  Pokémon Center  AEON Mall",
       "isoDate": "2026-05-23",
       "city": "kyoto",
       "items": [
@@ -103,40 +112,60 @@
           "time": "06:40",
           "icon": "✈️",
           "title": "Team Ian 抵達關西機場",
-          "note": "CX566  01:55 - 06:40",
+          "note": "CX566  HKG-KIX  01:55 - 06:40",
           "who": "team1",
           "popup": true,
-          "detail": "Team Ian 乘搭 CX566 於 23/5 01:55 起飛，06:40 抵達關西機場。抵達後建議乘搭 Haruka 特急或巴士前往京都市區。",
+          "detail": "Team Ian 乘搭 CX566 於 23/5 01:55 由香港出發，06:40 抵達關西國際機場。另一 team 航班資料稍後補上。",
           "maps": "https://www.google.com/maps/search/?api=1&query=Kansai+International+Airport"
         },
         {
-          "time": "待定",
-          "icon": "✈️",
-          "title": "Team Edan 抵達關西機場",
-          "note": "航班待確認",
-          "who": "team2",
-          "popup": true,
-          "detail": "Team Edan 航班資料待填入。抵達後建議乘搭 Haruka 特急或巴士前往京都市區。",
-          "maps": "https://www.google.com/maps/search/?api=1&query=Kansai+International+Airport"
-        },
-        {
-          "time": "待定",
-          "icon": "🏨",
-          "title": "酒店辦理入住",
-          "note": "放低行李  稍作休息",
+          "time": "08:00",
+          "icon": "🚆",
+          "title": "前往京都",
+          "note": "由關西機場出發往京都",
           "who": "all",
           "popup": true,
-          "detail": "京都酒店：Daiwa Roynet Hotel Kyoto Shijo Karasuma",
-          "maps": ""
+          "detail": "抵達後前往京都市區，交通可按實際時間選擇 Haruka 特急或巴士。",
+          "maps": "https://www.google.com/maps/search/?api=1&query=Kyoto+Station"
+        },
+        {
+          "time": "09:00",
+          "icon": "🛍️",
+          "title": "錦市場",
+          "note": "京都廚房  邊行邊食",
+          "who": "all",
+          "popup": true,
+          "detail": "錦市場有各式小食、豆腐、醃菜及串燒，適合作為第一日輕鬆行程。",
+          "maps": "https://www.google.com/maps/search/?api=1&query=Nishiki+Market+Kyoto"
+        },
+        {
+          "time": "12:00",
+          "icon": "🎮",
+          "title": "Pokémon Center Kyoto",
+          "note": "京都 Pokémon Center",
+          "who": "all",
+          "popup": true,
+          "detail": "Pokémon Center Kyoto，適合購物及打卡。",
+          "maps": "https://www.google.com/maps/search/?api=1&query=Pokemon+Center+Kyoto"
+        },
+        {
+          "time": "17:00",
+          "icon": "🛒",
+          "title": "AEON Mall KYOTO",
+          "note": "購物  補給  晚餐前休息",
+          "who": "all",
+          "popup": true,
+          "detail": "AEON Mall KYOTO 可購物、補給日用品，亦適合第一日較輕鬆安排。",
+          "maps": "https://www.google.com/maps/search/?api=1&query=AEON+Mall+KYOTO"
         },
         {
           "time": "19:00",
           "icon": "🍽️",
-          "title": "附近晚餐",
-          "note": "第一餐  輕鬆為主",
+          "title": "Dinner",
+          "note": "晚餐",
           "who": "all",
           "popup": true,
-          "detail": "餐廳待定。",
+          "detail": "第一晚晚餐，餐廳可再決定。",
           "maps": ""
         }
       ]
@@ -144,60 +173,100 @@
     {
       "label": "Day 2",
       "date": "5月24日",
-      "title": "京都東部",
-      "subtitle": "清水寺  Nintendo Museum  祇園",
+      "title": "宇治 / Nintendo Museum",
+      "subtitle": "平等院  中村藤吉  Nintendo Museum  伏見稻荷",
       "isoDate": "2026-05-24",
       "city": "kyoto",
       "items": [
         {
-          "time": "09:00",
-          "icon": "⛩️",
-          "title": "清水寺",
-          "note": "早去人少，可欣賞清晨景色",
+          "time": "08:00",
+          "icon": "🚆",
+          "title": "前往宇治",
+          "note": "to Uji",
           "who": "all",
           "popup": true,
-          "detail": "京都著名古剎，建議早上前往避開人潮。清水舞台一帶景色優美，可俯瞰京都市區。",
-          "maps": "https://www.google.com/maps/search/?api=1&query=Kiyomizu-dera+Kyoto"
+          "detail": "早上由京都出發前往宇治。",
+          "maps": "https://www.google.com/maps/search/?api=1&query=Uji+Station+Kyoto"
+        },
+        {
+          "time": "09:00",
+          "icon": "⛩️",
+          "title": "平等院",
+          "note": "宇治代表景點",
+          "who": "all",
+          "popup": true,
+          "detail": "平等院是宇治代表景點，建議早上先到。",
+          "maps": "https://www.google.com/maps/search/?api=1&query=Byodoin+Temple+Uji"
+        },
+        {
+          "time": "10:00",
+          "icon": "🍵",
+          "title": "中村藤吉平等院店",
+          "note": "抹茶甜品 / 茶",
+          "who": "all",
+          "popup": true,
+          "detail": "中村藤吉平等院店，適合食抹茶甜品或稍作休息。",
+          "maps": "https://www.google.com/maps/search/?api=1&query=Nakamura+Tokichi+Byodoin+Uji"
         },
         {
           "time": "11:00",
-          "icon": "🎮",
-          "title": "Nintendo Museum",
-          "note": "已預約門票  11:00 至 11:30 入場",
-          "booked": true,
+          "icon": "🚆",
+          "title": "Travel",
+          "note": "前往 Nintendo Museum",
           "who": "all",
           "popup": true,
-          "detail": "已預約 Nintendo Museum 入場時段：2026年5月24日（日）11:00 AM 至 11:30 AM（JST）。建議預早到場，並預留交通時間前往宇治。",
+          "detail": "由宇治一帶前往 Nintendo Museum，預留交通及等候時間。",
           "maps": "https://www.google.com/maps/search/?api=1&query=Nintendo+Museum+Uji+Kyoto"
         },
         {
-          "time": "13:30",
-          "icon": "🍽️",
-          "title": "午餐",
-          "note": "可於宇治 / 返回市區後安排",
+          "time": "11:30",
+          "icon": "🎮",
+          "title": "Nintendo Museum",
+          "note": "已預約門票  booked 11:30",
           "who": "all",
           "popup": true,
-          "detail": "餐廳待定，可按 Nintendo Museum 參觀後再決定於宇治或返回京都市區用餐。",
-          "maps": "https://www.google.com/maps/search/?api=1&query=Uji+Kyoto+restaurants"
+          "detail": "已預約 Nintendo Museum。請按門票入場時段到場，建議預早抵達及準備門票資料。",
+          "maps": "https://www.google.com/maps/search/?api=1&query=Nintendo+Museum+Uji+Kyoto",
+          "booked": true
         },
         {
-          "time": "15:30",
-          "icon": "🏮",
-          "title": "祇園散策",
-          "note": "石板路老街  打卡必去",
+          "time": "16:00",
+          "icon": "🍵",
+          "title": "Tea",
+          "note": "下午茶 / 休息",
           "who": "all",
           "popup": true,
-          "detail": "祇園花見小路一帶係京都最具代表性嘅街道，適合慢慢行，感受舊日風情。",
-          "maps": "https://www.google.com/maps/search/?api=1&query=Gion+Kyoto"
+          "detail": "參觀後安排下午茶或稍作休息。",
+          "maps": "https://www.google.com/maps/search/?api=1&query=Uji+Kyoto+tea"
+        },
+        {
+          "time": "17:00",
+          "icon": "⛩️",
+          "title": "伏見稻荷大社",
+          "note": "鳥居  輕鬆散步",
+          "who": "all",
+          "popup": true,
+          "detail": "伏見稻荷大社，視乎體力可只行山腳一段鳥居。",
+          "maps": "https://www.google.com/maps/search/?api=1&query=Fushimi+Inari+Taisha"
         },
         {
           "time": "19:00",
-          "icon": "🍽️",
-          "title": "晚餐",
-          "note": "待定",
+          "icon": "🚆",
+          "title": "返回京都",
+          "note": "to Kyoto",
           "who": "all",
           "popup": true,
-          "detail": "餐廳待定。",
+          "detail": "由伏見稻荷一帶返回京都市區。",
+          "maps": "https://www.google.com/maps/search/?api=1&query=Kyoto+Station"
+        },
+        {
+          "time": "20:00",
+          "icon": "🍽️",
+          "title": "Dinner",
+          "note": "晚餐",
+          "who": "all",
+          "popup": true,
+          "detail": "晚餐，餐廳可再決定。",
           "maps": ""
         }
       ]
@@ -205,69 +274,70 @@
     {
       "label": "Day 3",
       "date": "5月25日",
-      "title": "京都西部 / 嵐山",
-      "subtitle": "嵐山竹林  天龍寺  各自自由活動",
+      "title": "京都購物 / 銀閣寺",
+      "subtitle": "大丸  Hands  商店街  Kobe Beef Mouriya  銀閣寺",
       "isoDate": "2026-05-25",
       "city": "kyoto",
       "items": [
         {
           "time": "09:00",
-          "icon": "🎋",
-          "title": "嵐山竹林",
-          "note": "早去人少，光線最靚",
+          "icon": "🛍️",
+          "title": "大丸 / Hands / 商店街 / JINS",
+          "note": "京都市中心購物",
           "who": "all",
           "popup": true,
-          "detail": "嵐山竹林係京都標誌性景點，早上光線穿透竹葉效果最佳，人流亦相對較少。",
-          "maps": "https://www.google.com/maps/search/?api=1&query=Arashiyama+Bamboo+Grove+Kyoto"
+          "detail": "上午安排大丸、Hands、商店街及 JINS 一帶購物。",
+          "maps": "https://www.google.com/maps/search/?api=1&query=Daimaru+Kyoto+Hands+JINS"
         },
         {
-          "time": "10:00",
+          "time": "11:30",
+          "icon": "🥩",
+          "title": "Kobe Beef Mouriya Gion",
+          "note": "已預約  booked 11:30",
+          "who": "all",
+          "popup": true,
+          "detail": "Kobe Beef Mouriya Gion 已預約 11:30，建議準時到達。",
+          "maps": "https://www.google.com/maps/search/?api=1&query=Kobe+Beef+Mouriya+Gion",
+          "booked": true
+        },
+        {
+          "time": "14:00",
+          "icon": "🚆",
+          "title": "Travel",
+          "note": "前往銀閣寺方向",
+          "who": "all",
+          "popup": true,
+          "detail": "午餐後前往銀閣寺方向。",
+          "maps": "https://www.google.com/maps/search/?api=1&query=Ginkakuji+Kyoto"
+        },
+        {
+          "time": "16:00",
           "icon": "⛩️",
-          "title": "天龍寺",
-          "note": "世界文化遺產  日式庭園",
+          "title": "銀閣寺",
+          "note": "京都東山代表景點",
           "who": "all",
           "popup": true,
-          "detail": "天龍寺係嵐山一帶最重要嘅禪寺，庭園以借景嵐山著稱，係世界文化遺產。",
-          "maps": "https://www.google.com/maps/search/?api=1&query=Tenryu-ji+Kyoto"
+          "detail": "銀閣寺及周邊散步，視乎時間可順行哲學之道一小段。",
+          "maps": "https://www.google.com/maps/search/?api=1&query=Ginkakuji+Kyoto"
         },
         {
-          "time": "12:00",
-          "icon": "🍽️",
-          "title": "嵐山午餐",
-          "note": "待定",
+          "time": "18:00",
+          "icon": "🚆",
+          "title": "Travel",
+          "note": "返回晚餐地點",
           "who": "all",
           "popup": true,
-          "detail": "餐廳待定。",
-          "maps": ""
-        },
-        {
-          "time": "14:00",
-          "icon": "🗺️",
-          "title": "Team Ian 自由活動",
-          "note": "行程待定",
-          "who": "team1",
-          "popup": true,
-          "detail": "Team Ian 下午自由活動，行程待填入。",
-          "maps": ""
-        },
-        {
-          "time": "14:00",
-          "icon": "🗺️",
-          "title": "Team Edan 自由活動",
-          "note": "行程待定",
-          "who": "team2",
-          "popup": true,
-          "detail": "Team Edan 下午自由活動，行程待填入。",
-          "maps": ""
+          "detail": "由銀閣寺一帶返回市區晚餐。",
+          "maps": "https://www.google.com/maps/search/?api=1&query=Kyoto+restaurants"
         },
         {
           "time": "19:00",
           "icon": "🍽️",
-          "title": "晚餐（大家合流）",
-          "note": "待定",
+          "title": "Dinner",
+          "note": "晚餐",
           "who": "all",
           "popup": true,
-          "detail": "餐廳待定。",
+          "detail": "晚餐，餐廳可再決定。",
           "maps": ""
         }
       ]
@@ -276,118 +346,108 @@
       "label": "Day 4",
       "date": "5月26日",
       "title": "京都 → 大阪",
-      "subtitle": "上午京都  下午移動大阪  check in",
+      "subtitle": "早餐  金閣寺  移動大阪  心齋橋 / 難波",
       "isoDate": "2026-05-26",
       "city": "both",
       "items": [
         {
-          "time": "09:00",
-          "icon": "⛩️",
-          "title": "上午京都自由活動",
-          "note": "可補去未去嘅景點",
+          "time": "08:00",
+          "icon": "☕",
+          "title": "Breakfast",
+          "note": "早餐",
           "who": "all",
           "popup": true,
-          "detail": "上午可按個人喜好補去未去嘅景點，或者喺附近咖啡店歎個早餐。",
+          "detail": "早上早餐後開始行程。",
           "maps": ""
+        },
+        {
+          "time": "10:00",
+          "icon": "🏯",
+          "title": "金閣寺",
+          "note": "京都經典景點",
+          "who": "all",
+          "popup": true,
+          "detail": "金閣寺是京都經典景點，建議早上前往。",
+          "maps": "https://www.google.com/maps/search/?api=1&query=Kinkakuji+Kyoto"
         },
         {
           "time": "13:00",
-          "icon": "🚅",
-          "title": "移動至大阪",
-          "note": "JR 新快速 約 15 分鐘",
+          "icon": "🚆",
+          "title": "前往大阪",
+          "note": "to Osaka",
           "who": "all",
           "popup": true,
-          "detail": "京都至大阪可搭 JR 新快速，約 15 分鐘抵達大阪站。車費約 570 円。",
-          "maps": "https://www.google.com/maps/search/?api=1&query=Kyoto+Station"
-        },
-        {
-          "time": "14:00",
-          "icon": "🏨",
-          "title": "大阪酒店 Check In",
-          "note": "放低行李  準備下午行程",
-          "who": "all",
-          "popup": true,
-          "detail": "大阪酒店：Apartment Hotel 11 Shinimamiya 1",
-          "maps": ""
+          "detail": "由京都移動至大阪，按實際位置選擇 JR 或其他交通。",
+          "maps": "https://www.google.com/maps/search/?api=1&query=Osaka+Station"
         },
         {
           "time": "15:00",
           "icon": "🛍️",
-          "title": "心齋橋 / 道頓堀",
-          "note": "大阪最熱鬧購物區",
+          "title": "自由行：心齋橋 / 難波",
+          "note": "大阪購物散策",
           "who": "all",
           "popup": true,
-          "detail": "心齋橋係大阪主要購物街，附近道頓堀則以美食聞名，格力高霓虹燈牌係打卡必去。",
-          "maps": "https://www.google.com/maps/search/?api=1&query=Dotonbori+Osaka"
+          "detail": "下午安排心齋橋、難波一帶自由行，購物及打卡。",
+          "maps": "https://www.google.com/maps/search/?api=1&query=Shinsaibashi+Namba+Osaka"
         },
         {
           "time": "19:00",
           "icon": "🍽️",
-          "title": "大阪初晚餐",
-          "note": "道頓堀一帶  待定",
+          "title": "Dinner",
+          "note": "晚餐",
           "who": "all",
           "popup": true,
-          "detail": "餐廳待定。道頓堀一帶選擇豐富，可按當日情況決定。",
-          "maps": "https://www.google.com/maps/search/?api=1&query=Dotonbori+Osaka+restaurants"
+          "detail": "大阪晚餐，餐廳可再決定。",
+          "maps": ""
         }
       ]
     },
     {
       "label": "Day 5",
       "date": "5月27日",
-      "title": "大阪市區",
-      "subtitle": "大阪城  黑門市場  各自活動",
+      "title": "大阪北部 / 梅田",
+      "subtitle": "勝尾寺  箕面大滝  梅田  Birthday Dinner",
       "isoDate": "2026-05-27",
       "city": "osaka",
       "items": [
         {
-          "time": "09:00",
-          "icon": "🏯",
-          "title": "大阪城",
-          "note": "日本三大名城之一",
+          "time": "10:00",
+          "icon": "⛩️",
+          "title": "勝尾寺 / 箕面大滝 / 箕面",
+          "note": "郊外半日行程",
           "who": "all",
           "popup": true,
-          "detail": "大阪城係大阪最具代表性嘅地標，天守閣內有豐臣秀吉相關展覽。建議早去，人流較少。",
-          "maps": "https://www.google.com/maps/search/?api=1&query=Osaka+Castle"
-        },
-        {
-          "time": "11:30",
-          "icon": "🛒",
-          "title": "黑門市場",
-          "note": "大阪廚房  海鮮即買即食",
-          "who": "all",
-          "popup": true,
-          "detail": "黑門市場素有「大阪廚房」之稱，海鮮、肉類、熟食應有盡有，適合邊行邊食。",
-          "maps": "https://www.google.com/maps/search/?api=1&query=Kuromon+Market+Osaka"
+          "detail": "上午前往勝尾寺、箕面大滝及箕面一帶，留意交通時間及體力安排。",
+          "maps": "https://www.google.com/maps/search/?api=1&query=Katsuoji+Minoh+Waterfall+Osaka"
         },
         {
           "time": "13:00",
-          "icon": "🗺️",
-          "title": "Team Ian 下午自由活動",
-          "note": "行程待定",
-          "who": "team1",
-          "popup": true,
-          "detail": "Team Ian 下午自由活動，行程待填入。",
-          "maps": ""
-        },
-        {
-          "time": "13:00",
-          "icon": "🗺️",
-          "title": "Team Edan 下午自由活動",
-          "note": "行程待定",
-          "who": "team2",
-          "popup": true,
-          "detail": "Team Edan 下午自由活動，行程待填入。",
-          "maps": ""
-        },
-        {
-          "time": "18:00",
           "icon": "🍽️",
-          "title": "最後晚餐（大家合流）",
-          "note": "好好食一頓  明天回程",
+          "title": "Lunch",
+          "note": "午餐",
           "who": "all",
           "popup": true,
-          "detail": "最後晚餐，餐廳待定。建議選一間大家都想去嘅地方，好好慶祝！",
+          "detail": "午餐，地點可按當日路線決定。",
+          "maps": "https://www.google.com/maps/search/?api=1&query=Minoh+Osaka+restaurants"
+        },
+        {
+          "time": "16:00",
+          "icon": "🛍️",
+          "title": "梅田",
+          "note": "購物 / 咖啡 / 休息",
+          "who": "all",
+          "popup": true,
+          "detail": "下午安排梅田一帶購物、咖啡或休息。",
+          "maps": "https://www.google.com/maps/search/?api=1&query=Umeda+Osaka"
+        },
+        {
+          "time": "19:00",
+          "icon": "🎂",
+          "title": "Birthday Dinner",
+          "note": "生日晚餐",
+          "who": "all",
+          "popup": true,
+          "detail": "生日晚餐，餐廳待確認。",
           "maps": ""
         }
       ]
@@ -396,38 +456,38 @@
       "label": "Day 6",
       "date": "5月28日",
       "title": "回程",
-      "subtitle": "前往機場  返港",
+      "subtitle": "天王寺 Q’s Mall  前往機場  返港",
       "isoDate": "2026-05-28",
       "city": "osaka",
       "items": [
         {
-          "time": "待定",
-          "icon": "🛒",
-          "title": "最後購物 / 手信",
-          "note": "視乎航班時間",
+          "time": "10:00",
+          "icon": "🛍️",
+          "title": "天王寺 Q’s Mall",
+          "note": "最後購物 / 午餐前散策",
           "who": "all",
           "popup": true,
-          "detail": "視乎航班時間決定是否有時間最後購物，建議前一日已完成手信採購。",
-          "maps": ""
+          "detail": "上午安排天王寺 Q’s Mall，視乎航班時間作最後購物。",
+          "maps": "https://www.google.com/maps/search/?api=1&query=Abeno+Q's+Mall+Tennoji+Osaka"
         },
         {
-          "time": "待定",
-          "icon": "🚌",
-          "title": "Team Ian 前往機場",
-          "note": "CX595  18:30 - 21:40",
-          "who": "team1",
+          "time": "15:00",
+          "icon": "🚆",
+          "title": "Travel",
+          "note": "前往關西機場",
+          "who": "all",
           "popup": true,
-          "detail": "Team Ian 乘搭 CX595 於 28/5 18:30 由大阪回港，21:40 抵達香港。建議預留充足時間前往關西機場辦理登機。",
+          "detail": "下午前往關西機場，建議預留充足交通及辦理登機時間。",
           "maps": "https://www.google.com/maps/search/?api=1&query=Kansai+International+Airport"
         },
         {
-          "time": "待定",
-          "icon": "🚌",
-          "title": "Team Edan 前往機場",
-          "note": "航班待確認  預留充足時間",
-          "who": "team2",
+          "time": "18:30",
+          "icon": "✈️",
+          "title": "Team Ian 回程 CX595",
+          "note": "KIX-HKG  18:30 - 21:40",
+          "who": "team1",
           "popup": true,
-          "detail": "Team Edan 航班待確認。由大阪市區前往關西機場可搭 Haruka 特急或南海電鐵，建議預留 90 分鐘。",
+          "detail": "Team Ian 乘搭 CX595 於 28/5 18:30 由大阪回港，21:40 抵達香港。另一 team 航班資料稍後補上。",
           "maps": "https://www.google.com/maps/search/?api=1&query=Kansai+International+Airport"
         }
       ]
