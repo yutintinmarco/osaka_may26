@@ -137,7 +137,7 @@
 
 /* Timeline */
 .timeline-item { display: flex; gap: 10px; padding: 10px 8px; border-radius: 12px; background: rgba(255,255,255,0.20); margin-bottom: 6px; border: 1px solid rgba(255,255,255,0.52); backdrop-filter: blur(24px) saturate(1.08); -webkit-backdrop-filter: blur(24px) saturate(1.08); box-shadow: 0 6px 16px rgba(15,23,42,0.08); }
-.timeline-item.is-booked { border-left: 3px solid #22a852; background: linear-gradient(90deg, rgba(52,199,89,0.18), rgba(255,255,255,0.20) 34%); }
+.timeline-item.is-booked { border-bottom: 3px solid #22a852; background: linear-gradient(180deg, rgba(255,255,255,0.20), rgba(52,199,89,0.16)); }
 .timeline-item.clickable { cursor: pointer; }
 .timeline-item.who-team1 { border-left: 3px solid var(--team1-color); }
 .timeline-item.who-team2 { border-left: 3px solid var(--team2-color); }
@@ -314,7 +314,7 @@ html.theme-light .theme-btn { color: #111; }
   html:not(.theme-light):not(.theme-dark) .timeline-item { background: rgba(24,24,32,0.58); border-color: rgba(255,255,255,0.09); box-shadow: 0 4px 14px rgba(0,0,0,0.30); }
   html:not(.theme-light):not(.theme-dark) .timeline-item.who-team1 { border-left: 3px solid var(--team1-color); background: rgba(74,144,217,0.10); }
   html:not(.theme-light):not(.theme-dark) .timeline-item.who-team2 { border-left: 3px solid var(--team2-color); background: rgba(232,168,56,0.10); }
-  html:not(.theme-light):not(.theme-dark) .timeline-item.is-booked { border-left: 3px solid #48dc76; background: linear-gradient(90deg, rgba(72,220,118,0.16), rgba(24,24,32,0.58) 34%); }
+  html:not(.theme-light):not(.theme-dark) .timeline-item.is-booked { border-bottom: 3px solid #48dc76; background: linear-gradient(180deg, rgba(24,24,32,0.58), rgba(72,220,118,0.14)); }
   html:not(.theme-light):not(.theme-dark) .time { color: rgba(170,170,188,0.80); }
   html:not(.theme-light):not(.theme-dark) .content-title { color: #f0f0f2; }
   html:not(.theme-light):not(.theme-dark) .content-note { color: rgba(180,180,200,0.78); }
@@ -394,7 +394,7 @@ html.theme-dark .city-badge-osaka { background: rgba(100,40,20,0.65); color: #ff
 html.theme-dark .timeline-item { background: rgba(24,24,32,0.58); border-color: rgba(255,255,255,0.09); box-shadow: 0 4px 14px rgba(0,0,0,0.30); }
 html.theme-dark .timeline-item.who-team1 { border-left: 3px solid var(--team1-color); background: rgba(74,144,217,0.10); }
 html.theme-dark .timeline-item.who-team2 { border-left: 3px solid var(--team2-color); background: rgba(232,168,56,0.10); }
-html.theme-dark .timeline-item.is-booked { border-left: 3px solid #48dc76; background: linear-gradient(90deg, rgba(72,220,118,0.16), rgba(24,24,32,0.58) 34%); }
+html.theme-dark .timeline-item.is-booked { border-bottom: 3px solid #48dc76; background: linear-gradient(180deg, rgba(24,24,32,0.58), rgba(72,220,118,0.14)); }
 html.theme-dark .time { color: rgba(170,170,188,0.80); }
 html.theme-dark .content-title { color: #f0f0f2; }
 html.theme-dark .content-note { color: rgba(180,180,200,0.78); }
