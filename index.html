@@ -203,7 +203,7 @@
 .modal-backdrop { position: fixed; inset: 0; background: rgba(0,0,0,0.35); display: none; align-items: center; justify-content: center; z-index: 999; }
 .modal-backdrop.active { display: flex; }
 .modal { width: 90%; max-width: 420px; background: #fff; border-radius: 18px; padding: 14px 16px 12px 16px; box-shadow: 0 18px 40px rgba(15,23,42,0.3); border: 2px solid transparent; position: relative; overflow: hidden; }
-.modal.is-booked::after { content: ""; position: absolute; left: 18px; right: 18px; bottom: 0; height: 4px; border-radius: 999px 999px 0 0; background: linear-gradient(to right, rgba(52,199,89,0.12), rgba(52,199,89,0.86), rgba(52,199,89,0.12)); box-shadow: 0 -1px 8px rgba(52,199,89,0.22); pointer-events: none; }
+.modal.is-booked::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 5px; border-radius: 0 0 18px 18px; background: linear-gradient(to right, rgba(52,199,89,0.16), rgba(52,199,89,0.92), rgba(52,199,89,0.16)); box-shadow: 0 -2px 10px rgba(52,199,89,0.24); pointer-events: none; }
 .modal-img-wrapper { margin: -2px 0 8px 0; }
 .modal-img-wrapper img { width: 100%; border-radius: 14px; display: block; transition: opacity 0.25s ease, transform 0.25s ease; }
 .modal-img-wrapper img.fade-out { opacity: 0; transform: translateX(-8px); }
@@ -329,7 +329,7 @@ html.theme-light .theme-btn { color: #111; }
   html:not(.theme-light):not(.theme-dark) .pass-metro { background: rgba(160,0,140,0.22); color: #d880d0; border-color: rgba(200,80,180,0.30); }
   html:not(.theme-light):not(.theme-dark) .modal-backdrop { background: rgba(0,0,0,0.60); }
   html:not(.theme-light):not(.theme-dark) .modal { background: rgba(26,26,34,0.96); border: 1px solid rgba(255,255,255,0.10); box-shadow: 0 24px 56px rgba(0,0,0,0.60); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); }
-  html:not(.theme-light):not(.theme-dark) .modal.is-booked::after { background: linear-gradient(to right, rgba(72,220,118,0.10), rgba(72,220,118,0.92), rgba(72,220,118,0.10)); box-shadow: 0 -1px 10px rgba(72,220,118,0.26); }
+  html:not(.theme-light):not(.theme-dark) .modal.is-booked::after { background: linear-gradient(to right, rgba(72,220,118,0.16), rgba(72,220,118,0.96), rgba(72,220,118,0.16)); box-shadow: 0 -2px 12px rgba(72,220,118,0.30); }
   html:not(.theme-light):not(.theme-dark) .modal-title { color: #f0f0f2; }
   html:not(.theme-light):not(.theme-dark) .modal-time { color: rgba(170,170,190,0.75); }
   html:not(.theme-light):not(.theme-dark) .modal-body { color: rgba(200,200,218,0.88); }
@@ -410,7 +410,7 @@ html.theme-dark .pass-icoca { background: rgba(0,140,100,0.22); color: #6adbb8; 
 html.theme-dark .pass-metro { background: rgba(160,0,140,0.22); color: #d880d0; border-color: rgba(200,80,180,0.30); }
 html.theme-dark .modal-backdrop { background: rgba(0,0,0,0.60); }
 html.theme-dark .modal { background: rgba(26,26,34,0.96); border: 1px solid rgba(255,255,255,0.10); box-shadow: 0 24px 56px rgba(0,0,0,0.60); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); }
-html.theme-dark .modal.is-booked::after { background: linear-gradient(to right, rgba(72,220,118,0.10), rgba(72,220,118,0.92), rgba(72,220,118,0.10)); box-shadow: 0 -1px 10px rgba(72,220,118,0.26); }
+html.theme-dark .modal.is-booked::after { background: linear-gradient(to right, rgba(72,220,118,0.16), rgba(72,220,118,0.96), rgba(72,220,118,0.16)); box-shadow: 0 -2px 12px rgba(72,220,118,0.30); }
 html.theme-dark .modal-title { color: #f0f0f2; }
 html.theme-dark .modal-time { color: rgba(170,170,190,0.75); }
 html.theme-dark .modal-body { color: rgba(200,200,218,0.88); }
