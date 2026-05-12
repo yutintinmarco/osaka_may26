@@ -119,6 +119,36 @@
           "maps": "https://www.google.com/maps/search/?api=1&query=Kansai+International+Airport"
         },
         {
+          "time": "08:00",
+          "icon": "🚆",
+          "title": "前往京都",
+          "note": "由關西機場出發往京都",
+          "who": "team1",
+          "popup": true,
+          "detail": "抵達後前往京都市區，交通可按實際時間選擇 Haruka 特急或巴士。",
+          "maps": "https://www.google.com/maps/search/?api=1&query=Kyoto+Station"
+        },
+        {
+          "time": "09:00",
+          "icon": "🛍️",
+          "title": "錦市場",
+          "note": "京都廚房  邊行邊食",
+          "who": "team1",
+          "popup": true,
+          "detail": "錦市場有各式小食、豆腐、醃菜及串燒，適合作為第一日輕鬆行程。",
+          "maps": "https://www.google.com/maps/search/?api=1&query=Nishiki+Market+Kyoto"
+        },
+        {
+          "time": "12:00",
+          "icon": "🎮",
+          "title": "Pokémon Center Kyoto",
+          "note": "京都 Pokémon Center",
+          "who": "team1",
+          "popup": true,
+          "detail": "Pokémon Center Kyoto，適合購物及打卡。",
+          "maps": "https://www.google.com/maps/search/?api=1&query=Pokemon+Center+Kyoto"
+        },
+        {
           "time": "15:10",
           "icon": "✈️",
           "title": "Team Edan 抵達關西機場",
@@ -129,41 +159,21 @@
           "maps": "https://www.google.com/maps/search/?api=1&query=Kansai+International+Airport"
         },
         {
-          "time": "08:00",
+          "time": "16:30",
           "icon": "🚆",
           "title": "前往京都",
           "note": "由關西機場出發往京都",
-          "who": "all",
+          "who": "team2",
           "popup": true,
           "detail": "抵達後前往京都市區，交通可按實際時間選擇 Haruka 特急或巴士。",
           "maps": "https://www.google.com/maps/search/?api=1&query=Kyoto+Station"
-        },
-        {
-          "time": "09:00",
-          "icon": "🛍️",
-          "title": "錦市場",
-          "note": "京都廚房  邊行邊食",
-          "who": "all",
-          "popup": true,
-          "detail": "錦市場有各式小食、豆腐、醃菜及串燒，適合作為第一日輕鬆行程。",
-          "maps": "https://www.google.com/maps/search/?api=1&query=Nishiki+Market+Kyoto"
-        },
-        {
-          "time": "12:00",
-          "icon": "🎮",
-          "title": "Pokémon Center Kyoto",
-          "note": "京都 Pokémon Center",
-          "who": "all",
-          "popup": true,
-          "detail": "Pokémon Center Kyoto，適合購物及打卡。",
-          "maps": "https://www.google.com/maps/search/?api=1&query=Pokemon+Center+Kyoto"
         },
         {
           "time": "17:00",
           "icon": "🛒",
           "title": "AEON Mall KYOTO",
           "note": "購物  補給  晚餐前休息",
-          "who": "all",
+          "who": "team1",
           "popup": true,
           "detail": "AEON Mall KYOTO 可購物、補給日用品，亦適合第一日較輕鬆安排。",
           "maps": "https://www.google.com/maps/search/?api=1&query=AEON+Mall+KYOTO"
@@ -235,7 +245,7 @@
           "note": "已預約門票  11:00 至 11:30 入場",
           "who": "all",
           "popup": true,
-          "detail": "已預約 Nintendo Museum 入場時段：2026年5月24日（日）11:00 AM 至 11:30 AM（JST）。建議預早抵達及準備門票資料。",
+          "detail": "已預約 Nintendo Museum。請按門票入場時段到場，建議預早抵達及準備門票資料。",
           "maps": "https://www.google.com/maps/search/?api=1&query=Nintendo+Museum+Uji+Kyoto",
           "booked": true
         },
@@ -395,7 +405,17 @@
           "icon": "🛍️",
           "title": "自由行：心齋橋 / 難波",
           "note": "大阪購物散策",
-          "who": "all",
+          "who": "team1",
+          "popup": true,
+          "detail": "下午安排心齋橋、難波一帶自由行，購物及打卡。",
+          "maps": "https://www.google.com/maps/search/?api=1&query=Shinsaibashi+Namba+Osaka"
+        },
+        {
+          "time": "15:00",
+          "icon": "🛍️",
+          "title": "自由行：心齋橋 / 難波",
+          "note": "大阪購物散策",
+          "who": "team2",
           "popup": true,
           "detail": "下午安排心齋橋、難波一帶自由行，購物及打卡。",
           "maps": "https://www.google.com/maps/search/?api=1&query=Shinsaibashi+Namba+Osaka"
