@@ -58,15 +58,15 @@
         "airlineLogo": "assets/icon/cx_logo.png",
         "outbound": {
           "date": "23/5",
-          "flight": "待定",
+          "flight": "CX506",
           "route": "香港 至 大阪",
-          "time": "待定"
+          "time": "10:25 - 15:10"
         },
         "inbound": {
           "date": "28/5",
-          "flight": "待定",
+          "flight": "CX569",
           "route": "大阪 至 香港",
-          "time": "待定"
+          "time": "19:25 - 22:40"
         }
       }
     ],
@@ -123,7 +123,7 @@
           "icon": "🚆",
           "title": "前往京都",
           "note": "由關西機場出發往京都",
-          "who": "all",
+          "who": "team1",
           "popup": true,
           "detail": "抵達後前往京都市區，交通可按實際時間選擇 Haruka 特急或巴士。",
           "maps": "https://www.google.com/maps/search/?api=1&query=Kyoto+Station"
@@ -133,7 +133,7 @@
           "icon": "🛍️",
           "title": "錦市場",
           "note": "京都廚房  邊行邊食",
-          "who": "all",
+          "who": "team1",
           "popup": true,
           "detail": "錦市場有各式小食、豆腐、醃菜及串燒，適合作為第一日輕鬆行程。",
           "maps": "https://www.google.com/maps/search/?api=1&query=Nishiki+Market+Kyoto"
@@ -143,17 +143,37 @@
           "icon": "🎮",
           "title": "Pokémon Center Kyoto",
           "note": "京都 Pokémon Center",
-          "who": "all",
+          "who": "team1",
           "popup": true,
           "detail": "Pokémon Center Kyoto，適合購物及打卡。",
           "maps": "https://www.google.com/maps/search/?api=1&query=Pokemon+Center+Kyoto"
+        },
+        {
+          "time": "15:10",
+          "icon": "✈️",
+          "title": "Team Edan 抵達關西機場",
+          "note": "CX506  HKG-KIX  10:25 - 15:10",
+          "who": "team2",
+          "popup": true,
+          "detail": "Team Edan 乘搭 CX506 於 23/5 10:25 由香港起飛，15:10 抵達關西機場。抵達後按當日安排與大隊合流。",
+          "maps": "https://www.google.com/maps/search/?api=1&query=Kansai+International+Airport"
+        },
+        {
+          "time": "16:30",
+          "icon": "🚆",
+          "title": "前往京都",
+          "note": "由關西機場出發往京都",
+          "who": "team2",
+          "popup": true,
+          "detail": "抵達後前往京都市區，交通可按實際時間選擇 Haruka 特急或巴士。",
+          "maps": "https://www.google.com/maps/search/?api=1&query=Kyoto+Station"
         },
         {
           "time": "17:00",
           "icon": "🛒",
           "title": "AEON Mall KYOTO",
           "note": "購物  補給  晚餐前休息",
-          "who": "all",
+          "who": "team1",
           "popup": true,
           "detail": "AEON Mall KYOTO 可購物、補給日用品，亦適合第一日較輕鬆安排。",
           "maps": "https://www.google.com/maps/search/?api=1&query=AEON+Mall+KYOTO"
@@ -385,7 +405,17 @@
           "icon": "🛍️",
           "title": "自由行：心齋橋 / 難波",
           "note": "大阪購物散策",
-          "who": "all",
+          "who": "team1",
+          "popup": true,
+          "detail": "下午安排心齋橋、難波一帶自由行，購物及打卡。",
+          "maps": "https://www.google.com/maps/search/?api=1&query=Shinsaibashi+Namba+Osaka"
+        },
+        {
+          "time": "15:00",
+          "icon": "🛍️",
+          "title": "自由行：心齋橋 / 難波",
+          "note": "大阪購物散策",
+          "who": "team2",
           "popup": true,
           "detail": "下午安排心齋橋、難波一帶自由行，購物及打卡。",
           "maps": "https://www.google.com/maps/search/?api=1&query=Shinsaibashi+Namba+Osaka"
@@ -488,6 +518,16 @@
           "who": "team1",
           "popup": true,
           "detail": "Team Ian 乘搭 CX595 於 28/5 18:30 由大阪回港，21:40 抵達香港。另一 team 航班資料稍後補上。",
+          "maps": "https://www.google.com/maps/search/?api=1&query=Kansai+International+Airport"
+        },
+        {
+          "time": "19:25",
+          "icon": "✈️",
+          "title": "Team Edan 回程 CX569",
+          "note": "KIX-HKG  19:25 - 22:40",
+          "who": "team2",
+          "popup": true,
+          "detail": "Team Edan 乘搭 CX569 於 28/5 19:25 由大阪關西機場起飛，22:40 抵達香港。建議預留充足時間前往關西機場辦理登機。",
           "maps": "https://www.google.com/maps/search/?api=1&query=Kansai+International+Airport"
         }
       ]
