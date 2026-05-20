@@ -313,14 +313,18 @@
           ]
         },
         {
-          "time": "19:00",
+          "time": "19:30",
           "icon": "🍽️",
-          "title": "Dinner",
-          "note": "晚餐",
+          "title": "炭火串焼とりと 四条烏丸店",
+          "note": "已預約  串燒晚餐",
           "who": "all",
           "popup": true,
-          "detail": "第一晚晚餐，餐廳可再決定。",
-          "maps": ""
+          "detail": "Day 1 晚餐已預約炭火串焼とりと 四条烏丸店。建議按 booking 時間準時到達，作為抵達京都後的輕鬆串燒晚餐。",
+          "maps": "https://maps.app.goo.gl/favccBogyy6thvew5",
+          "booked": true,
+          "gallery": [
+            "assets/gallery/default_food.jpg"
+          ]
         }
       ]
     },
@@ -427,27 +431,31 @@
           ]
         },
         {
-          "time": "19:00",
+          "time": "18:30",
           "icon": "🚆",
           "title": "返回京都",
-          "note": "to Kyoto",
+          "note": "返回晚餐地點",
           "who": "all",
           "popup": true,
-          "detail": "由伏見稻荷一帶返回京都市區。",
+          "detail": "由伏見稻荷一帶返回晚餐地點，預留交通及步行時間。",
           "maps": "https://www.google.com/maps/search/?api=1&query=Kyoto+Station",
           "gallery": [
             "assets/gallery/kyoto_station.jpg"
           ]
         },
         {
-          "time": "20:00",
+          "time": "19:00",
           "icon": "🍽️",
-          "title": "Dinner",
-          "note": "晚餐",
+          "title": "炭焼鰻 土井活鰻",
+          "note": "已預約  鰻魚晚餐",
           "who": "all",
           "popup": true,
-          "detail": "晚餐，餐廳可再決定。",
-          "maps": ""
+          "detail": "Day 2 晚餐已預約炭焼鰻 土井活鰻。完成伏見稻荷行程後前往，建議預留交通時間及準時到達。",
+          "maps": "https://maps.app.goo.gl/6WRg1gPa91CGdBqa7",
+          "booked": true,
+          "gallery": [
+            "assets/gallery/default_food.jpg"
+          ]
         }
       ]
     },
@@ -513,23 +521,17 @@
         },
         {
           "time": "18:00",
-          "icon": "🚆",
-          "title": "Travel",
-          "note": "返回晚餐地點",
+          "icon": "🍜",
+          "title": "天下一品 総本店",
+          "note": "京都代表拉麵  排隊機會大",
           "who": "all",
           "popup": true,
-          "detail": "由銀閣寺一帶返回市區晚餐。",
-          "maps": "https://www.google.com/maps/search/?api=1&query=Kyoto+restaurants"
-        },
-        {
-          "time": "19:00",
-          "icon": "🍽️",
-          "title": "Dinner",
-          "note": "晚餐",
-          "who": "all",
-          "popup": true,
-          "detail": "晚餐，餐廳可再決定。",
-          "maps": ""
+          "detail": "Day 3 晚餐安排天下一品 総本店。此店是天下一品總本店，排隊機會較大，建議預留等候時間；如現場人龍太長，可按當日情況轉後備選擇。",
+          "maps": "https://maps.app.goo.gl/dT4zWjnRvvZLHP7t7",
+          "dianping": "https://tabelog.com/kyoto/A2601/A260302/26000716/",
+          "gallery": [
+            "assets/gallery/default_food.jpg"
+          ]
         }
       ]
     },
