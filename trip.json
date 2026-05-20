@@ -822,14 +822,54 @@
   ],
   "snacks": {
     "title": "小食清單",
-    "subtitle": "路過即食  不設時間  點擊可開啟地圖",
+    "subtitle": "按地區同推薦分類快速篩選  先顯示必食  點擊可開啟詳情及地圖",
     "items": [
       {
-        "title": "錦市場",
-        "area": "京都",
+        "title": "Konnamonja こんなもんじゃ",
+        "area": "京都 錦市場",
+        "category": "豆乳甜品",
+        "priority": "must",
+        "mealType": "dessert",
+        "routeFit": "day1",
+        "tags": [
+          "京都",
+          "錦市場",
+          "甜品",
+          "順路"
+        ],
+        "priceLevel": "¥",
+        "queueLevel": "medium",
+        "bestTime": "上午至下午",
+        "sortOrder": 10,
+        "must": "豆乳甜甜圈、豆乳雪糕、湯葉",
+        "note": "Day 1 錦市場順路，京都感強，適合多人分食。",
+        "opening": "上午至下午",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Konnamonja+Kyoto+Nishiki+Market",
+        "gallery": [
+          "assets/gallery/nishiki_market_01.jpg",
+          "assets/gallery/nishiki_market_02.jpg",
+          "assets/gallery/nishiki_market_03.jpg"
+        ]
+      },
+      {
+        "title": "錦市場總覽",
+        "area": "京都 錦市場",
         "category": "街頭小食",
-        "must": "豆乳甜甜圈、玉子燒、漬物、宇治茶",
-        "note": "京都廚房，適合慢慢行；市場內留意部分店舖不建議邊行邊食。",
+        "priority": "must",
+        "mealType": "snack",
+        "routeFit": "day1",
+        "tags": [
+          "京都",
+          "錦市場",
+          "小食",
+          "順路"
+        ],
+        "priceLevel": "¥¥",
+        "queueLevel": "medium",
+        "bestTime": "上午至下午",
+        "sortOrder": 20,
+        "must": "玉子燒、漬物、宇治茶、湯葉、Tako tamago",
+        "note": "京都廚房，適合慢慢行；留意部分店舖不建議邊行邊食。",
         "opening": "多數店舖約 09:00-18:00",
         "maps": "https://www.google.com/maps/search/?api=1&query=Nishiki+Market+Kyoto",
         "gallery": [
@@ -839,37 +879,152 @@
         ]
       },
       {
-        "title": "豆乳甜甜圈（錦市場）",
-        "area": "京都 錦市場",
-        "category": "甜點",
-        "must": "豆乳甜甜圈",
-        "note": "錦市場經典小甜點，適合邊行程邊買返袋分食。",
-        "opening": "視店舖而定",
-        "maps": "https://www.google.com/maps/search/?api=1&query=Nishiki+Market+soy+milk+doughnut+Kyoto",
+        "title": "Gion Tsujiri / 茶寮都路里",
+        "area": "京都 祇園 / 四條",
+        "category": "抹茶甜品",
+        "priority": "route",
+        "mealType": "dessert",
+        "routeFit": "day3",
+        "tags": [
+          "京都",
+          "祇園",
+          "四條",
+          "抹茶",
+          "甜品"
+        ],
+        "priceLevel": "¥¥",
+        "queueLevel": "medium",
+        "bestTime": "下午茶",
+        "sortOrder": 110,
+        "must": "抹茶 parfait、抹茶雪糕、抹茶飲品",
+        "note": "Day 3 市中心或祇園附近可作甜品休息點。",
+        "opening": "下午茶",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Gion+Tsujiri+Kyoto",
         "gallery": [
-          "assets/gallery/nishiki_market_01.jpg"
+          "assets/gallery/default_cafe.jpg"
         ]
       },
       {
-        "title": "宇治抹茶甜品",
+        "title": "Tenkaippin 天下一品",
+        "area": "京都",
+        "category": "拉麵",
+        "priority": "backup",
+        "mealType": "meal",
+        "routeFit": "any",
+        "tags": [
+          "京都",
+          "拉麵",
+          "後備晚餐"
+        ],
+        "priceLevel": "¥¥",
+        "queueLevel": "medium",
+        "bestTime": "晚餐 / 宵夜",
+        "sortOrder": 210,
+        "must": "こってり拉麵",
+        "note": "京都代表拉麵之一，晚餐未定時可作後備。",
+        "opening": "晚餐 / 宵夜",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Tenkaippin+Kyoto",
+        "gallery": [
+          "assets/gallery/default_food.jpg"
+        ]
+      },
+      {
+        "title": "中村藤吉 宇治",
         "area": "宇治",
-        "category": "甜品 / 茶",
-        "must": "抹茶 parfait、抹茶雪糕、茶蕎麥",
-        "note": "Day 2 宇治路線順路，可作下午茶或 Museum 前後休息。",
-        "opening": "視店舖而定",
-        "maps": "https://www.google.com/maps/search/?api=1&query=Uji+matcha+dessert",
+        "category": "抹茶甜品",
+        "priority": "must",
+        "mealType": "dessert",
+        "routeFit": "day2",
+        "tags": [
+          "宇治",
+          "抹茶",
+          "甜品",
+          "必食"
+        ],
+        "priceLevel": "¥¥",
+        "queueLevel": "high",
+        "bestTime": "上午 / 下午茶",
+        "sortOrder": 30,
+        "must": "抹茶 jelly、抹茶 parfait、抹茶蕎麥",
+        "note": "Day 2 已安排宇治，建議保留為核心甜品點。",
+        "opening": "上午 / 下午茶",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Nakamura+Tokichi+Uji",
         "gallery": [
           "assets/gallery/byodointea_01.jpg"
         ]
       },
       {
-        "title": "章魚燒（道頓堀）",
+        "title": "伊藤久右衛門 宇治",
+        "area": "宇治",
+        "category": "抹茶甜品 / 茶手信",
+        "priority": "route",
+        "mealType": "dessert",
+        "routeFit": "day2",
+        "tags": [
+          "宇治",
+          "抹茶",
+          "甜品",
+          "茶手信"
+        ],
+        "priceLevel": "¥¥",
+        "queueLevel": "medium",
+        "bestTime": "午餐 / 下午茶",
+        "sortOrder": 120,
+        "must": "抹茶蕎麥、抹茶甜品、茶手信",
+        "note": "中村藤吉排隊太長時的實用替代。",
+        "opening": "午餐 / 下午茶",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Itoh+Kyuemon+Uji",
+        "gallery": [
+          "assets/gallery/byodointea_01.jpg",
+          "assets/gallery/byodoin_01.jpg"
+        ]
+      },
+      {
+        "title": "辻利 宇治本店",
+        "area": "宇治",
+        "category": "抹茶甜品",
+        "priority": "route",
+        "mealType": "dessert",
+        "routeFit": "day2",
+        "tags": [
+          "宇治",
+          "抹茶",
+          "甜品",
+          "Museum 前後"
+        ],
+        "priceLevel": "¥¥",
+        "queueLevel": "medium",
+        "bestTime": "下午茶",
+        "sortOrder": 130,
+        "must": "抹茶甜品、抹茶飲品",
+        "note": "宇治抹茶後備選擇，適合 Museum 前後休息。",
+        "opening": "下午茶",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Tsujiri+Uji+Main+Store",
+        "gallery": [
+          "assets/gallery/default_cafe.jpg"
+        ]
+      },
+      {
+        "title": "Takoyaki Doraku Wanaka 道頓堀店",
         "area": "大阪 道頓堀",
-        "category": "大阪名物",
+        "category": "章魚燒",
+        "priority": "must",
+        "mealType": "snack",
+        "routeFit": "day4",
+        "tags": [
+          "大阪",
+          "道頓堀",
+          "章魚燒",
+          "必食"
+        ],
+        "priceLevel": "¥",
+        "queueLevel": "high",
+        "bestTime": "下午至晚上",
+        "sortOrder": 40,
         "must": "章魚燒",
-        "note": "大阪代表小食，適合夜晚行道頓堀時順手試。",
-        "opening": "視店舖而定",
-        "maps": "https://www.google.com/maps/search/?api=1&query=takoyaki+Dotonbori+Osaka",
+        "note": "大阪代表小食，Day 4 心齋橋 / 難波路線順路。",
+        "opening": "下午至晚上",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Takoyaki+Doraku+Wanaka+Dotonbori",
         "gallery": [
           "assets/gallery/dotonbori_01.webp",
           "assets/gallery/dotonbori_02.jpg",
@@ -877,87 +1032,255 @@
         ]
       },
       {
-        "title": "大阪燒 / Okonomiyaki",
-        "area": "大阪 難波 / 道頓堀",
+        "title": "Creo Ru 道頓堀",
+        "area": "大阪 道頓堀",
         "category": "大阪名物",
-        "must": "豬肉大阪燒、海鮮大阪燒",
-        "note": "如果晚餐未定，可以作大阪 casual dinner 選項。",
-        "opening": "視店舖而定",
-        "maps": "https://www.google.com/maps/search/?api=1&query=okonomiyaki+Dotonbori+Osaka",
+        "priority": "route",
+        "mealType": "meal",
+        "routeFit": "day4",
+        "tags": [
+          "大阪",
+          "道頓堀",
+          "大阪燒",
+          "串炸"
+        ],
+        "priceLevel": "¥¥",
+        "queueLevel": "medium",
+        "bestTime": "晚餐",
+        "sortOrder": 140,
+        "must": "章魚燒、大阪燒、串炸",
+        "note": "一間可以食到多款大阪名物，適合多人同行。",
+        "opening": "晚餐",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Creo+Ru+Dotonbori",
         "gallery": [
-          "assets/gallery/default_food.jpg"
+          "assets/gallery/dotonbori.jpg"
         ]
       },
       {
-        "title": "串炸（新世界 / 難波）",
-        "area": "大阪",
-        "category": "大阪名物",
-        "must": "串炸、牛筋土手燒",
-        "note": "炸物路線，適合多人分食；留意店舖規則同排隊情況。",
-        "opening": "視店舖而定",
-        "maps": "https://www.google.com/maps/search/?api=1&query=kushikatsu+Osaka+Shinsekai",
+        "title": "Mizuno 美津の",
+        "area": "大阪 道頓堀",
+        "category": "大阪燒",
+        "priority": "backup",
+        "mealType": "meal",
+        "routeFit": "day4",
+        "tags": [
+          "大阪",
+          "道頓堀",
+          "大阪燒",
+          "後備晚餐"
+        ],
+        "priceLevel": "¥¥",
+        "queueLevel": "high",
+        "bestTime": "午餐 / 晚餐",
+        "sortOrder": 220,
+        "must": "山芋燒、大阪燒",
+        "note": "如果大阪燒想由小食升級做正式晚餐，可以考慮。",
+        "opening": "午餐 / 晚餐",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Mizuno+Okonomiyaki+Osaka",
         "gallery": [
-          "assets/gallery/default_food.jpg"
+          "assets/gallery/dotonbori.jpg"
+        ]
+      },
+      {
+        "title": "Kushikatsu Daruma 串炸だるま",
+        "area": "大阪 難波 / 道頓堀 / 新世界",
+        "category": "串炸",
+        "priority": "must",
+        "mealType": "meal",
+        "routeFit": "day4",
+        "tags": [
+          "大阪",
+          "難波",
+          "串炸",
+          "宵夜"
+        ],
+        "priceLevel": "¥¥",
+        "queueLevel": "medium",
+        "bestTime": "晚餐 / 宵夜",
+        "sortOrder": 50,
+        "must": "串炸、牛筋土手燒",
+        "note": "大阪串炸代表，適合 casual dinner 或宵夜。",
+        "opening": "晚餐 / 宵夜",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Kushikatsu+Daruma+Namba+Osaka",
+        "gallery": [
+          "assets/gallery/dotonbori_02.jpg"
         ]
       },
       {
         "title": "551 蓬萊",
         "area": "大阪 / 關西機場",
-        "category": "肉包 / 手信",
+        "category": "手信 / 熱食",
+        "priority": "souvenir",
+        "mealType": "souvenir",
+        "routeFit": "day6",
+        "tags": [
+          "大阪",
+          "關西機場",
+          "手信",
+          "豬肉包"
+        ],
+        "priceLevel": "¥",
+        "queueLevel": "medium",
+        "bestTime": "回程前",
+        "sortOrder": 310,
         "must": "豬肉包、燒賣",
-        "note": "大阪經典手信，離開前可以考慮買返酒店或機場食。",
-        "opening": "視分店而定",
+        "note": "大阪經典手信，可於難波、車站或機場補貨。",
+        "opening": "回程前",
         "maps": "https://www.google.com/maps/search/?api=1&query=551+Horai+Osaka",
         "gallery": [
           "assets/gallery/default_food.jpg"
         ]
       },
       {
-        "title": "木津市場早市小食",
+        "title": "木津市場早餐",
         "area": "大阪 木津市場",
-        "category": "市場 / 海鮮",
+        "category": "市場早餐",
+        "priority": "must",
+        "mealType": "meal",
+        "routeFit": "day6",
+        "tags": [
+          "大阪",
+          "木津市場",
+          "早餐",
+          "海鮮"
+        ],
+        "priceLevel": "¥¥",
+        "queueLevel": "medium",
+        "bestTime": "早餐",
+        "sortOrder": 60,
         "must": "海鮮丼、壽司、玉子燒",
-        "note": "Day 6 早上已安排木津市場，可以按現場狀況食早餐。",
-        "opening": "清晨至中午，視店舖而定",
+        "note": "Day 6 已安排木津市場，適合作早餐主項。",
+        "opening": "早餐",
         "maps": "https://maps.app.goo.gl/gHhYGkgWEd9Cbh4Y7",
         "gallery": [
           "assets/gallery/market_01.jpg"
         ]
       },
       {
-        "title": "南京町豬肉包 / 小籠包",
+        "title": "老祥記 Roushouki",
         "area": "神戶 南京町",
-        "category": "中華街小食",
-        "must": "豬肉包、小籠包、北京鴨卷",
-        "note": "Day 5 神戶路線順路，適合下午當作輕食。",
-        "opening": "視店舖而定",
-        "maps": "https://www.google.com/maps/search/?api=1&query=Nankinmachi+Kobe+butaman",
+        "category": "豬肉包",
+        "priority": "must",
+        "mealType": "snack",
+        "routeFit": "day5",
+        "tags": [
+          "神戶",
+          "南京町",
+          "豬肉包",
+          "必食"
+        ],
+        "priceLevel": "¥",
+        "queueLevel": "high",
+        "bestTime": "下午",
+        "sortOrder": 70,
+        "must": "豬肉包",
+        "note": "南京町代表小食，Day 5 元町 / 南京町散策時順路。",
+        "opening": "下午",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Roushouki+Kobe+Nankinmachi",
         "gallery": [
           "assets/gallery/nankinmachi.jpg"
         ]
       },
       {
-        "title": "神戶布甸 / 甜品",
-        "area": "神戶 Harborland / 南京町",
-        "category": "甜品 / 手信",
-        "must": "神戶布甸、牛奶甜品",
-        "note": "神戶甜品手信路線，適合晚餐後或買返酒店。",
-        "opening": "視店舖而定",
-        "maps": "https://www.google.com/maps/search/?api=1&query=Kobe+pudding+Harborland",
+        "title": "元祖ぎょうざ苑",
+        "area": "神戶 南京町",
+        "category": "餃子",
+        "priority": "route",
+        "mealType": "snack",
+        "routeFit": "day5",
+        "tags": [
+          "神戶",
+          "南京町",
+          "餃子",
+          "味噌醬"
+        ],
+        "priceLevel": "¥¥",
+        "queueLevel": "medium",
+        "bestTime": "下午 / 晚餐前",
+        "sortOrder": 150,
+        "must": "味噌醬餃子",
+        "note": "想坐低食少少時可考慮，比純街邊小食更穩陣。",
+        "opening": "下午 / 晚餐前",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Ganso+Gyozaen+Kobe",
         "gallery": [
-          "assets/gallery/kobe_harborland.jpg"
+          "assets/gallery/nankinmachi.jpg"
         ]
       },
       {
-        "title": "嵐山湯豆腐",
-        "area": "京都 嵐山",
-        "category": "京料理",
-        "must": "湯豆腐定食",
-        "note": "如果之後臨時加嵐山，可以作溫和一點的京都料理選項。",
-        "opening": "視店舖而定",
-        "maps": "https://www.google.com/maps/search/?api=1&query=yudofu+Arashiyama+Kyoto",
+        "title": "神戶牛可樂餅 / 牛肉小食",
+        "area": "神戶 南京町 / 元町",
+        "category": "神戶牛小食",
+        "priority": "route",
+        "mealType": "snack",
+        "routeFit": "day5",
+        "tags": [
+          "神戶",
+          "元町",
+          "神戶牛",
+          "可樂餅"
+        ],
+        "priceLevel": "¥",
+        "queueLevel": "medium",
+        "bestTime": "下午",
+        "sortOrder": 160,
+        "must": "神戶牛可樂餅、牛肉串",
+        "note": "比正式神戶牛餐便宜，適合一日遊小食定位。",
+        "opening": "下午",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Kobe+beef+croquette+Motomachi+Kobe",
         "gallery": [
-          "assets/gallery/default_food.jpg"
+          "assets/gallery/nankinmachi.jpg"
+        ]
+      },
+      {
+        "title": "Kobe Milk",
+        "area": "神戶 南京町",
+        "category": "牛奶甜品",
+        "priority": "must",
+        "mealType": "dessert",
+        "routeFit": "day5",
+        "tags": [
+          "神戶",
+          "南京町",
+          "甜品",
+          "生日"
+        ],
+        "priceLevel": "¥",
+        "queueLevel": "medium",
+        "bestTime": "下午",
+        "sortOrder": 80,
+        "must": "神戶牛奶布甸、牛奶甜品",
+        "note": "食完南京町鹹點後補甜品，亦配合生日旅行感覺。",
+        "opening": "下午",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Kobe+Milk+Nankinmachi",
+        "gallery": [
+          "assets/gallery/default_cafe.jpg"
+        ]
+      },
+      {
+        "title": "Harborland / MOSAIC 甜品 Cafe",
+        "area": "神戶 Harborland / MOSAIC",
+        "category": "甜品 / 咖啡",
+        "priority": "route",
+        "mealType": "dessert",
+        "routeFit": "day5",
+        "tags": [
+          "神戶",
+          "Harborland",
+          "MOSAIC",
+          "甜品",
+          "夜景"
+        ],
+        "priceLevel": "¥¥",
+        "queueLevel": "low",
+        "bestTime": "晚餐後",
+        "sortOrder": 170,
+        "must": "布甸、雪糕、咖啡",
+        "note": "Day 5 晚餐後或等夜景時休息用。",
+        "opening": "晚餐後",
+        "maps": "https://www.google.com/maps/search/?api=1&query=Kobe+Harborland+MOSAIC+cafe",
+        "gallery": [
+          "assets/gallery/kobe_harborland.jpg",
+          "assets/gallery/kobe_port_tower.jpg"
         ]
       }
     ]
