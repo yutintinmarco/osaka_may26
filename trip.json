@@ -323,7 +323,9 @@
           "maps": "https://maps.app.goo.gl/favccBogyy6thvew5",
           "booked": true,
           "gallery": [
-            "assets/gallery/default_food.jpg"
+            "assets/gallery/sumibi_00.webp",
+            "assets/gallery/sumibi_01.webp",
+            "assets/gallery/sumibi_02.webp"
           ]
         },
         {
@@ -336,7 +338,9 @@
           "who": "all",
           "popup": true,
           "gallery": [
-            "assets/gallery/default_trip.jpg"
+            "assets/gallery/daiwa_01.webp",
+            "assets/gallery/daiwa_02.webp",
+            "assets/gallery/daiwa_03.webp"
           ]
         }
       ]
@@ -416,8 +420,7 @@
           "gallery": [
             "assets/gallery/nintendo_museum_01.jpg",
             "assets/gallery/nintendo_museum_02.jpg",
-            "assets/gallery/nintendo_museum_03.jpg",
-            "assets/gallery/nintendo_museum_04.jpg"
+            "assets/gallery/nintendo_museum_03.jpg"
           ]
         },
         {
@@ -444,7 +447,23 @@
           ]
         },
         {
-          "time": "18:30",
+          "time": "19:00",
+          "icon": "🍽️",
+          "title": "炭焼鰻 土井活鰻",
+          "note": "已預約  鰻魚晚餐",
+          "who": "all",
+          "popup": true,
+          "detail": "Day 2 晚餐已預約炭焼鰻 土井活鰻。完成伏見稻荷行程後前往，建議預留交通時間及準時到達。",
+          "maps": "https://maps.app.goo.gl/6WRg1gPa91CGdBqa7",
+          "booked": true,
+          "gallery": [
+            "assets/gallery/eel_01.webp",
+            "assets/gallery/eel_02.webp",
+            "assets/gallery/eel_03.webp"
+          ]
+        },
+        {
+          "time": "20:00",
           "icon": "🚆",
           "title": "返回京都",
           "note": "返回晚餐地點",
@@ -457,21 +476,7 @@
           ]
         },
         {
-          "time": "19:00",
-          "icon": "🍽️",
-          "title": "炭焼鰻 土井活鰻",
-          "note": "已預約  鰻魚晚餐",
-          "who": "all",
-          "popup": true,
-          "detail": "Day 2 晚餐已預約炭焼鰻 土井活鰻。完成伏見稻荷行程後前往，建議預留交通時間及準時到達。",
-          "maps": "https://maps.app.goo.gl/6WRg1gPa91CGdBqa7",
-          "booked": true,
-          "gallery": [
-            "assets/gallery/default_food.jpg"
-          ]
-        },
-        {
-          "time": "21:00",
+          "time": "21:30",
           "icon": "🏨",
           "title": "返回京都酒店休息",
           "note": "Daiwa Roynet Hotel Kyoto Shijo Karasuma",
@@ -480,7 +485,9 @@
           "who": "all",
           "popup": true,
           "gallery": [
-            "assets/gallery/default_trip.jpg"
+            "assets/gallery/daiwa_01.webp",
+            "assets/gallery/daiwa_02.webp",
+            "assets/gallery/daiwa_03.webp"
           ]
         }
       ]
@@ -569,7 +576,9 @@
           "who": "all",
           "popup": true,
           "gallery": [
-            "assets/gallery/default_trip.jpg"
+            "assets/gallery/daiwa_01.webp",
+            "assets/gallery/daiwa_02.webp",
+            "assets/gallery/daiwa_03.webp"
           ]
         }
       ]
@@ -669,7 +678,10 @@
           "who": "all",
           "popup": true,
           "gallery": [
-            "assets/gallery/default_trip.jpg"
+            "assets/gallery/apartment_01.webp",
+            "assets/gallery/apartment_02.webp",
+            "assets/gallery/apartment_03.webp",
+            "assets/gallery/apartment_04.webp"
           ]
         }
       ],
@@ -806,7 +818,10 @@
           "who": "all",
           "popup": true,
           "gallery": [
-            "assets/gallery/default_trip.jpg"
+            "assets/gallery/apartment_01.webp",
+            "assets/gallery/apartment_02.webp",
+            "assets/gallery/apartment_03.webp",
+            "assets/gallery/apartment_04.webp"
           ]
         }
       ]
