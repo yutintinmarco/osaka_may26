@@ -325,6 +325,19 @@
           "gallery": [
             "assets/gallery/default_food.jpg"
           ]
+        },
+        {
+          "time": "21:30",
+          "icon": "🏨",
+          "title": "返回京都酒店休息",
+          "note": "Daiwa Roynet Hotel Kyoto Shijo Karasuma",
+          "detail": "晚餐後返回京都酒店休息。時間可按當日體力及晚餐實際情況調整。",
+          "maps": "https://www.google.com/maps/search/?api=1&query=Daiwa+Roynet+Hotel+Kyoto+Shijo+Karasuma",
+          "who": "all",
+          "popup": true,
+          "gallery": [
+            "assets/gallery/default_trip.jpg"
+          ]
         }
       ]
     },
@@ -456,6 +469,19 @@
           "gallery": [
             "assets/gallery/default_food.jpg"
           ]
+        },
+        {
+          "time": "21:00",
+          "icon": "🏨",
+          "title": "返回京都酒店休息",
+          "note": "Daiwa Roynet Hotel Kyoto Shijo Karasuma",
+          "detail": "晚餐後返回京都酒店休息。翌日仍有京都市內行程，建議不要太夜。",
+          "maps": "https://www.google.com/maps/search/?api=1&query=Daiwa+Roynet+Hotel+Kyoto+Shijo+Karasuma",
+          "who": "all",
+          "popup": true,
+          "gallery": [
+            "assets/gallery/default_trip.jpg"
+          ]
         }
       ]
     },
@@ -531,6 +557,19 @@
           "dianping": "https://tabelog.com/kyoto/A2601/A260302/26000716/",
           "gallery": [
             "assets/gallery/default_food.jpg"
+          ]
+        },
+        {
+          "time": "20:30",
+          "icon": "🏨",
+          "title": "返回京都酒店休息",
+          "note": "Daiwa Roynet Hotel Kyoto Shijo Karasuma",
+          "detail": "天下一品總本店晚餐後返回京都酒店休息。若排隊時間較長，可按實際情況延後。",
+          "maps": "https://www.google.com/maps/search/?api=1&query=Daiwa+Roynet+Hotel+Kyoto+Shijo+Karasuma",
+          "who": "all",
+          "popup": true,
+          "gallery": [
+            "assets/gallery/default_trip.jpg"
           ]
         }
       ]
@@ -619,6 +658,19 @@
           "popup": true,
           "detail": "大阪晚餐，餐廳可再決定。",
           "maps": ""
+        },
+        {
+          "time": "21:30",
+          "icon": "🏨",
+          "title": "返回大阪住宿休息",
+          "note": "Apartment Hotel 11 Shinimamiya 1",
+          "detail": "大阪晚餐或購物後返回住宿休息。",
+          "maps": "https://www.google.com/maps/search/?api=1&query=Apartment+Hotel+11+Shinimamiya+1+Osaka",
+          "who": "all",
+          "popup": true,
+          "gallery": [
+            "assets/gallery/default_trip.jpg"
+          ]
         }
       ],
       "cities": [
@@ -742,6 +794,19 @@
           "maps": "https://www.google.com/maps/search/?api=1&query=Osaka+Station",
           "gallery": [
             "assets/gallery/default_transport.jpg"
+          ]
+        },
+        {
+          "time": "22:00",
+          "icon": "🏨",
+          "title": "返回大阪住宿休息",
+          "note": "神戶返回大阪後休息",
+          "detail": "由神戶返回大阪後回住宿休息，為翌日回程預留體力及整理行李時間。",
+          "maps": "https://www.google.com/maps/search/?api=1&query=Apartment+Hotel+11+Shinimamiya+1+Osaka",
+          "who": "all",
+          "popup": true,
+          "gallery": [
+            "assets/gallery/default_trip.jpg"
           ]
         }
       ]
