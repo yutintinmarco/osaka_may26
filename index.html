@@ -243,8 +243,46 @@
 .modal-close-btn { padding: 6px 14px; border-radius: 999px; border: 1px solid #ddd; background: #f9f9fb; font-size: calc(12px * var(--font-scale)); }
 
 /* Snacks */
+.snack-filter-panel { margin: 10px 0 12px 0; }
+.snack-filter-row { display: flex; gap: 7px; overflow-x: auto; padding: 2px 0 7px 0; -webkit-overflow-scrolling: touch; }
+.snack-filter-row + .snack-filter-row { margin-top: 2px; }
+.snack-filter-btn { flex: 0 0 auto; border: 1px solid rgba(0,0,0,0.12); background: rgba(255,255,255,0.62); color: #555; border-radius: 999px; padding: 6px 11px; font-size: calc(11px * var(--font-scale)); font-weight: 700; white-space: nowrap; }
+.snack-filter-btn.active { background: #111; color: #fff; border-color: #111; }
+.snack-filter-btn.priority-must.active { background: #d85c8a; border-color: #d85c8a; }
+.snack-filter-btn.priority-route.active { background: #f4d7e2; border-color: #e7b6ca; color: #9a2f59; }
+.snack-filter-btn.priority-backup.active { background: #e7f0ff; border-color: #bdd5ff; color: #2f5f9a; }
+.snack-filter-btn.priority-souvenir.active { background: #f6ead2; border-color: #e5ca93; color: #8a5a12; }
+.snack-empty { font-size: calc(12px * var(--font-scale)); color: #666; padding: 14px 8px; text-align: center; }
+.snack-item { padding: 11px 11px; display: block; }
 .snack-item .time { width: 0; display: none; }
-.snack-item { padding: 10px 10px; }
+.snack-card-top { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; margin-bottom: 6px; }
+.snack-badge { display: inline-flex; align-items: center; border-radius: 999px; padding: 3px 9px; font-size: calc(10px * var(--font-scale)); font-weight: 800; line-height: 1.2; }
+.snack-badge.must { background: #d85c8a; color: #fff; }
+.snack-badge.route { background: #f4d7e2; color: #9a2f59; }
+.snack-badge.backup { background: #e7f0ff; color: #2f5f9a; }
+.snack-badge.souvenir { background: #f6ead2; color: #8a5a12; }
+.snack-area-badge { display: inline-flex; align-items: center; border-radius: 999px; padding: 3px 9px; font-size: calc(10px * var(--font-scale)); font-weight: 700; background: rgba(255,255,255,0.56); color: #555; border: 1px solid rgba(0,0,0,0.08); }
+.snack-title-row { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; margin-bottom: 5px; }
+.snack-title { font-size: calc(14px * var(--font-scale)); font-weight: 800; color: #111; line-height: 1.35; flex: 1; }
+.snack-route { font-size: calc(10px * var(--font-scale)); color: #777; font-weight: 700; white-space: nowrap; margin-top: 2px; }
+.snack-line { font-size: calc(11px * var(--font-scale)); color: #555; line-height: 1.45; margin-top: 3px; }
+.snack-line strong { color: #333; }
+.snack-meta-row { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 8px; align-items: center; }
+.snack-meta-pill { font-size: calc(10px * var(--font-scale)); padding: 3px 8px; border-radius: 999px; background: rgba(255,255,255,0.52); border: 1px solid rgba(0,0,0,0.08); color: #555; font-weight: 700; }
+.snack-map-btn { margin-left: auto; border: none; border-radius: 999px; padding: 5px 10px; background: #111; color: #fff; font-size: calc(10px * var(--font-scale)); font-weight: 800; }
+.snack-tags { display: flex; gap: 5px; flex-wrap: wrap; margin-top: 7px; }
+.snack-tag { font-size: calc(9px * var(--font-scale)); padding: 2px 7px; border-radius: 999px; background: rgba(0,0,0,0.055); color: #666; font-weight: 700; }
+html.theme-dark .snack-filter-btn { background: rgba(36,36,44,0.70); border-color: rgba(255,255,255,0.12); color: rgba(220,220,228,0.78); }
+html.theme-dark .snack-filter-btn.active { background: rgba(230,230,238,0.90); border-color: rgba(230,230,238,0.90); color: #111; }
+html.theme-dark .snack-item { background: rgba(24,24,32,0.58); border-color: rgba(255,255,255,0.09); }
+html.theme-dark .snack-title { color: #f0f0f2; }
+html.theme-dark .snack-line { color: rgba(190,190,205,0.80); }
+html.theme-dark .snack-line strong { color: rgba(235,235,242,0.92); }
+html.theme-dark .snack-area-badge,
+html.theme-dark .snack-meta-pill { background: rgba(255,255,255,0.07); border-color: rgba(255,255,255,0.10); color: rgba(210,210,224,0.82); }
+html.theme-dark .snack-route { color: rgba(180,180,198,0.72); }
+html.theme-dark .snack-tag { background: rgba(255,255,255,0.08); color: rgba(190,190,205,0.78); }
+html.theme-dark .snack-empty { color: rgba(190,190,205,0.75); }
 
 /* FAB */
 .fab-wrap { position: fixed; right: 16px; bottom: calc(16px + env(safe-area-inset-bottom)); z-index: 1400; display: flex; align-items: flex-end; }
@@ -542,13 +580,13 @@ body.expenses-view-active .container {
   </style>
             <link rel="apple-touch-icon" href="assets/icon/trip_icon.png">
   <link rel="icon" type="image/png" href="assets/icon/trip_icon.png">
-  <link rel="manifest" href="manifest.json?v=6.8.2">
+  <link rel="manifest" href="manifest.json?v=6.9.0">
   <meta name="theme-color" content="#f5f5f7">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="apple-mobile-web-app-title" content="關嘉露西生日之旅">
-  <link rel="stylesheet" href="assets/css/expenses.css?v=6.8.2">
+  <link rel="stylesheet" href="assets/css/expenses.css?v=6.9.0">
 </head>
 <body>
 <div class="bg-fixed"></div>
@@ -622,7 +660,7 @@ body.expenses-view-active .container {
   <div id="expenses-root"></div>
 </div>
 <div class="footer-note" id="footer-note"></div>
-<div class="app-version-note" id="app-version-note">v6.8.2</div>
+<div class="app-version-note" id="app-version-note">v6.9.0</div>
 
 
   </div>
@@ -965,32 +1003,165 @@ function updateChip(data){
 }
 
 // Snacks
+function getPriorityLabel(priority) {
+  const labels = { must: "必食", route: "順路", backup: "後備晚餐", souvenir: "手信" };
+  return labels[priority] || "順路";
+}
+function getMealTypeLabel(mealType) {
+  const labels = { snack: "小食", dessert: "甜品", meal: "正餐", drink: "飲品", souvenir: "手信" };
+  return labels[mealType] || "小食";
+}
+function getQueueLabel(queueLevel) {
+  const labels = { low: "少排隊", medium: "可能要排", high: "熱門排隊" };
+  return labels[queueLevel] || "";
+}
+function getSnackAreaGroup(area){
+  const a=String(area||"");
+  if(a.includes("宇治"))return "宇治";
+  if(a.includes("京都"))return "京都";
+  if(a.includes("大阪"))return "大阪";
+  if(a.includes("神戶"))return "神戶";
+  return "其他";
+}
+function normalizeSnackItem(item){
+  return {
+    ...item,
+    priority: item.priority || "route",
+    mealType: item.mealType || "snack",
+    routeFit: item.routeFit || "any",
+    tags: Array.isArray(item.tags) ? item.tags : [],
+    priceLevel: item.priceLevel || "",
+    queueLevel: item.queueLevel || "",
+    bestTime: item.bestTime || item.opening || "",
+    sortOrder: Number.isFinite(Number(item.sortOrder)) ? Number(item.sortOrder) : 999
+  };
+}
 function renderSnacks(data){
   const listEl=document.getElementById("snacks-list");if(!listEl)return;
   const snacks=data.snacks;if(!snacks?.items?.length)return;
   document.getElementById("bt-snacks").style.display="flex";
   if(snacks.title)document.getElementById("snacks-title").textContent=snacks.title;
   if(snacks.subtitle)document.getElementById("snacks-subtitle").textContent=snacks.subtitle;
-  document.getElementById("snacks-count").textContent=`共 ${snacks.items.length} 項`;
-  listEl.innerHTML="";
-  snacks.items.forEach(s=>{
-    const el=document.createElement("div");el.className="timeline-item snack-item clickable";
-    el.setAttribute("data-title",s.title||"");el.setAttribute("data-maps",s.maps||"");
-    el.setAttribute("data-time",[s.area||"",s.category||""].filter(Boolean).join("  "));
-    const lines=[];if(s.must)lines.push(`必點  ${s.must}`);if(s.note)lines.push(s.note);if(s.opening)lines.push(`營業  ${s.opening}`);
-    el.setAttribute("data-detail-lines",JSON.stringify(lines.length?lines:["點擊地圖前往"]));
-    const snackGallery=[...normGallery(s.gallery)];
-    if(!snackGallery.length){
-      const gd=data.meta?.galleryDefaults||{};
-      snackGallery.push(...normGallery(gd.byIcon?.[s.icon||"🍡"]||gd.byIcon?.["🍽️"]||gd.fallback));
-    }
-    if(snackGallery.length)el.setAttribute("data-gallery",JSON.stringify(snackGallery));
-    const icon=document.createElement("div");icon.className="icon";icon.textContent=s.icon||"🍡";
-    const cw=document.createElement("div");cw.className="content";
-    cw.innerHTML=`<div class="content-title">${s.title||""}</div>${[s.area||"",s.category||""].filter(Boolean).length?`<div class="content-note">${[s.area||"",s.category||""].filter(Boolean).join("  ")}</div>`:""}`;
-    el.append(icon,cw);listEl.appendChild(el);
-  });
-  setupClicks();
+
+  const allItems=(snacks.items||[]).map(normalizeSnackItem);
+  const priorityOrder={must:0,route:1,backup:2,souvenir:3};
+  const areaFilters=["全部","京都","宇治","大阪","神戶"];
+  const priorityFilters=[
+    {key:"must",label:"必食"},
+    {key:"all",label:"全部"},
+    {key:"route",label:"順路"},
+    {key:"backup",label:"後備晚餐"},
+    {key:"souvenir",label:"手信"}
+  ];
+  const mealFilters=[
+    {key:"all",label:"全部"},
+    {key:"snack",label:"小食"},
+    {key:"dessert",label:"甜品"},
+    {key:"meal",label:"正餐"},
+    {key:"drink",label:"飲品"},
+    {key:"souvenir",label:"手信"}
+  ];
+  let selectedArea="全部";
+  let selectedPriority="must";
+  let selectedMeal="all";
+
+  function esc(v){return String(v??"").replace(/[&<>"]/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[m]));}
+  function routeLabel(routeFit){
+    const m=String(routeFit||"").match(/^day(\d+)$/i);
+    return m?`Day ${m[1]}`:"Any";
+  }
+  function sortSnacks(arr){
+    return arr.slice().sort((a,b)=>
+      (a.sortOrder-b.sortOrder) ||
+      ((priorityOrder[a.priority]??9)-(priorityOrder[b.priority]??9)) ||
+      String(a.area||"").localeCompare(String(b.area||""),"zh-Hant") ||
+      String(a.title||"").localeCompare(String(b.title||""),"zh-Hant")
+    );
+  }
+  function makeFilterRow(type,items,selected){
+    const row=document.createElement("div");row.className="snack-filter-row";
+    items.forEach(it=>{
+      const key=typeof it==="string"?it:it.key;
+      const label=typeof it==="string"?it:it.label;
+      const btn=document.createElement("button");
+      btn.className=`snack-filter-btn ${type==="priority"&&key!=="all"?`priority-${key}`:""}${key===selected?" active":""}`;
+      btn.type="button";btn.dataset.filterType=type;btn.dataset.filterKey=key;btn.textContent=label;
+      row.appendChild(btn);
+    });
+    return row;
+  }
+  function buildShell(){
+    listEl.innerHTML="";
+    const panel=document.createElement("div");panel.className="snack-filter-panel";
+    panel.appendChild(makeFilterRow("area",areaFilters,selectedArea));
+    panel.appendChild(makeFilterRow("priority",priorityFilters,selectedPriority));
+    panel.appendChild(makeFilterRow("meal",mealFilters,selectedMeal));
+    listEl.appendChild(panel);
+    panel.querySelectorAll(".snack-filter-btn").forEach(btn=>{
+      btn.addEventListener("click",()=>{
+        const type=btn.dataset.filterType,key=btn.dataset.filterKey;
+        if(type==="area")selectedArea=key;
+        if(type==="priority")selectedPriority=key;
+        if(type==="meal")selectedMeal=key;
+        renderList();
+      });
+    });
+  }
+  function renderList(){
+    buildShell();
+    const filtered=sortSnacks(allItems.filter(s=>{
+      const areaOk=selectedArea==="全部"||getSnackAreaGroup(s.area)===selectedArea;
+      const priorityOk=selectedPriority==="all"||s.priority===selectedPriority;
+      const mealOk=selectedMeal==="all"||s.mealType===selectedMeal;
+      return areaOk&&priorityOk&&mealOk;
+    }));
+    document.getElementById("snacks-count").textContent=`顯示 ${filtered.length} / 共 ${allItems.length} 項`;
+    if(!filtered.length){const empty=document.createElement("div");empty.className="snack-empty";empty.textContent="暫時沒有符合條件的小食，試試切換分類。";listEl.appendChild(empty);return;}
+    filtered.forEach(s=>{
+      const el=document.createElement("div");el.className="timeline-item snack-item clickable";
+      el.setAttribute("data-title",s.title||"");el.setAttribute("data-maps",s.maps||"");
+      el.setAttribute("data-time",[s.area||"",getPriorityLabel(s.priority),getMealTypeLabel(s.mealType)].filter(Boolean).join("  "));
+      const lines=[];
+      if(s.must)lines.push(`必食  ${s.must}`);
+      if(s.note)lines.push(`建議  ${s.note}`);
+      if(s.priceLevel)lines.push(`價位  ${s.priceLevel}`);
+      if(s.queueLevel)lines.push(`排隊  ${getQueueLabel(s.queueLevel)}`);
+      if(s.bestTime)lines.push(`時間  ${s.bestTime}`);
+      if(s.tags?.length)lines.push(`標籤  ${s.tags.join(" / ")}`);
+      el.setAttribute("data-detail-lines",JSON.stringify(lines.length?lines:["點擊地圖前往"]));
+      const snackGallery=[...normGallery(s.gallery)];
+      if(!snackGallery.length){
+        const gd=data.meta?.galleryDefaults||{};
+        snackGallery.push(...normGallery(gd.byIcon?.[s.icon||"🍡"]||gd.byIcon?.["🍽️"]||gd.fallback));
+      }
+      if(snackGallery.length)el.setAttribute("data-gallery",JSON.stringify(snackGallery));
+      el.innerHTML=`
+        <div class="snack-card-top">
+          <span class="snack-badge ${esc(s.priority)}">${esc(getPriorityLabel(s.priority))}</span>
+          <span class="snack-area-badge">${esc(s.area||"")}</span>
+        </div>
+        <div class="snack-title-row">
+          <div class="snack-title">${esc(s.title||"")}</div>
+          <div class="snack-route">${esc(routeLabel(s.routeFit))}</div>
+        </div>
+        ${s.must?`<div class="snack-line"><strong>必食：</strong>${esc(s.must)}</div>`:""}
+        ${s.note?`<div class="snack-line"><strong>建議：</strong>${esc(s.note)}</div>`:""}
+        <div class="snack-meta-row">
+          ${s.priceLevel?`<span class="snack-meta-pill">價位 ${esc(s.priceLevel)}</span>`:""}
+          ${s.queueLevel?`<span class="snack-meta-pill">排隊 ${esc(getQueueLabel(s.queueLevel))}</span>`:""}
+          ${s.bestTime?`<span class="snack-meta-pill">時間 ${esc(s.bestTime)}</span>`:""}
+          ${s.maps?`<button type="button" class="snack-map-btn" data-snack-map="${esc(s.maps)}">地圖</button>`:""}
+        </div>
+        ${s.tags?.length?`<div class="snack-tags">${s.tags.slice(0,5).map(t=>`<span class="snack-tag">${esc(t)}</span>`).join("")}</div>`:""}
+      `;
+      listEl.appendChild(el);
+    });
+    setupClicks();
+    listEl.querySelectorAll(".snack-map-btn").forEach(btn=>{
+      btn.addEventListener("click",e=>{e.stopPropagation();const url=btn.dataset.snackMap;if(url)window.open(url,"_blank");});
+    });
+  }
+  renderList();
 }
 
 // Info View
@@ -1273,7 +1444,7 @@ function render(data){
 // FAB
 const ivw=document.getElementById("itinerary-view"),svw=document.getElementById("snacks-view"),infvw=document.getElementById("info-view"),expvw=document.getElementById("expenses-view");
 const bti=document.getElementById("bt-itinerary"),bts=document.getElementById("bt-snacks"),btinfo=document.getElementById("bt-info"),btexp=document.getElementById("bt-expenses");
-const APP_VERSION = "6.8.2";
+const APP_VERSION = "6.9.0";
 const EXPENSES_MODULE_VERSION = APP_VERSION;
 window.APP_VERSION = APP_VERSION;
 window.EXPENSES_MODULE_VERSION = EXPENSES_MODULE_VERSION;
@@ -1360,7 +1531,7 @@ document.addEventListener("click",()=>fm.classList.remove("open"),{passive:true}
 // Android / Chrome PWA support. Network-only service worker, no aggressive cache.
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => {
-    navigator.serviceWorker.register("./sw.js?v=1.3.5").catch(() => {});
+    navigator.serviceWorker.register("./sw.js?v=1.3.6").catch(() => {});
   });
 }
 
