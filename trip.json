@@ -668,6 +668,7 @@
           "note": "大阪燒肉晚餐",
           "who": "all",
           "popup": true,
+          "booked": true,
           "detail": "Day 4 晚餐安排国産牛焼肉食べ放題 あぶりや千日前店。位置在千日前一帶，配合心齋橋 / 難波自由行後前往較順路。",
           "maps": "https://maps.app.goo.gl/fsFQfW9Vvd63mvYa6",
           "gallery": [
@@ -754,7 +755,8 @@
           "note": "神戶三宮  蟹料理午餐",
           "who": "all",
           "popup": true,
-          "detail": "Day 5 午餐安排かに道楽神戸三宮店。由神戶動物王國返回三宮一帶後用餐，之後再去南京町 / 元町散策。",
+          "booked": true,
+          "detail": "午餐安排かに道楽神戸三宮店。由神戶動物王國返回三宮一帶後用餐，之後再去南京町 / 元町散策。",
           "maps": "https://maps.app.goo.gl/HDB9xaeu5mUnbtow8",
           "gallery": [
             "assets/gallery/crab_01.jpg",
