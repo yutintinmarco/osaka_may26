@@ -309,7 +309,7 @@
           "detail": "AEON Mall KYOTO 可購物、補給日用品，亦適合第一日較輕鬆安排。",
           "maps": "https://www.google.com/maps/search/?api=1&query=AEON+Mall+KYOTO",
           "gallery": [
-            "assets/gallery/aeon_01.jpg"
+            "assets/gallery/default_shopping.jpg"
           ]
         },
         {
@@ -563,7 +563,10 @@
           "maps": "https://maps.app.goo.gl/dT4zWjnRvvZLHP7t7",
           "dianping": "https://tabelog.com/kyoto/A2601/A260302/26000716/",
           "gallery": [
-            "assets/gallery/default_food.jpg"
+            "assets/gallery/ramen_01.webp",
+            "assets/gallery/ramen_02.webp",
+            "assets/gallery/ramen_03.webp",
+            "assets/gallery/ramen_04.webp"
           ]
         },
         {
@@ -660,13 +663,17 @@
         },
         {
           "time": "19:00",
-          "icon": "🍽️",
-          "title": "Dinner",
-          "note": "晚餐",
+          "icon": "🥩",
+          "title": "国産牛焼肉食べ放題 あぶりや千日前店",
+          "note": "大阪燒肉晚餐",
           "who": "all",
           "popup": true,
-          "detail": "大阪晚餐，餐廳可再決定。",
-          "maps": ""
+          "detail": "Day 4 晚餐安排国産牛焼肉食べ放題 あぶりや千日前店。位置在千日前一帶，配合心齋橋 / 難波自由行後前往較順路。",
+          "maps": "https://maps.app.goo.gl/fsFQfW9Vvd63mvYa6",
+          "gallery": [
+            "assets/gallery/beef_01.jpg",
+            "assets/gallery/beef_02.jpg"
+          ]
         },
         {
           "time": "21:30",
@@ -699,7 +706,7 @@
       "city": "kobe",
       "items": [
         {
-          "time": "09:30",
+          "time": "08:45",
           "icon": "🚆",
           "title": "出發前往神戶",
           "note": "大阪出發  前往神戶 Port Island",
@@ -712,7 +719,7 @@
           ]
         },
         {
-          "time": "10:45",
+          "time": "10:00",
           "icon": "🐾",
           "title": "神戶動物王國",
           "note": "室內外動物園  Port Island",
@@ -728,16 +735,31 @@
           ]
         },
         {
-          "time": "13:45",
+          "time": "13:00",
           "icon": "🚆",
           "title": "前往三宮 / 元町",
           "note": "由 Port Island 回神戶市區",
           "who": "all",
           "popup": true,
-          "detail": "由神戶動物王國一帶返回三宮 / 元町，可按當日體力安排午餐或輕食。",
+          "detail": "由神戶動物王國一帶返回三宮 / 元町。",
           "maps": "https://www.google.com/maps/search/?api=1&query=Sannomiya+Motomachi+Kobe",
           "gallery": [
             "assets/gallery/nankinmachi.jpg"
+          ]
+        },
+        {
+          "time": "13:30",
+          "icon": "🦀",
+          "title": "かに道楽神戸三宮店",
+          "note": "神戶三宮  蟹料理午餐",
+          "who": "all",
+          "popup": true,
+          "detail": "Day 5 午餐安排かに道楽神戸三宮店。由神戶動物王國返回三宮一帶後用餐，之後再去南京町 / 元町散策。",
+          "maps": "https://maps.app.goo.gl/HDB9xaeu5mUnbtow8",
+          "gallery": [
+            "assets/gallery/crab_01.jpg",
+            "assets/gallery/crab_02.jpg",
+            "assets/gallery/crab_03.webp"
           ]
         },
         {
